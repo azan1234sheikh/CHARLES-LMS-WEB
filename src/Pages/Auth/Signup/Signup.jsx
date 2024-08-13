@@ -37,31 +37,36 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // toast.success("Signup successful!");
-    try {
-      const { email, comfirm_email, password } = formData || {};
-      const payload = {
-        name: "test user",
-        username: "test",
-        email,
-        password,
-        type: "student",
-      };
-      const response = await axios.post(
-        "http://localhost:9000/api/user/signup",
-        payload
-      );
-      if (response?.status === 201) {
+    const { email, password } = formData || {};
+    const payload = {
+      // name: "test user",
+      username: "test" + email,
+      email,
+      password,
+      type: "student",
+    };
+
+    const options = {
+      url: "http://localhost:9000/api/user/signup",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: payload,
+    };
+
+    axios(options)
+      .then(() => {
         toast.success("Signup successful!");
         navigate("/Signin");
-      } else {
-        toast.error("Signup failed. Please try again.");
-      }
-    } catch (error) {
-      toast.error(
-        error.response?.data?.message || "An error occurred. Please try again."
-      );
-    }
+      })
+      .catch((error) => {
+        toast.error(
+          error.response?.data?.message ||
+            "An error occurred. Please try again."
+        );
+      });
 
     console.log(formData, "formData");
   };

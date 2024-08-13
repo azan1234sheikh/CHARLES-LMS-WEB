@@ -40,23 +40,33 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // toast.success("Signup successful!");
-    try {
-      const response = await axios.post(
-        "http://localhost:9000/api/user/login",
-        formData
-      );
-      if (response?.status === 201) {
+    const { email, password } = formData || {};
+    const payload = {
+      email,
+      password,
+    };
+
+    const options = {
+      url: "http://localhost:9000/api/user/login",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: payload,
+    };
+
+    axios(options)
+      .then(() => {
         toast.success("login successful!");
         navigate("/Explorecourse");
-      } else {
-        toast.error("login failed. Please try again.");
-      }
-    } catch (error) {
-      toast.error(
-        error.response?.data?.message || "An error occurred. Please try again."
-      );
-    }
+      })
+      .catch((error) => {
+        toast.error(
+          error.response?.data?.message ||
+            "An error occurred. Please try again."
+        );
+      });
 
     console.log(formData, "formData");
   };
