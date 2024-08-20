@@ -49,7 +49,7 @@ const MentorCourses = (
 
                 <Link href="#">
                   <Image
-                    src="./public/notif.svg"
+                    src="./notif.svg"
                     alt="Image"
                     h="24px"
                     position="relative"
@@ -62,7 +62,7 @@ const MentorCourses = (
                 </Link>
                 <Link href="#">
                   <Image
-                    src="./public/Rectangle 5997 (1).svg"
+                    src="./Rectangle 5997 (1).svg"
                     alt="Image"
                     h="50px"
                     position="relative"
@@ -82,13 +82,13 @@ const MentorCourses = (
                           <Box h="50px" bg="gray" w="50px" borderRadius="24px" />
                           <Text mb="12px" fontWeight="bold" fontSize="24px" lineHeight="36px" alignSelf="end"color="black" fontFamily="Plus Jakarta Sans"> Emerson Levin</Text>
                         </Flex>
-                        <Image mt="15px" mr="12px" src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image mt="15px" mr="12px" src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text fontWeight="400" fontSize="14px" lineHeight="28px"  mr="212px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             100 Courses
                           </Text>
                           <Flex left="2px" position="relative" top="7px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -112,15 +112,15 @@ const MentorCourses = (
                     </FormControl>
                     <Box>
                   <Button onClick={onModal1Open} border=" 1px solid rgba(245, 245, 247, 1)" bottom="69px" right="208px" position="relative" mt="12px"  ml="93px" bg="#fffff" color="#ffffff" w="97px" h="50px" borderRadius="10px">
-                  <Image src="./public/range (3).svg" alt="Lincoln George" h="12px" w="12px" />
+                  <Image src="./range (3).svg" alt="Lincoln George" h="12px" w="12px" />
                   <Text ml="12px" color="black"> Level</Text>
                   </Button>
                   <Button onClick={onModal2Open} border=" 1px solid rgba(245, 245, 247, 1)" bottom="63px" right="188px" position="relative" bg="#fffff" color="#ffffff" w="127px" h="50px" borderRadius="10px">
-                  <Image src="./public/element-1.svg" alt="Lincoln George" h="18px" w="18px" />
+                  <Image src="./element-1.svg" alt="Lincoln George" h="18px" w="18px" />
                   <Text ml="12px" color="black">Category</Text>
                   </Button>
                   <Button onClick={onModal3Open} border=" 1px solid rgba(245, 245, 247, 1)"  bottom="118px" left="154px" position="relative" bg="#fffff" color="#ffffff" w="166px" h="50px" borderRadius="10px">
-                  <Image src="./public/range (3).svg" alt="Lincoln George" h="12px" w="12px" />
+                  <Image src="./range (3).svg" alt="Lincoln George" h="12px" w="12px" />
                   <Text ml="12px" color="black">Sort By: Popular</Text>
                   </Button>
                   </Box>
@@ -224,7 +224,7 @@ const MentorCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range.svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -248,7 +248,7 @@ const MentorCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                        <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         {/* {reviewText} */}
@@ -280,7 +280,7 @@ const MentorCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (2).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (2).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -305,7 +305,7 @@ const MentorCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                      <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         {/* {reviewText} */}
@@ -338,7 +338,7 @@ const MentorCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (1).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -362,7 +362,7 @@ const MentorCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                         <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                         <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         {/* {reviewText} */}
@@ -395,7 +395,7 @@ const MentorCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (1).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -419,7 +419,7 @@ const MentorCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                      <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         {/* {reviewText} */}
@@ -451,7 +451,7 @@ const MentorCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (1).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -475,7 +475,7 @@ const MentorCourses = (
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
                         
-                      <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         
@@ -507,7 +507,7 @@ const MentorCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (1).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -530,7 +530,7 @@ const MentorCourses = (
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
                        
-                      <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         

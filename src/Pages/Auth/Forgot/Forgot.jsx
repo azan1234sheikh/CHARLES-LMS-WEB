@@ -4,8 +4,6 @@ import { ChakraBaseProvider } from '@chakra-ui/react';
 import { Card } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
 import "../../../index.css";
-import Signin from '../Signin/Signin';
-import Signup from '../Signup/Signup';
 import { useNavigate } from 'react-router-dom';
 const Forgot = () => {
 const navigate = useNavigate();
@@ -21,7 +19,7 @@ const navigate = useNavigate();
     <Container>
      <Center minH="900px">
 
-   <Image src="./public/image (1).png"
+   <Image src="./image (1).png"
    minW="605px" mb="160px" h="700px" >
    </Image>
    </Center>

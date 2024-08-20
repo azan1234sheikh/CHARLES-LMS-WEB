@@ -66,22 +66,22 @@ const CreateSettingsbtn=()=>{
         flexDirection="column"
         w="100%"
       >
-        <MenuItem onClick={Overiviewbtn} icon={<Image src="./public/element-4.png" alt="Grid" h="18px" w="18px" />}>Overview</MenuItem>
+        <MenuItem onClick={Overiviewbtn} icon={<Image src="./element-4.png" alt="Grid" h="18px" w="18px" />}>Overview</MenuItem>
         <SubMenu
-          icon={<Image src="./public/book.png" alt="User" h="18px" w="18px" />}
+          icon={<Image src="./book.png" alt="User" h="18px" w="18px" />}
           label="Courses"
         >
           <MenuItem onClick={handlebtn} >Explore Courses</MenuItem>
           <MenuItem onClick={handleCoursebtn} >My Courses</MenuItem>
           <MenuItem onClick={CreateCoursebtn} >Create Courses</MenuItem>
         </SubMenu>
-        <MenuItem onClick={CreateMentorbtn} icon={<Image src="./public/user-octagon.png" alt="Lock" h="18px" w="18px" />}>
+        <MenuItem onClick={CreateMentorbtn} icon={<Image src="./user-octagon.png" alt="Lock" h="18px" w="18px" />}>
           Mentors
         </MenuItem>
-        <MenuItem onClick={Msgbtn} icon={<Image src="./public/message.svg" alt="User" h="18px" w="18px" />}>
+        <MenuItem onClick={Msgbtn} icon={<Image src="./message.svg" alt="User" h="18px" w="18px" />}>
           Message
         </MenuItem>
-        <MenuItem onClick={CreateSettingsbtn} icon={<Image src="./public/setting-4.png" alt="Television" h="18px" w="18px" />}>Setting</MenuItem>
+        <MenuItem onClick={CreateSettingsbtn} icon={<Image src="./setting-4.png" alt="Television" h="18px" w="18px" />}>Setting</MenuItem>
       </Box>
     </Box>
    

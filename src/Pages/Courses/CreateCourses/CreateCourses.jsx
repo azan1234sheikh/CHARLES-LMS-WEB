@@ -41,7 +41,7 @@ const CreateCourses = () => {
 
                 <Link onClick={handlenotfication}>
                   <Image
-                    src="./public/notif.svg"
+                    src="./notif.svg"
                     alt="Image"
                     h="24px"
                     position="relative"
@@ -54,7 +54,7 @@ const CreateCourses = () => {
                 </Link>
                 <Link onClick={handleAccount}>
                   <Image
-                    src="./public/Rectangle 5997 (1).svg"
+                    src="./Rectangle 5997 (1).svg"
                     alt="Image"
                     h="50px"
                     position="relative"
@@ -107,14 +107,14 @@ const CreateCourses = () => {
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}  h="50px" fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Select Date'/>
                       <Box color="black" position="relative" left="402px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector (1).svg'></Image>
+                      <Image src='./Vector (1).svg'></Image>
                       </Box>
                       </FormControl>
                       <FormControl mt="3">
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="50px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Mon'/>
                       <Box  position="relative" right="39px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector.svg'></Image>
+                      <Image src='./Vector.svg'></Image>
                       </Box>
                       </FormControl>
                      </Flex>
@@ -206,14 +206,14 @@ const CreateCourses = () => {
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}  h="50px" fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Select Date'/>
                       <Box color="black" position="relative" left="402px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector (1).svg'></Image>
+                      <Image src='./Vector (1).svg'></Image>
                       </Box>
                       </FormControl>
                       <FormControl mt="3">
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="50px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Mon'/>
                       <Box  position="relative" right="39px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector.svg'></Image>
+                      <Image src='./Vector.svg'></Image>
                       </Box>
                       </FormControl>
                      </Flex>
@@ -305,14 +305,14 @@ const CreateCourses = () => {
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}  h="50px" fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Select Date'/>
                       <Box color="black" position="relative" left="402px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector (1).svg'></Image>
+                      <Image src='./Vector (1).svg'></Image>
                       </Box>
                       </FormControl>
                       <FormControl mt="3">
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="50px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Mon'/>
                       <Box  position="relative" right="39px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector.svg'></Image>
+                      <Image src='./Vector.svg'></Image>
                       </Box>
                       </FormControl>
                      </Flex>
@@ -403,14 +403,14 @@ const CreateCourses = () => {
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}  h="50px" fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Select Date'/>
                       <Box color="black" position="relative" left="402px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector (1).svg'></Image>
+                      <Image src='./Vector (1).svg'></Image>
                       </Box>
                       </FormControl>
                       <FormControl mt="3">
                       {/* <FormLabel htmlFor='Email' fontFamily="'Plus Jakarta Sans', sans-serif">Email Address</FormLabel> */}
                       <Input w="216px"  _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="50px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Mon'/>
                       <Box  position="relative" right="39px" bottom="35px" w="54px" h="24px" >
-                      <Image src='./public/Vector.svg'></Image>
+                      <Image src='./Vector.svg'></Image>
                       </Box>
                       </FormControl>
                      </Flex>

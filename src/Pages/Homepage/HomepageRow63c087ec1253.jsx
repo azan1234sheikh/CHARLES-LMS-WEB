@@ -3,11 +3,11 @@ import { Image, Box, Flex, Container, Heading, Button } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 
 const data = [
-  { image: "./public/img_clip_path_group.svg" },
-  { image: "./public/img_clip_path_group_black_900.svg" },
-  { image: "./public/img_clip_path_group_black_900_30x102.svg" },
-  { image: "./public/img_clip_path_group_black_900_32x146.svg" },
-  { image: "./public/img_vector.svg" },
+  { image: "./img_clip_path_group.svg" },
+  { image: "./img_clip_path_group_black_900.svg" },
+  { image: "./img_clip_path_group_black_900_30x102.svg" },
+  { image: "./img_clip_path_group_black_900_32x146.svg" },
+  { image: "./img_vector.svg" },
 ];
 
 export default function HomepageRow63c087ec1253() {
@@ -76,7 +76,7 @@ export default function HomepageRow63c087ec1253() {
                     p="8px"
                     borderRadius="12px"
                   >
-                    <Image src="./public/img_thumbs_up_neutral_white.png" alt="Thumbsup" h="42px" w="34%" fit="contain" />
+                    <Image src="./img_thumbs_up_neutral_white.png" alt="Thumbsup" h="42px" w="34%" fit="contain" />
                     <Flex mt="8px" alignSelf="end" flex={1} flexDirection="column" alignItems="start">
                       <Heading size="heading4xl" as="h1" color="gray.900" mt="4px" fontFamily="Inter">
                         <Heading size="heading4xl" as="span" color="gray.900">
@@ -111,7 +111,7 @@ export default function HomepageRow63c087ec1253() {
               borderRadius="12px"
             >
               <Image
-                src="./public/img_63c087ec12530e6.png"
+                src="./img_63c087ec12530e6.png"
                 alt="63c087ec12530es"
                 h="60px"
                 w="32%"
@@ -262,7 +262,7 @@ export default function HomepageRow63c087ec1253() {
             >
               <Box h="50px" mt="88px" bg="blue.600" w="50px" borderRadius="24px" />
               <Image
-                src="./public/img_1_7.png"
+                src="./img_1_7.png"
                 alt="Image"
                 h="412px"
                 ml={{ base: "0px", sm: "-10px" }}

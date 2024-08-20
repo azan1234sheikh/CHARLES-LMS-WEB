@@ -210,14 +210,14 @@ const Dashboard = () => {
                 <CiSearch size="100%"  />
               </Box>
                 <Link href="#" onClick={handleAccount}>
-                  <Image  src="./public/Rectangle 5997.svg"  position="relative" bottom="33px" left="103px" alt="Contrast" h="50px" w="50px" />
+                  <Image  src="./Rectangle 5997.svg"  position="relative" bottom="33px" left="103px" alt="Contrast" h="50px" w="50px" />
                 </Link>
 
                   <Box h="8px" mb="14px" bg="secondary.red" w="8px" borderRadius="4px" />
                 </Flex>
                 <Link onClick={handlenotfication} href="#">
                   <Image
-                    src="./public/notif.svg"
+                    src="./notif.svg"
                     alt="Image"
                     h="24px"
                     mr="292px"
@@ -548,7 +548,7 @@ const Dashboard = () => {
                         <Button
                           size="md"
                           rightIcon={
-                            <Image src="./public/Full Arrow Right.svg" alt="Full Arrow Right" w="20px" h="20px" />
+                            <Image src="./Full Arrow Right.svg" alt="Full Arrow Right" w="20px" h="20px" />
                           }
                           fontFamily="Plus Jakarta Sans"
                           fontWeight={500}

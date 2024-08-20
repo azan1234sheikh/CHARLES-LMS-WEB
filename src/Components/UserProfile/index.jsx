@@ -2,7 +2,7 @@ import { Heading, Box, Flex, Image } from "@chakra-ui/react";
 import React from "react";
 
 export default function UserProfile({
-  userImage = "./public/img_flutter_logo_202_svg.svg",
+  userImage = "./img_flutter_logo_202_svg.svg",
   userRole = "App Developer",
   completionPercentage = "50%",
   ...props

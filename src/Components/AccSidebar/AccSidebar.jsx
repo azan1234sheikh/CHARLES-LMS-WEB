@@ -82,20 +82,20 @@ const handleHelpdesk=()=>{
         w="300px"
       >
         <Box mt="12px">
-        <MenuItem onClick={handlebtn}  icon={<Image src="./public/Editprofile.svg" alt="Grid" h="18px" w="18px" />}>Edit Profile</MenuItem>
+        <MenuItem onClick={handlebtn}  icon={<Image src="./Editprofile.svg" alt="Grid" h="18px" w="18px" />}>Edit Profile</MenuItem>
         </Box>
         <Box mt="12px">
-        <MenuItem  onClick={handlesetting} icon={<Image src="./public/Accountsetting.svg" alt="Lock" h="18px" w="18px" />}>
+        <MenuItem  onClick={handlesetting} icon={<Image src="./Accountsetting.svg" alt="Lock" h="18px" w="18px" />}>
           Account Settings
         </MenuItem>
         </Box>
         <Box mt="12px">
-        <MenuItem onClick={handleAnnouncment} icon={<Image src="./public/Accsettings.svg" alt="User" h="18px" w="18px" />}>
+        <MenuItem onClick={handleAnnouncment} icon={<Image src="./Accsettings.svg" alt="User" h="18px" w="18px" />}>
           Announcement
         </MenuItem>
         </Box>
         <Box mt="12px">
-        <MenuItem onClick={handleHelpdesk} icon={<Image src="./public/Helpdesk.svg" alt="Television" h="18px" w="18px" />}>Helpdesk</MenuItem>
+        <MenuItem onClick={handleHelpdesk} icon={<Image src="./Helpdesk.svg" alt="Television" h="18px" w="18px" />}>Helpdesk</MenuItem>
         </Box>
       </Box>
     </Box>                
@@ -124,7 +124,7 @@ const handleHelpdesk=()=>{
         <ModalContent  top="125px" ml="82px" alignItems="center" w="375px" h="280px"  >
           <ModalHeader>
             <Center>
-            <Image mt="22px" w="48px" h="48px" src="./public/Round-icon.svg"/>
+            <Image mt="22px" w="48px" h="48px" src="./Round-icon.svg"/>
 
             </Center>
             

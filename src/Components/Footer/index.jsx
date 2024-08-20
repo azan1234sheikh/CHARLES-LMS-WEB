@@ -23,7 +23,7 @@ export default function Footer({ ...props }) {
         flexDirection={{ md: "row", base: "column" }}
       >
         <Flex w={{ md: "20%", base: "100%" }} flexDirection="column">
-          <Image src="./public/img_footer_logo.png" alt="Footerlogo" h="44px" w="124px" fit="contain" />
+          <Image src="./img_footer_logo.png" alt="Footerlogo" h="44px" w="124px" fit="contain" />
           <Flex flexDirection="column" alignItems="start">
             <Text mt="26px" fontWeight={500}>
               HALL ROAD st 124 bloc 6{" "}

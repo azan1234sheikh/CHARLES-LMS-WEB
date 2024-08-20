@@ -12,12 +12,14 @@ import {
   IconButton,
   Button,
   Box,
+  Image
 } from "@chakra-ui/react";
 import { FiEye } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -58,10 +60,10 @@ const Signup = () => {
       <Container>
         <Center minH="900px">
           <Image
-            src="./public/image (1).png"
+            src="./image (1).png"
             minW="675px"
             mb="160px"
-            ml="160px"
+           
             h="700px"
           />
         </Center>
@@ -72,7 +74,7 @@ const Signup = () => {
             w="385px"
             height="677px"
             position="relative"
-            left="835px"
+            left="700px"
             bottom="850px"
             bg="white"
           >

@@ -60,7 +60,7 @@ export default function WebmessagePage() {
                             {searchBarValue2?.length > 0 ? (
                               <IoCloseSharp  onClick={() => setSearchBarValue2("")} />
                             ) : (
-                              <Image src="./public/Search.svg" alt="Contrast" h="18px" w="18px" />
+                              <Image src="./Search.svg" alt="Contrast" h="18px" w="18px" />
                             )}
                           </InputRightElement>
                         </InputGroup>

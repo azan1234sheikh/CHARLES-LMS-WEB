@@ -70,7 +70,7 @@ export default function HomepageRowfrequently() {
                           borderRadius="16px"
                         >
                           <Heading as="h3">{d.canabeginner}</Heading>
-                          <Image src="./public/img_close.svg" alt="Close" h="24px" w="24px" />
+                          <Image src="./img_close.svg" alt="Close" h="24px" w="24px" />
                         </Flex>
                       </AccordionButton>
                       <AccordionPanel p="0px">Dummy Content</AccordionPanel>
@@ -97,7 +97,7 @@ export default function HomepageRowfrequently() {
                           <Heading as="h4" w={{ base: "100%", sm: "92%" }} lineHeight="24px">
                             {d.istherea}
                           </Heading>
-                          <Image src="./public/img_close.svg" alt="Close" h="24px" w={{ base: "100%", sm: "24px" }} />
+                          <Image src="./img_close.svg" alt="Close" h="24px" w={{ base: "100%", sm: "24px" }} />
                         </Flex>
                       </AccordionButton>
                       <AccordionPanel p="0px">Dummy Content</AccordionPanel>

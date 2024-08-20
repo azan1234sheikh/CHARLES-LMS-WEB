@@ -4,35 +4,35 @@ import React, { Suspense } from "react";
 
 const data = [
   {
-    userImage: "./public/img_63c02e556c48fe4.png",
+    userImage: "./img_63c02e556c48fe4.png",
     userName: "Andrew Smith",
     userLocation: "New York, NY",
     userDescription:
       "Blandit pretium sit nulla feugiat mattis in arcu mauris urna porttitor dolor sit amet consectur dolor sitele.",
   },
   {
-    userImage: "./public/img_63c02e568e38ebc.png",
+    userImage: "./img_63c02e568e38ebc.png",
     userName: "Lily Woods",
     userLocation: "Miami, FL",
     userDescription:
       "The earth is now the bed of the life of the people, for the ferment of the soil is full of laughter.",
   },
   {
-    userImage: "./public/img_63c02e5500c9a20.png",
+    userImage: "./img_63c02e5500c9a20.png",
     userName: "Will Miller",
     userLocation: "Portland, Oregon",
     userDescription:
       "Or else it is very easy to draw a whole country, but with hate as hate, who will love an easy quiver for the bow.",
   },
   {
-    userImage: "./public/img_63c02e557842c50.png",
+    userImage: "./img_63c02e557842c50.png",
     userName: "Sally Moner",
     userLocation: "San Francisco, CA",
     userDescription:
       "Or else it is very easy to draw a whole country, but with hate as hate, who will love an easy quiver for the bow.",
   },
   {
-    userImage: "./public/img_63c02e556c48fe4.png",
+    userImage: "./img_63c02e556c48fe4.png",
     userName: "Andrew Smith",
     userLocation: "New York, NY",
     userDescription:

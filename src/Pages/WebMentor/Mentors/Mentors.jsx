@@ -63,7 +63,7 @@ const Mentors = (
                     Tutors
                     <Link onClick={handlenotfication}>
                       <Image
-                        src="./public/notif.svg"
+                        src="./notif.svg"
                         alt="Image"
                         h="24px"
                         position="relative"
@@ -76,7 +76,7 @@ const Mentors = (
                     </Link>
                     <Link  onClick={handleAccount}>
                       <Image
-                        src="./public/Rectangle 5997 (1).svg"
+                        src="./Rectangle 5997 (1).svg"
                         alt="Image"
                         h="50px"
                         position="relative"
@@ -104,11 +104,11 @@ const Mentors = (
                     <Box>
                       
                       <Button onClick={onModal2Open} border=" 1px solid rgba(245, 245, 247, 1)" bottom="83px" left="734px" position="relative" bg="#fffff" color="#ffffff" w="127px" h="50px" borderRadius="10px">
-                      <Image src="./public/element-1.svg" alt="Lincoln George" h="18px" w="18px" />
+                      <Image src="./element-1.svg" alt="Lincoln George" h="18px" w="18px" />
                       <Text ml="12px" color="black">Category</Text>
                       </Button>
                       <Button onClick={onModal3Open} border=" 1px solid rgba(245, 245, 247, 1)"  bottom="83px" left="774px" position="relative" bg="#fffff" color="#ffffff" w="166px" h="50px" borderRadius="10px">
-                      <Image src="./public/range (3).svg" alt="Lincoln George" h="12px" w="12px" />
+                      <Image src="./range (3).svg" alt="Lincoln George" h="12px" w="12px" />
                       <Text ml="12px" color="black">Sort By: Popular</Text>
                       </Button>
                       </Box>
@@ -226,14 +226,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -273,14 +273,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -322,14 +322,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -369,14 +369,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -416,14 +416,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -462,14 +462,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -509,14 +509,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -556,14 +556,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -603,14 +603,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -649,14 +649,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)
@@ -695,14 +695,14 @@ const Mentors = (
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)

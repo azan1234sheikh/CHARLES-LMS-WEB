@@ -17,7 +17,7 @@ const Header = () => {
                     <Box ml="152px" >
                    <Link href="#">
                      <Image
-                       src="./public/notif.svg"
+                       src="./notif.svg"
                        alt="Image"
                        h="24px"
                        position="relative"
@@ -30,7 +30,7 @@ const Header = () => {
                    </Link>
                    <Link href="#">
                      <Image
-                       src="./public/Rectangle 5997 (1).svg"
+                       src="./Rectangle 5997 (1).svg"
                        alt="Image"
                        h="50px"
                        position="relative"

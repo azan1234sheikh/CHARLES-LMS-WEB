@@ -47,7 +47,7 @@ export default function HomepageRowTwo() {
                 >
                   <UserProfile />
                   <UserProfile
-                    userImage="./public/img_figma_logomark_svg.svg"
+                    userImage="./img_figma_logomark_svg.svg"
                     userRole="UI/UX Designer"
                     completionPercentage="90%"
                   />
@@ -64,7 +64,7 @@ export default function HomepageRowTwo() {
               />
             </Flex>
             <Image
-              src="./public/img_adobestock_499845150.png"
+              src="./img_adobestock_499845150.png"
               alt="Adobestock"
               h="394px"
               zIndex={6}
@@ -78,15 +78,15 @@ export default function HomepageRowTwo() {
             />
             <Box zIndex={7} w="46%" position="absolute" bottom="-74px" right="17%" m="auto">
               <Image
-                src="./public/Homepagebox.svg"
+                src="./Homepagebox.svg"
                 alt="Image"
                 h={{ md: "348px", base: "auto" }}
                 fit="cover"
                 w="100%"
               />
               <Flex alignItems="start" px="12px">
-                <Image src="./public/img_chat_1_webp.png" alt="Chat1webp" h="1px" w="1px" fit="cover" />
-                <Image src="./public/img_chat__webp.png" alt="Chat2webp" h="1px" ml="12px" w="1px" fit="cover" />
+                <Image src="./img_chat_1_webp.png" alt="Chat1webp" h="1px" w="1px" fit="cover" />
+                <Image src="./img_chat__webp.png" alt="Chat2webp" h="1px" ml="12px" w="1px" fit="cover" />
                 <Image
                   src=""
                   alt="Chat3webp"
@@ -115,23 +115,23 @@ export default function HomepageRowTwo() {
               </Flex>
               <Flex gap="18px" flexDirection="column">
                 <Flex gap="10px">
-                  <Image src="./public/img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
+                  <Image src="./img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
                   <Heading as="h5">Access Courses forever</Heading>
                 </Flex>
                 <Flex gap="10px">
-                  <Image src="./public/img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
+                  <Image src="./img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
                   <Heading as="h6">Free class update material</Heading>
                 </Flex>
                 <Flex gap="10px">
-                  <Image src="./public/img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
+                  <Image src="./img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
                   <Heading as="h6">Real-world projects Freelancer</Heading>
                 </Flex>
                 <Flex gap="10px">
-                  <Image src="./public/img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
+                  <Image src="./img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
                   <Heading as="h6">Forum learning according to interests</Heading>
                 </Flex>
                 <Flex gap="10px">
-                  <Image src="./public/img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
+                  <Image src="./img_ic_check_svg.svg" alt="Icchecksvg" h="24px" w="24px" />
                   <Heading as="h6">Other online class privileges</Heading>
                 </Flex>
               </Flex>

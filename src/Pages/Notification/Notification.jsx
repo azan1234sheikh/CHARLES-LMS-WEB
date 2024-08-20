@@ -33,7 +33,7 @@ const Notification = () => {
 
                <Link href="#">
                  <Image
-                   src="./public/notif.svg"
+                   src="./notif.svg"
                    alt="Image"
                    h="24px"
                    position="relative"
@@ -46,7 +46,7 @@ const Notification = () => {
                </Link>
                <Link href="#">
                  <Image
-                   src="./public/Rectangle 5997 (1).svg"
+                   src="./Rectangle 5997 (1).svg"
                    alt="Image"
                    h="50px"
                    position="relative"
@@ -72,7 +72,7 @@ const Notification = () => {
             <Flex>
                 
             <Box mt="32px" ml="12px" h="50px" bg="rgba(217, 243, 248, 1)" w="50px" borderRadius="24px" >
-                <Image src='./public/Msg.svg' w="23px" h="23px" ml="14px" mt="12px" />
+                <Image src='./Msg.svg' w="23px" h="23px" ml="14px" mt="12px" />
             </Box>
             <Text mt="25px" ml="12px" fontWeight="500" color="black" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">New Courses </Text><Text fontWeight="500" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans" mt="29px" transform="translateX(781px)" > 2m ago</Text>
             <Text mt="62px" transform="translateX(-135px)" flexDirection="column" fontWeight="500" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">Brian tylor added new course. Check this out!</Text>
@@ -98,7 +98,7 @@ const Notification = () => {
             <Flex mt="11px">
                 
             <Box mt="32px" ml="12px" h="50px" bg="rgba(217, 243, 248, 1)" w="50px" borderRadius="24px" >
-            <Image src='./public/setting.svg' w="23px" h="23px" ml="14px" mt="12px" />
+            <Image src='./setting.svg' w="23px" h="23px" ml="14px" mt="12px" />
             </Box>
             <Text mt="25px" ml="12px" fontWeight="500" color="black" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">System</Text><Text fontWeight="500" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans" mt="29px" transform="translateX(821px)" > 2m ago</Text>
             <Text mt="62px" transform="translateX(-98px)" flexDirection="column" fontWeight="500" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">Update your Information</Text>
@@ -111,7 +111,7 @@ const Notification = () => {
             <Flex mt="11px">
                 
             <Box mt="32px" ml="12px" h="50px" bg="rgba(217, 243, 248, 1)" w="50px" borderRadius="24px" >
-            <Image src='./public/mycourse.svg' w="23px" h="23px" ml="14px" mt="12px" />
+            <Image src='./mycourse.svg' w="23px" h="23px" ml="14px" mt="12px" />
             </Box>
             <Text mt="25px" ml="12px" fontWeight="500" color="black" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">My Course</Text>
             <Text mt="62px" transform="translateX(-73px)" flexDirection="column" fontWeight="500" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">Come on other LMS modules have been waiting to be completed</Text>

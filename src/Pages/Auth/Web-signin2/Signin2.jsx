@@ -15,7 +15,6 @@ import {
 import { Card } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
 import "../../../index.css";
-import Signin from '../Signin/Signin';
 import Signup from '../Signup/Signup';
 import { useNavigate } from 'react-router-dom';
 const Signin2 = () => {

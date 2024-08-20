@@ -17,7 +17,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
-    cardimage : "./public/programming.svg",
+    cardimage : "./programming.svg",
   },
   {
     intermediateButton: "Beginner",
@@ -33,7 +33,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
-    cardimage : "./public/design.svg",
+    cardimage : "./design.svg",
 
   },
   {
@@ -45,7 +45,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
-    cardimage : "./public/UIUX.svg",
+    cardimage : "./UIUX.svg",
 
   },
   {
@@ -62,7 +62,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
-    cardimage : "./public/programming.svg",
+    cardimage : "./programming.svg",
 
   },
   {
@@ -74,7 +74,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
-    cardimage : "./public/design.svg",
+    cardimage : "./design.svg",
 
   },
   {
@@ -86,7 +86,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
-    cardimage : "./public/UIUX.svg",
+    cardimage : "./UIUX.svg",
 
   },
 ];

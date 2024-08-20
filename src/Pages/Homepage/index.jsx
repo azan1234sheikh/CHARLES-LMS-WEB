@@ -40,7 +40,7 @@ export default function HomepagePage() {
             flexDirection={{ md: "row", base: "column" }}
             as="header"
           >
-            <Image src="./public/img_header_logo.png" alt="Headerlogo" h="48px" w="132px" fit="contain" />
+            <Image src="./img_header_logo.png" alt="Headerlogo" h="48px" w="132px" fit="contain" />
             <Flex
               flex={1}
               justifyContent="space-between"
@@ -70,7 +70,7 @@ export default function HomepagePage() {
                     <Heading size="textlg" as="h6" fontFamily="Plus Jakarta Sans">
                       Courses
                     </Heading>
-                    <Image src="./public/img_fi_rr_caret_down.svg" alt="Firrcaret" h="24px" w="24px" />
+                    <Image src="./img_fi_rr_caret_down.svg" alt="Firrcaret" h="24px" w="24px" />
                   </Flex>
                   {menuOpen ? <MegaMenu1 /> : null}
                 </ListItem>
@@ -86,7 +86,7 @@ export default function HomepagePage() {
                     <Heading size="textlg" as="h6" fontFamily="Plus Jakarta Sans">
                       Learning Flow
                     </Heading>
-                    <Image src="./public/img_fi_rr_caret_down.svg" alt="Firrcaret" h="24px" w="24px" />
+                    <Image src="./img_fi_rr_caret_down.svg" alt="Firrcaret" h="24px" w="24px" />
                   </Flex>
                   {menuOpen1 ? <MegaMenu1 /> : null}
                 </ListItem>
@@ -100,7 +100,7 @@ export default function HomepagePage() {
               </UnorderedList>
               <Flex gap="20px" alignItems="center">
                 <Link href="#">
-                  <Image src="./public/img_button.svg" alt="Button" h="48px" w="48px" borderRadius="24px" />
+                  <Image src="./img_button.svg" alt="Button" h="48px" w="48px" borderRadius="24px" />
                 </Link>
                 <Button onClick={handlebtn} size="2xl" color="black.900" bg="rgba(38, 189, 217, 1)" fontWeight={500} minW="170px" borderRadius="10px">
                   Login / Register
@@ -126,7 +126,7 @@ export default function HomepagePage() {
           >
             <Flex gap="48px" w={{ md: "58%", base: "100%" }} flexDirection="column" alignItems="center">
               <Flex gap="34px" alignSelf="stretch" flexDirection="column" alignItems="center">
-                <Image src="./public/img_mask_group.svg" alt="Image" h="120px" w="120px" />
+                <Image src="./img_mask_group.svg" alt="Image" h="120px" w="120px" />
                 <Flex gap="14px" alignSelf="stretch" flexDirection="column" alignItems="center">
                   <Heading size="h1_web" mt="6px">
                     Ready to Build Your Future?

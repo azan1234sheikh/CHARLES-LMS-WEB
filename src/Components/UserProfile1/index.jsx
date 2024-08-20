@@ -2,7 +2,7 @@ import { Heading, Image, Flex } from "@chakra-ui/react";
 import React from "react";
 
 export default function UserProfile1({
-  userImage = "./public/img_63c02e556c48fe4.png",
+  userImage = "./img_63c02e556c48fe4.png",
   userName = "Andrew Smith",
   userLocation = "New York, NY",
   userDescription = "Blandit pretium sit nulla feugiat mattis in arcu mauris urna porttitor dolor sit amet consectur dolor sitele.",
@@ -36,7 +36,7 @@ export default function UserProfile1({
             </Heading>
           </Flex>
         </Flex>
-        <Image src="./public/img_trash.svg" alt="Andrew Smith" h="32px" w="32px" />
+        <Image src="./img_trash.svg" alt="Andrew Smith" h="32px" w="32px" />
       </Flex>
       <Heading size="textlg" as="h6" color="gray.800" mb="8px" w="96%" lineHeight="30px">
         {userDescription}

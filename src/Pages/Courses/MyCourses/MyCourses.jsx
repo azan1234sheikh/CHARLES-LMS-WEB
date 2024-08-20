@@ -73,7 +73,7 @@ const MyCourses = (
 
                 <Link onClick={handlenotfication}>
                   <Image
-                    src="./public/notif.svg"
+                    src="./notif.svg"
                     alt="Image"
                     h="24px"
                     position="relative"
@@ -86,7 +86,7 @@ const MyCourses = (
                 </Link>
                 <Link  onClick={handleAccount}>
                   <Image
-                    src="./public/Rectangle 5997 (1).svg"
+                    src="./Rectangle 5997 (1).svg"
                     alt="Image"
                     h="50px"
                     position="relative"
@@ -114,15 +114,15 @@ const MyCourses = (
                 </Flex>
                 <Box>
                   <Button onClick={onModal1Open} border=" 1px solid rgba(245, 245, 247, 1)" bottom="89px" left="498px" position="relative" mt="12px"  ml="93px" bg="#fffff" color="#ffffff" w="97px" h="50px" borderRadius="10px">
-                  <Image src="./public/range (3).svg" alt="Lincoln George" h="12px" w="12px" />
+                  <Image src="./range (3).svg" alt="Lincoln George" h="12px" w="12px" />
                   <Text ml="12px" color="black"> Level</Text>
                   </Button>
                   <Button onClick={onModal2Open} border=" 1px solid rgba(245, 245, 247, 1)" bottom="83px" left="524px" position="relative" bg="#fffff" color="#ffffff" w="127px" h="50px" borderRadius="10px">
-                  <Image src="./public/element-1.svg" alt="Lincoln George" h="18px" w="18px" />
+                  <Image src="./element-1.svg" alt="Lincoln George" h="18px" w="18px" />
                   <Text ml="12px" color="black">Category</Text>
                   </Button>
                   <Button onClick={onModal3Open} border=" 1px solid rgba(245, 245, 247, 1)"  bottom="83px" left="564px" position="relative" bg="#fffff" color="#ffffff" w="166px" h="50px" borderRadius="10px">
-                  <Image src="./public/range (3).svg" alt="Lincoln George" h="12px" w="12px" />
+                  <Image src="./range (3).svg" alt="Lincoln George" h="12px" w="12px" />
                   <Text ml="12px" color="black">Sort By: Popular</Text>
                   </Button>
                   <Button border=" 1px solid rgba(245, 245, 247, 1)"  bottom="83px" left="584px" position="relative" bg="#fffff" color="#000000" w="126px" h="50px" borderRadius="10px"  onClick={onOpen}>Delete Course</Button>
@@ -228,7 +228,7 @@ const MyCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range.svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -253,7 +253,7 @@ const MyCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                        <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                      
                       <Text color="black" alignSelf="end">
@@ -289,7 +289,7 @@ const MyCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (2).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (2).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -314,7 +314,7 @@ const MyCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                      <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         {/* {reviewText} */}
@@ -348,7 +348,7 @@ const MyCourses = (
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range (1).svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -373,7 +373,7 @@ const MyCourses = (
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                         <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                         <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                       <Text color="black" alignSelf="end">
                         {/* {reviewText} */}
@@ -394,7 +394,7 @@ const MyCourses = (
         <ModalContent  top="125px" ml="82px" alignItems="center" w="375px" h="280px"  >
           <ModalHeader>
             <Center>
-            <Image mt="22px" w="48px" h="48px" src="./public/Round-icon.svg"/>
+            <Image mt="22px" w="48px" h="48px" src="./Round-icon.svg"/>
 
             </Center>
             

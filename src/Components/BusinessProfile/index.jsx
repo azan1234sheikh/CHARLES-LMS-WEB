@@ -2,7 +2,7 @@ import { Button, Image, Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 
 export default function BusinessProfile({
-  businessImage = "./public/img_div.svg",
+  businessImage = "./img_div.svg",
   businessTitle = "Business",
   businessDescription = "Lacinia fermen tum fusce felis placerat amet bibendum rhoncus cursus doloril.",
   exploreCoursesButton = "Explore Courses",
@@ -22,7 +22,7 @@ export default function BusinessProfile({
         <Flex mt="30px" mr="12px" alignSelf="stretch" justifyContent="space-between" alignItems="center" gap="20px">
           <Button
             size="md"
-            rightIcon={<Image src="./public/img_full_arrow_right.svg" alt="Full Arrow Right" w="20px" h="20px" />}
+            rightIcon={<Image src="./img_full_arrow_right.svg" alt="Full Arrow Right" w="20px" h="20px" />}
             fontWeight={500}
             borderColor="neutral.soft_grey"
             borderWidth="1px"

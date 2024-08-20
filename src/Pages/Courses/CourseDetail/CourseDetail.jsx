@@ -69,7 +69,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
    
                    <Link href="#">
                      <Image
-                       src="./public/notif.svg"
+                       src="./notif.svg"
                        alt="Image"
                        h="24px"
                        position="relative"
@@ -82,7 +82,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    </Link>
                    <Link href="#">
                      <Image
-                       src="./public/Rectangle 5997 (1).svg"
+                       src="./Rectangle 5997 (1).svg"
                        alt="Image"
                        h="50px"
                        position="relative"
@@ -121,7 +121,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
             <Flex>
             <Link href="#">
                      <Image
-                       src="./public/Rectangle 5997 (1).svg"
+                       src="./Rectangle 5997 (1).svg"
                        alt="Image"
                        h="30px"
                        position="relative"
@@ -139,7 +139,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(156, 156, 164, 1)"> {CourseCat}</Text>
                    <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(4, 164, 244, 1)"> {mentorfollow}</Text>
                    </Flex>
-                   <Image position="relative" top="24px" left="123px" src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                   <Image position="relative" top="24px" left="123px" src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                    <Text ml="132px" color="black" alignSelf="end">
                         4.5 </Text>
                    </Flex> 
@@ -163,21 +163,21 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     <Text mt="18px" alignContent="space-around" fontWeight="400" color="rgba(20, 21, 34, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans"  >{CourseDesccription}</Text>
                     <Text mt="13px" fontWeight="500" color="rgba(20, 21, 34, 1)" fontSize="24px" lineHeight="36px" fontFamily="Plus Jakarta Sans">Key Points</Text>
                     <Flex mt="12px" >
-                        <Image h="24px" w="24px"  src='./public/tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)">Undestand the basics of Prototype and Animation  </Text>
                        
                     </Flex>
                     <Flex mt="12px">
-                        <Image h="24px" w="24px"  src='./public/tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)">Understand the basics of MicroInteraction</Text>
                        
                     </Flex>
                     <Flex mt="12px">
-                        <Image h="24px" w="24px"  src='./public/tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)"> Creating Animation (20 case studies) for mobile apps</Text>
                     </Flex>
                     <Flex mt="12px">
-                        <Image h="24px" w="24px"  src='./public/tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)">Presenting designs using Animation</Text>
                     </Flex>
                   </Stack>
@@ -214,7 +214,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     
                   >
                    <Flex ml="12px" mb="102px">
-                  <Image src='./public/Figma.svg' />
+                  <Image src='./Figma.svg' />
                    <Stack >
                   <Text  ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Figma </Text>
                   <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
@@ -242,7 +242,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     
                   >
                    <Flex ml="12px" mb="102px">
-                  <Image src='./public/Principal.svg' />
+                  <Image src='./Principal.svg' />
                    <Stack >
                   <Text  ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Principle </Text>
                   <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
@@ -292,7 +292,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
             <Flex mt="23px">
             <Link href="#">
                      <Image 
-                       src="./public/Rectangle 5997 (1).svg"
+                       src="./Rectangle 5997 (1).svg"
                        alt="Image"
                        h="30px"
                        position="relative"
@@ -305,7 +305,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    </Link>
                     
                    <Text mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="400" lineHeight="28px" fontSize="14px" color="rgba(156, 156, 164, 1)"ml="23px">{studentName}</Text>
-                   <Image position="relative" top="26px" left="123px" src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                   <Image position="relative" top="26px" left="123px" src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                    
                    <Text ml="132px" color="black" alignSelf="end">
                         {reviewText} </Text>
@@ -313,7 +313,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    <Stack>
                    <Progress ml="22px" w="290px" mt="22px" borderRadius="12px" sx={{'& > div': { bg:'rgba(255, 187, 84, 1)',}}}size='sm' value={30} />
                    <Flex>
-                    <Image mt="7px" src="./public/Number.svg"/>
+                    <Image mt="7px" src="./Number.svg"/>
                    <Text mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="700" lineHeight="24px" fontSize="16px" color="#000000"ml="23px">{Modules}</Text>
                    <Text ml="127px" mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="400" lineHeight="28px" fontSize="14px" color="rgba(156, 156, 164, 1)" >{ratio}</Text>     
 
@@ -376,7 +376,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                 <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                   <Button
                     size="sm"
-                    rightIcon={<Image src="./public/range.svg" alt="Settings" w="12px" h="12px" />}
+                    rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
                     mt="100px"
                     fontFamily="Plus Jakarta Sans"
                     gap="6px"
@@ -401,7 +401,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     </Flex>
                     <Flex gap="4px" w="32%" justifyContent="center">
                       <Flex flex={1} flexDirection="column" alignItems="end">
-                        <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                       </Flex>
                      
                       <Text color="black" alignSelf="end">
@@ -437,7 +437,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                       <Button
                         size="sm"
-                        rightIcon={<Image src="./public/range.svg" alt="Settings" w="12px" h="12px" />}
+                        rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
                         mt="100px"
                         fontFamily="Plus Jakarta Sans"
                         gap="6px"
@@ -462,7 +462,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                         </Flex>
                         <Flex gap="4px" w="32%" justifyContent="center">
                           <Flex flex={1} flexDirection="column" alignItems="end">
-                            <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                            <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           </Flex>
                          
                           <Text color="black" alignSelf="end">
@@ -498,7 +498,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
                       <Button
                         size="sm"
-                        rightIcon={<Image src="./public/range.svg" alt="Settings" w="12px" h="12px" />}
+                        rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
                         mt="100px"
                         fontFamily="Plus Jakarta Sans"
                         gap="6px"
@@ -523,7 +523,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                         </Flex>
                         <Flex gap="4px" w="32%" justifyContent="center">
                           <Flex flex={1} flexDirection="column" alignItems="end">
-                            <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                            <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           </Flex>
                          
                           <Text color="black" alignSelf="end">

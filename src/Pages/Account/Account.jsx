@@ -54,7 +54,7 @@ const Account = (
 
              <Link href="#">
                <Image
-                 src="./public/notif.svg"
+                 src="./notif.svg"
                  alt="Image"
                  h="24px"
                  position="relative"
@@ -67,7 +67,7 @@ const Account = (
              </Link>
              <Link href="#">
                <Image
-                 src="./public/Rectangle 5997 (1).svg"
+                 src="./Rectangle 5997 (1).svg"
                  alt="Image"
                  h="50px"
                  position="relative"
@@ -99,7 +99,7 @@ const Account = (
         <Flex position="relative" left="71px" bottom="100px" >   
         <Text mb="112px" ml="120px"  fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Upload Photo</Text>
         <Text mb="12px" mt="30px" transform="translateX(-90px)" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(132, 129, 138, 1)">300x300 and max 2 MB</Text>
-        <Image mt="32px" transform="translateX(-320px)" src="./public/Upload.svg" alt="Television" h="74px" w="74px" />
+        <Image mt="32px" transform="translateX(-320px)" src="./Upload.svg" alt="Television" h="74px" w="74px" />
         </Flex> 
         <Stack ml="22px" transform="translateY(-120px)" >  
                 <Text  fontWeight="500" color="black" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">
@@ -134,7 +134,7 @@ const Account = (
                       onChange={(date) => setSelectedDate(date)}
                       customInput ={<Input w="400px" h="50px" placeholder="Select date" />}/>
                     <InputRightElement>
-                      <Image mt="2px" transform="translateX(-340px)" src="./public/celendar.svg" alt="Television" h="24px" w="24px"/>
+                      <Image mt="2px" transform="translateX(-340px)" src="./celendar.svg" alt="Television" h="24px" w="24px"/>
                     </InputRightElement>
                    </InputGroup>
              </FormControl>

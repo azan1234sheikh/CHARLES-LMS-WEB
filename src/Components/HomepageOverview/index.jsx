@@ -14,7 +14,7 @@ export default function HomepageOverview({
     studentName = "Emerson Sipr",
     moduleCount = "5 Modul",
     courseDuration = "1h 30m",
-    cardimage = "./public/cardimg.svg",
+    cardimage = "./cardimg.svg",
     ...props
   }) {
     return (
@@ -38,7 +38,7 @@ export default function HomepageOverview({
             <Flex bgImage={cardimage} w="294px" h="150px" alignSelf="stretch" p="10px" borderRadius="10px">
               <Button
                 size="sm"
-                rightIcon={<Image src="./public/range (2).svg" alt="Settings" w="12px" h="12px" />}
+                rightIcon={<Image src="./range (2).svg" alt="Settings" w="12px" h="12px" />}
                 mt="100px"
                 fontFamily="Plus Jakarta Sans"
                 gap="6px"
@@ -63,7 +63,7 @@ export default function HomepageOverview({
                 </Flex>
                 <Flex gap="4px" w="32%" justifyContent="center">
                   <Flex flex={1} flexDirection="column" alignItems="end">
-                  <Image src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                  <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                   </Flex>
                   <Text color="black" alignSelf="end">
                     {/* {reviewText} */}

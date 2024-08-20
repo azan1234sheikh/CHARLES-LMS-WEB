@@ -35,7 +35,7 @@ const Helpdesk = () => {
  
               <Link href="#">
                 <Image
-                  src="./public/notif.svg"
+                  src="./notif.svg"
                   alt="Image"
                   h="24px"
                   position="relative"
@@ -48,7 +48,7 @@ const Helpdesk = () => {
               </Link>
               <Link href="#">
                 <Image
-                  src="./public/Rectangle 5997 (1).svg"
+                  src="./Rectangle 5997 (1).svg"
                   alt="Image"
                   h="50px"
                   position="relative"
@@ -75,7 +75,7 @@ const Helpdesk = () => {
        <Card bottom="2px" left="42px" w="744px" h="436px">
        <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="27px" fontWeight="700" fontSize="18px" color="rgba(20, 21, 34, 1)">Notifications</Text>
         <Flex ml="12px" mt="12px">
-            <Image src='./public/Coursea.svg' />
+            <Image src='./Coursea.svg' />
             <Stack mb="12px">
             <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">What is Coursea </Text>
             <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
@@ -85,7 +85,7 @@ const Helpdesk = () => {
         </Flex>
            <Box ml="12px" h="1px" mt="12px" w="684px" bg="rgba(245, 245, 247, 1)"></Box>    
            <Flex ml="12px" mt="2px">
-            <Image src='./public/lock.svg' />
+            <Image src='./lock.svg' />
             <Stack mb="12px">
             <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Term  & Condition </Text>
             <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
@@ -95,7 +95,7 @@ const Helpdesk = () => {
         </Flex>
         <Box ml="12px" h="1px" mt="8px" w="684px" bg="rgba(245, 245, 247, 1)"></Box>    
         <Flex ml="12px" mt="2px">
-            <Image src='./public/notify.svg' />
+            <Image src='./notify.svg' />
             <Stack mb="12px">
             <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Getting Started</Text>
             <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">

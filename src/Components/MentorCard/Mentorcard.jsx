@@ -45,14 +45,14 @@ const Mentorcard = () => {
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
-                        <Image  src="./public/document.svg" alt="Lincoln George" h="20px" w="20px" />
+                        <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             50 Courses
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
-                    <Image  src="./public/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                    <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
                             4.5(1200reviews)

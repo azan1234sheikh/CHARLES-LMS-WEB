@@ -39,7 +39,7 @@ const Verify = () => {
             <Container>
                 <Center minH="900px">
                     <Image
-                        src="./public/image (1).png"
+                        src="./image (1).png"
                         minW="605px"
                         mb="160px"
                         ml="20px"

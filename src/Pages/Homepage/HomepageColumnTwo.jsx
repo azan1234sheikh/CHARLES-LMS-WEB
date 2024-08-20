@@ -4,42 +4,42 @@ import React, { Suspense } from "react";
 
 const data = [
   {
-    businessImage: "./public/img_div.svg",
+    businessImage: "./img_div.svg",
     businessTitle: "Business",
     businessDescription: "Lacinia fermen tum fusce felis placerat amet bibendum rhoncus cursus doloril.",
     exploreCoursesButton: "Explore Courses",
     twentyfour: "24",
   },
   {
-    businessImage: "./public/img_div_red_300.svg",
+    businessImage: "./img_div_red_300.svg",
     businessTitle: "Design",
     businessDescription: "Accumsan vitae nisi massa lectusolme aliquam tincidunt tellus nullam.",
     exploreCoursesButton: "Explore Courses",
     twentyfour: "32",
   },
   {
-    businessImage: "./public/img_div_deep_purple_a200_01.svg",
+    businessImage: "./img_div_deep_purple_a200_01.svg",
     businessTitle: "Development",
     businessDescription: "Aliquam faucibus dignissim amet non nulla vestib ulum sed pulvinar anibh.",
     exploreCoursesButton: "Explore Courses",
     twentyfour: "48",
   },
   {
-    businessImage: "./public/img_div_deep_orange_400.svg",
+    businessImage: "./img_div_deep_orange_400.svg",
     businessTitle: "Marketing",
     businessDescription: "Id adipiscing nulla aliquam vel. In mattis enim in porttitor mauris eu.",
     exploreCoursesButton: "Explore Courses",
     twentyfour: "38",
   },
   {
-    businessImage: "./public/img_div.svg",
+    businessImage: "./img_div.svg",
     businessTitle: "Business",
     businessDescription: "Lacinia fermen tum fusce felis placerat amet bibendum rhoncus cursus doloril.",
     exploreCoursesButton: "Explore Courses",
     twentyfour: "24",
   },
   {
-    businessImage: "./public/img_div_yellow_700.svg",
+    businessImage: "./img_div_yellow_700.svg",
     businessTitle: "Illustration",
     businessDescription: "Id massa ultricies dignissim donec sed tortor gravida nunc orci. Sed lacinia.",
     exploreCoursesButton: "Explore Courses",

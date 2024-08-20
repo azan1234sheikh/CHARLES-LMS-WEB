@@ -26,7 +26,7 @@ const Overview = ({
               </Text>
             </Flex>
             <Flex mr="39px"  h="56px" bg="rgba(252, 217, 196, 1)" w="25%" justifyContent="center" p="16px" borderRadius="35px">
-              <Box h="20px" bgImage="url(./public/fi-rr-e-learning.png)" bgSize="cover" bgRepeat="no-repeat" w="100%">
+              <Box h="20px" bgImage="url(./fi-rr-e-learning.png)" bgSize="cover" bgRepeat="no-repeat" w="100%">
               
               </Box>
             </Flex>

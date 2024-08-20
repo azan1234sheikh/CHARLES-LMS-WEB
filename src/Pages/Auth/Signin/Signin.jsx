@@ -1,7 +1,7 @@
+
 import React, { useState } from "react";
 import {
   Center,
-  ChakraProvider,
   Container,
   Text,
   Stack,
@@ -14,23 +14,24 @@ import {
   Button,
   Flex,
   Box,
+  Image,
+  Icon
 } from "@chakra-ui/react";
-import { ChakraBaseProvider } from "@chakra-ui/react";
-import { Card } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
 import "../../../index.css";
 import { FiEye } from "react-icons/fi";
-import { Icon } from "@chakra-ui/react";
-import Signup from "../Signup/Signup";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const handleForgotclick = () => {
+    navigate("/Forgot"); // Redirects to the /signup route
+  };
   const handleSignupClick = () => {
     navigate("/Signup"); // Redirects to the /signup route
   };
+ 
 
   const [formData, setFormData] = useState({});
 
@@ -71,7 +72,7 @@ const Signin = () => {
     console.log(formData, "formData");
   };
   const handleForgotClick = () => {
-    navigate('/Forgot'); // Redirects to the /signup route
+    navigate('/Forgot'); // Redirects to the /Forgot route
   };
 
   return (
@@ -79,12 +80,11 @@ const Signin = () => {
       <Container>
         <Center minH="900px">
           <Image
-            src="./public/image (1).png"
+            src="./image (1).png"
             minW="675px"
-            mb="160px"
-            ml="160px"
+            mb="160px"   
             h="700px"
-          ></Image>
+          />
         </Center>
   
         <Center minH="100vh">
@@ -94,7 +94,7 @@ const Signin = () => {
             w="385px"
             height="677px"
             position="relative"
-            left="835px"
+            left="700px"
             bottom="850px"
             bg="white"
           >
@@ -189,6 +189,7 @@ const Signin = () => {
             </Stack>
             <Flex>
               <Text
+              onClick={handleForgotclick}
                 mt="48px"
                 color=" rgba(156, 156, 164, 1);"
                 fontWeight="500"
@@ -242,8 +243,8 @@ const Signin = () => {
                 <Image
                   w="16px"
                   h="16px"
-                  src="./public/ic_google logo.png"
-                  alt="Logo"
+                  src="./ic_google logo.png"
+                  alt="Google Logo"
                   boxSize="24px"
                 />
               }
@@ -251,9 +252,10 @@ const Signin = () => {
               fontFamily="'Plus Jakarta Sans', sans-serif"
               border="1px solid rgba(235, 234, 237, 1)"
               fontWeight="500"
+              color="black"
               size="14px"
               mt="25px"
-              padding="8px ,16px,8px,16px"
+              padding="8px 16px"
               gap="10px"
             >
               Sign In with Google
@@ -267,8 +269,8 @@ const Signin = () => {
                 <Image
                   w="16px"
                   h="16px"
-                  src="./public/ic_fb logo.png"
-                  alt="Logo"
+                  src="./ic_fb logo.png"
+                  alt="Facebook Logo"
                   boxSize="24px"
                 />
               }
@@ -277,7 +279,7 @@ const Signin = () => {
               border="1px solid rgba(235, 234, 237, 1)"
               fontWeight="500"
               size="14px"
-              padding="8px ,16px,8px,16px"
+              padding="8px 16px"
               gap="10px"
               color="black"
             >
@@ -322,5 +324,6 @@ const Signin = () => {
       </Container>
     </>
   );
-  
-}
+};
+
+export default Signin;
