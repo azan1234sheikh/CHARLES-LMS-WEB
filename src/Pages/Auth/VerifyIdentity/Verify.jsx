@@ -10,6 +10,7 @@ import {  useNavigate } from 'react-router-dom';
 import { PinInput,PinInputField } from '@chakra-ui/react';
 
 const Verify = () => {
+    const navigate = useNavigate();
     const [otp, setOtp] = useState(['', '', '', '']);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -30,7 +31,9 @@ const Verify = () => {
             setOtp(newOtp);
         }
     };
-
+    const handlebackClick = () => {
+        navigate('/Forgot'); // Redirects to the /signup route
+      };
     return (
         <>
             <Container>
@@ -39,7 +42,7 @@ const Verify = () => {
                         src="./public/image (1).png"
                         minW="605px"
                         mb="160px"
-                        ml="160px"
+                        ml="20px"
                         h="700px"
                     />
                 </Center>
@@ -50,7 +53,7 @@ const Verify = () => {
                         w="385px"
                         height="443px"
                         position="relative"
-                        left="835px"
+                        left="680px"
                         bottom="900px"
                         bg="white"
                     >
@@ -83,7 +86,7 @@ const Verify = () => {
                         </HStack>
                         </Box>
                         <Flex >
-                        <Text mt="32px"
+                        <Text onClick={handlebackClick} mt="32px"
                         color="rgba(156, 156, 164, 1);" fontWeight="500" fontSize="14px" letterSpacing="1px" lineHeight="21px" fontFamily="'Plus Jakarta Sans', sans-serif"
                         >Back</Text>    
                          <Text ml="183px" mt="35px"

@@ -19,7 +19,7 @@ export default function MegaMenu1() {
             <Flex gap="12px" flexDirection="column" alignItems="start">
               <Link href="#" fontSize={{ base: "13px", sm: "medium" }}>
                 <Text size="undefined" color="black.600" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 1
+                
                 </Text>
               </Link>
               <Link href="#" alignSelf="center" fontSize={{ base: "13px", sm: "medium" }}>

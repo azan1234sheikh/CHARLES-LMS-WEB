@@ -17,13 +17,14 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/html,css.svg"
   },
   {
     settingsButton: "Beginner",
     courseTitle: (
       <>
-        Introduction Basic <br />
-        Programming HTML & CSS
+       Creating Beautifull Landing Page <br/>
+       in 1 Hour
       </>
     ),
     priceRp150000: "Rp150.000",
@@ -32,13 +33,15 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/landingpage.svg",
+
   },
   {
     settingsButton: "Master",
     courseTitle: (
       <>
-        Introduction Basic <br />
-        Programming HTML & CSS
+        Animation is the Key of  <br />
+        Successfull UI/UX Design
       </>
     ),
     priceRp150000: "Rp150.000",
@@ -47,6 +50,9 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/cardimg.svg",
+    
+
   },
   {
     settingsButton: "Intermediate",
@@ -64,13 +70,14 @@ const data = [
     courseDuration: "1h 30m",
     pricerp150000: "$150.000",
     pricerp120000: "$120.000",
+    cardimage : "./public/html,css.svg",
   },
   {
     settingsButton: "Beginner",
     courseTitle: (
       <>
-        Introduction Basic <br />
-        Programming HTML & CSS
+       Creating Beautifull Landing Page <br/>
+       in 1 Hour
       </>
     ),
     priceRp150000: "Rp150.000",
@@ -79,6 +86,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/landingpage.svg",
   },
   {
     settingsButton: "Master",
@@ -94,6 +102,7 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/cardimg.svg",
   },
 ];
 

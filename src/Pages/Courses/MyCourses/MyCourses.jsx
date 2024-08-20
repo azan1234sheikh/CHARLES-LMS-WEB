@@ -3,9 +3,11 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
 import Sidebar8 from '../../../Components/Sidebar/sidebar.jsx';
  import { Image } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import React, { Suspense } from "react";
+import React, { useState,Suspense } from "react";
 import { CiSearch } from "react-icons/ci";
+import CourseDetail from '../CourseDetail/CourseDetail.jsx';
 import { useDisclosure } from '@chakra-ui/react';
+
 import {
     Modal,
     ModalOverlay,
@@ -15,6 +17,7 @@ import {
     ModalBody,
     ModalCloseButton,
   } from '@chakra-ui/react'
+  
 const MyCourses = (
     {
         beginnerButton = "Beginner",
@@ -23,6 +26,22 @@ const MyCourses = (
         reviewText = "4,5",
         ...props}
 ) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const handleDelete = () => {
+    setIsVisible(false); 
+  };
+  const navigatebtn = useNavigate();
+  const handleAccount=()=>{
+    navigatebtn('/Account');
+  }
+  const handlenotfication=()=>{
+    navigatebtn('/Notification');
+  }
+  const handlebtn=()=>{
+    navigatebtn('/CourseDetail');
+  }
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
     const finalRef = React.useRef(null)
     const { isOpen: isModal1Open, onOpen: onModal1Open, onClose: onModal1Close } = useDisclosure();
     const { isOpen: isModal2Open, onOpen: onModal2Open, onClose: onModal2Close } = useDisclosure();
@@ -52,27 +71,27 @@ const MyCourses = (
                 <Heading position="relative" bottom="290px" fontWeight ="500" fontSize="32px" lineHeight="48px" fontFamily="Plus Jakarta Sans" >
                 My Courses
 
-                <Link href="#">
+                <Link onClick={handlenotfication}>
                   <Image
                     src="./public/notif.svg"
                     alt="Image"
                     h="24px"
                     position="relative"
-                    left="900px"
-                    bottom="26px"
+                    left="1010px"
+                    bottom="36px"
                     w="24px"
                     fit="cover"
                     borderRadius="24px"
                   />
                 </Link>
-                <Link href="#">
+                <Link  onClick={handleAccount}>
                   <Image
                     src="./public/Rectangle 5997 (1).svg"
                     alt="Image"
                     h="50px"
                     position="relative"
-                    left="1002px"
-                    bottom="60px"
+                    left="1122px"
+                    bottom="70px"
                     w="50px"
                     fit="cover"
                     borderRadius="24px"
@@ -106,6 +125,7 @@ const MyCourses = (
                   <Image src="./public/range (3).svg" alt="Lincoln George" h="12px" w="12px" />
                   <Text ml="12px" color="black">Sort By: Popular</Text>
                   </Button>
+                  <Button border=" 1px solid rgba(245, 245, 247, 1)"  bottom="83px" left="584px" position="relative" bg="#fffff" color="#000000" w="126px" h="50px" borderRadius="10px"  onClick={onOpen}>Delete Course</Button>
                   </Box>
                   <Modal  isOpen={isModal2Open} onClose={onModal2Close}>
                    
@@ -310,8 +330,9 @@ const MyCourses = (
 
         {/* Card 3 */}
         <GridItem  flexDirection="column" w="348px">
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" bottom="342px" left="783px">
+        {isVisible && ( 
+          <Link onClick={handlebtn} _hover={{ textDecoration: 'none' }}>
+            <Box position="relative" bottom="352px" left="783px">
               <Flex
                 gap="20px"
                 bg="white"
@@ -364,8 +385,44 @@ const MyCourses = (
               </Flex>
             </Box>
           </Link>
+        )}
         </GridItem>
-     </Grid>
+       </Grid>
+
+      <Modal  blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent  top="125px" ml="82px" alignItems="center" w="375px" h="280px"  >
+          <ModalHeader>
+            <Center>
+            <Image mt="22px" w="48px" h="48px" src="./public/Round-icon.svg"/>
+
+            </Center>
+            
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Stack>
+            <Text ml="66px" fontFamily="Inter" fontSize="24px" lineHeight="32px" fontWeight='600' mb='1rem'>
+              Delete Training?
+            </Text>
+            <Text  ml="16px" fontFamily="Inter" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="21px" fontWeight='400' mb='1rem'>
+            Are you sure you want to delete the training? click yes to continue deletion, and no to cancel
+            </Text>
+            </Stack>
+          </ModalBody>
+
+          <ModalFooter>
+          <Flex>
+                   <Button fontSize="14px" bottom="32px" position="relative"border="1px solid black " color="black" left="10px" h="50px" fontFamily="Plus Jakarta Sans" bg="#ffffff" fontWeight={500} w="150px" borderRadius="10px">
+                      Cancel
+                       </Button>
+                       <Button ml="12px" fontSize="14px" onClick={handleDelete} colorScheme="transparent"  bottom="32px" position="relative" left="10px" h="50px" fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} w="150px" borderRadius="10px">
+                      Delete
+                       </Button>
+                       </Flex>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
      </Box>
    </Box>
      

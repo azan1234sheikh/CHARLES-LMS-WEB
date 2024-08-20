@@ -76,19 +76,19 @@ export default function HomepageRowTwo() {
               m="auto"
               borderRadius="50px"
             />
-            <Box zIndex={7} w="46%" position="absolute" bottom="-1px" right="17%" m="auto">
+            <Box zIndex={7} w="46%" position="absolute" bottom="-74px" right="17%" m="auto">
               <Image
-                src="images/img_group_chat_illu.png"
+                src="./public/Homepagebox.svg"
                 alt="Image"
-                h={{ md: "288px", base: "auto" }}
+                h={{ md: "348px", base: "auto" }}
                 fit="cover"
                 w="100%"
               />
               <Flex alignItems="start" px="12px">
                 <Image src="./public/img_chat_1_webp.png" alt="Chat1webp" h="1px" w="1px" fit="cover" />
-                <Image src="./public/img_chat_2_webp.png" alt="Chat2webp" h="1px" ml="12px" w="1px" fit="cover" />
+                <Image src="./public/img_chat__webp.png" alt="Chat2webp" h="1px" ml="12px" w="1px" fit="cover" />
                 <Image
-                  src="./public/img_chat_3_webp.png"
+                  src=""
                   alt="Chat3webp"
                   h="1px"
                   mb="14px"

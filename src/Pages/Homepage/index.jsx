@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import MegaMenu1 from "../../Components/MegaMenu1";
 import HomepageColumnOne from "./HomepageColumnOne";
 import HomepageColumnThree from "./HomepageColumnThree";
@@ -6,20 +7,27 @@ import HomepageRow63c087ec1253 from "./HomepageRow63c087ec1253";
 import HomepageRowTwo from "./HomepageRowTwo";
 import HomepageRowfrequently from "./HomepageRowfrequently";
 import HomepageStacktrustedby9 from "./HomepageStacktrustedby9";
-import { Button, Heading, Flex, Image, Container, Link, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Button, Box,Heading, Flex, Image, Container, Link, UnorderedList, ListItem } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../../Components/Footer";
 
 export default function HomepagePage() {
+  const btnnavigate = useNavigate();
+  const handlebtn =()=>{
+       btnnavigate("/Signin");
+  }
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [menuOpen1, setMenuOpen1] = React.useState(false);
 
   return (
     <>
-      <Flex  gap={{ md: "118px", base: "59px", sm: "88px" }} bg="gray.50" w="100%" flexDirection="column" py="6px">
+    
+    <Box >
+      <Flex w="100vw" gap={{ md: "118px", base: "59px", sm: "88px" }} bg="gray.50"   flexDirection="column" py="6px">
         <Flex
           mt="8px"
           ml="64px"
-          mr="106px"
+          mr="10px"
           gap={{ md: "72px", base: "36px", sm: "54px" }}
           flexDirection="column"
           mx={{ md: 0, base: "0px" }}
@@ -60,7 +68,7 @@ export default function HomepagePage() {
                 >
                   <Flex gap="6px" cursor="pointer">
                     <Heading size="textlg" as="h6" fontFamily="Plus Jakarta Sans">
-                      Cources
+                      Courses
                     </Heading>
                     <Image src="./public/img_fi_rr_caret_down.svg" alt="Firrcaret" h="24px" w="24px" />
                   </Flex>
@@ -94,7 +102,7 @@ export default function HomepagePage() {
                 <Link href="#">
                   <Image src="./public/img_button.svg" alt="Button" h="48px" w="48px" borderRadius="24px" />
                 </Link>
-                <Button size="2xl" color="black.900" fontWeight={500} minW="170px" borderRadius="10px">
+                <Button onClick={handlebtn} size="2xl" color="black.900" bg="rgba(38, 189, 217, 1)" fontWeight={500} minW="170px" borderRadius="10px">
                   Login / Register
                 </Button>
               </Flex>
@@ -136,10 +144,12 @@ export default function HomepagePage() {
                 Register as a Tutor
               </Button>
             </Flex>
+            <Footer/>
           </Container>
           
         </Flex>
       </Flex>
+      </Box>
     </>
   );
 }

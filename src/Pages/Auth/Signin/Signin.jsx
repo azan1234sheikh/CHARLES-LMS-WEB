@@ -15,22 +15,25 @@ const Signin = () => {
   const handleSignupClick = () => {
     navigate('/Signup'); // Redirects to the /signup route
   };
+  const handleForgotClick = () => {
+    navigate('/Forgot'); // Redirects to the /signup route
+  };
 
   return (
     <>
  
-    <Container >
+    <Container  >
        
        <Center minH="900px">
        <Image src="./public/image (1).png"
-       minW="675px" mb="160px" ml="160px" h="700px" >
+       minW="675px" mb="160px" h="700px" >
        </Image>
        </Center>
    
     
-        <Center minH="100vh">
-        <Box border="1px solid Transparent" p="0" w="385px" height="677px" position="relative" // ensure proper positioning for `left` and `bottom`
-         left="835px"  bottom="850px" bg="white " >
+        <Center>
+        <Box h="100vh" border="1px solid Transparent" p="0" w="385px" height="677px" position="relative" // ensure proper positioning for `left` and `bottom`
+         left="765px"  bottom="850px" bg="white " >
         <Text  mb="3" color="background: rgba(20, 21, 34, 1);" fontWeight="500" fontSize="42px" letterSpacing="2px" lineHeight="63px" fontFamily="'Plus Jakarta Sans', sans-serif">
             Sign In
           </Text>
@@ -60,7 +63,7 @@ const Signin = () => {
              </FormControl>
           </Stack>
           <Flex>
-          <Text mt="48px" color=" rgba(156, 156, 164, 1);" fontWeight="500" fontSize="14px" lineHeight="21px" fontFamily="'Plus Jakarta Sans', sans-serif">
+          <Text onClick={handleForgotClick} mt="48px" color=" rgba(156, 156, 164, 1);" fontWeight="500" fontSize="14px" lineHeight="21px" fontFamily="'Plus Jakarta Sans', sans-serif">
           Forgot Password
           </Text>
           <Button 
@@ -108,6 +111,7 @@ const Signin = () => {
          fontWeight="500"
          size="14px"
          mt="25px"
+         color="black"
          padding="8px ,16px,8px,16px"
          gap="10px"
          >Sign In with Google
@@ -125,6 +129,7 @@ const Signin = () => {
          size="14px"
          padding="8px ,16px,8px,16px"
          gap="10px"
+         color="black"
          >Sign In with Facebook
          </Button>
          <Text
@@ -139,6 +144,7 @@ const Signin = () => {
           Privacy Policy</span><br/> and <span style={{color: 'rgba(4, 164, 244, 1)', fontWeight: 400, fontSize: '12px', lineHeight: '18px', fontFamily: "'Plus Jakarta Sans', sans-serif"}}>
           Terms of Service</span>.
          </Text>
+         
         </Box>
         </Center>
     

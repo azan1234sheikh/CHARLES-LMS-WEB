@@ -17,16 +17,24 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/programming.svg",
   },
   {
     intermediateButton: "Beginner",
-    courseTitle: "Creating Beautifull Landing Page in 1 Hour",
+    courseTitle: (
+      <>
+        Introduction Basic <br />
+        Programming HTML & CSS
+      </>
+    ),
     coursePrice: "Rp150.000",
     discountedPrice: "Rp120.000",
     ratingText: "4,5",
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/design.svg",
+
   },
   {
     intermediateButton: "Master",
@@ -37,6 +45,8 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/UIUX.svg",
+
   },
   {
     intermediateButton: "Intermediate",
@@ -52,6 +62,8 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/programming.svg",
+
   },
   {
     intermediateButton: "Master",
@@ -62,6 +74,8 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/design.svg",
+
   },
   {
     intermediateButton: "Beginner",
@@ -72,6 +86,8 @@ const data = [
     studentName: "Emerson Sipr",
     moduleCount: "5 Modul",
     courseDuration: "1h 30m",
+    cardimage : "./public/UIUX.svg",
+
   },
 ];
 

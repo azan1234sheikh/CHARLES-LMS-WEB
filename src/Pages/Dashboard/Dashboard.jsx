@@ -78,9 +78,16 @@ const Dashboard = () => {
     e.preventDefault(); 
     navigate('/Signin'); // Redirects to the /signup route
   };
+  const navigatebtn = useNavigate();
+  const handleAccount=()=>{
+    navigatebtn('/Account');
+  }
+  const handlenotfication=()=>{
+    navigatebtn('/Notification');
+  }
   return (
     <>
-    <Box width="100%" bg=" rgba(247, 248, 250, 1);">
+    <Box  bg=" rgba(247, 248, 250, 1);">
      <Flex gap="16px" alignItems="start">
      <Sidebar />
          
@@ -202,13 +209,13 @@ const Dashboard = () => {
                 ><Box  w="54px" h="24px" >
                 <CiSearch size="100%"  />
               </Box>
-                <Link href="#" onClick={handleClick}>
+                <Link href="#" onClick={handleAccount}>
                   <Image  src="./public/Rectangle 5997.svg"  position="relative" bottom="33px" left="103px" alt="Contrast" h="50px" w="50px" />
                 </Link>
 
                   <Box h="8px" mb="14px" bg="secondary.red" w="8px" borderRadius="4px" />
                 </Flex>
-                <Link href="#">
+                <Link onClick={handlenotfication} href="#">
                   <Image
                     src="./public/notif.svg"
                     alt="Image"

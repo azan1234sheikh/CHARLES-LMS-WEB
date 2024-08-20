@@ -7,7 +7,7 @@ export default function Footer({ ...props }) {
       {...props}
       as="footer"
       mt="54px"
-      bg="gray"
+      bg="rgba(246, 248, 253, 1)"
       alignSelf="stretch"
       justifyContent="center"
       alignItems="center"

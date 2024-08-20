@@ -13,6 +13,13 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
    import { Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
 
 const CreateCourses = () => {
+  const navigatebtn = useNavigate();
+  const handleAccount=()=>{
+    navigatebtn('/Account');
+  }
+  const handlenotfication=()=>{
+    navigatebtn('/Notification');
+  }
   return (
     <>
  
@@ -32,7 +39,7 @@ const CreateCourses = () => {
                 <Heading position="relative" bottom="290px" fontWeight ="500" fontSize="32px" lineHeight="48px" fontFamily="Plus Jakarta Sans" >
                 Create Courses
 
-                <Link href="#">
+                <Link onClick={handlenotfication}>
                   <Image
                     src="./public/notif.svg"
                     alt="Image"
@@ -45,7 +52,7 @@ const CreateCourses = () => {
                     borderRadius="24px"
                   />
                 </Link>
-                <Link href="#">
+                <Link onClick={handleAccount}>
                   <Image
                     src="./public/Rectangle 5997 (1).svg"
                     alt="Image"
@@ -451,7 +458,7 @@ const CreateCourses = () => {
                          <AccordionIcon />
                         </AccordionButton>
     
-    <AccordionPanel  position="relative" right="3px" >
+                         <AccordionPanel  position="relative" right="3px" >
                        <Stack h="55px" w="452px">
                              <Text>
                                  Basic

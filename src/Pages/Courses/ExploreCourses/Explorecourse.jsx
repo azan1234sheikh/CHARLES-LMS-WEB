@@ -32,6 +32,14 @@ const Explorecourse = ({
     { id: 3, name: 'Item 3', category: 'Popular' },
     { id: 4, name: 'Item 4', category: 'Category 3' },
   ];
+
+  const navigatebtn = useNavigate();
+  const handleAccount=()=>{
+    navigatebtn('/Account');
+  }
+  const handlenotfication=()=>{
+    navigatebtn('/Notification');
+  }
   return (
     <>
     <Box h="100vh">
@@ -50,7 +58,7 @@ const Explorecourse = ({
                 <Heading position="relative" bottom="290px" fontWeight ="500" fontSize="32px" lineHeight="48px" fontFamily="Plus Jakarta Sans" >
                 Explore courses
 
-                <Link href="#">
+                <Link onClick={handlenotfication}>
                   <Image
                     src="./public/notif.svg"
                     alt="Image"
@@ -63,7 +71,7 @@ const Explorecourse = ({
                     borderRadius="24px"
                   />
                 </Link>
-                <Link href="#">
+                <Link onClick={handleAccount}>
                   <Image
                     src="./public/Rectangle 5997 (1).svg"
                     alt="Image"
@@ -113,7 +121,7 @@ const Explorecourse = ({
                        <Button border=" 1px solid rgba(245, 245, 247, 1)"  bottom="3px" left="4px" position="relative" bg="#fffff" color="#ffffff" w="74px" h="36px" borderRadius="10px">
                        <Text ml="2px" color="black">All</Text>
                        </Button>
-                       <Button  border=" 1px solid #000000"  bottom="3px" left="24px" position="relative" bg="#000000" color="#ffffff" w="100px" h="36px" borderRadius="10px">
+                       <Button  border=" 1px solid #000000"  bottom="3px" left="24px" position="relative" bg="#000000" color="white" w="100px" h="36px" borderRadius="10px">
                        <Text ml="2px">Design</Text>
                        </Button>
                               
@@ -245,9 +253,6 @@ const Explorecourse = ({
             </Box>
           </Link>
         </GridItem>
-
-        {/* Repeat similar structure for other cards */}
-        {/* Card 2 */}
         <GridItem w="348px" >
           <Link href="#" _hover={{ textDecoration: 'none' }}>
             <Box position="relative" top="12px" right="213px">
@@ -363,7 +368,7 @@ const Explorecourse = ({
           </Link>
         </GridItem>
 
-        {/* Other cards would follow a similar structure */}
+        {/* Card 4 */}
         <GridItem w="348px">
           <Link href="#" _hover={{ textDecoration: 'none' }}>
             <Box position="relative" top="36px" right="213px">

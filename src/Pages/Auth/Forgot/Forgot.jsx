@@ -12,6 +12,9 @@ const navigate = useNavigate();
   const handleSignInClick = () => {
     navigate('/Signin'); // Redirects to the /signup route
   };
+  const handlenextInClick = () => {
+    navigate('/Verify'); // Redirects to the /signup route
+  };
 
   return (
     <>
@@ -19,7 +22,7 @@ const navigate = useNavigate();
      <Center minH="900px">
 
    <Image src="./public/image (1).png"
-   minW="605px" mb="160px" ml="160px" h="700px" >
+   minW="605px" mb="160px" h="700px" >
    </Image>
    </Center>
         <Center minH="100vh">
@@ -40,11 +43,11 @@ const navigate = useNavigate();
           <Text mb="3" color="background: rgba(20, 21, 34, 1);" fontWeight="400" fontSize="14px" lineHeight="28px" fontFamily="'Plus Jakarta Sans', sans-serif">
           Select a way to receive the verification code
           </Text>
-          <Box mt="25px" w="385px" h="170px">
+          <Box mt="21px" w="385px" h="170px">
            
         <Button 
          w="385px" 
-         h="69px"  
+         h="89px"  
          bg="transparent"  
          border="1px solid transparent "
          _hover={{ border:"1px solid  rgba(223, 223, 223, 1) " }}
@@ -183,6 +186,26 @@ const navigate = useNavigate();
           Sign In to a different account
         </Text>
         </Button>
+        <Button
+        onClick={handlenextInClick}
+        border="1px solid transparent "
+        _hover={{ border:"1px solid  rgba(223, 223, 223, 1) " }}
+        mt="20px"
+        bg= "transparent"
+        mr="30px"
+        >
+
+        <Text
+        fontFamily="'Plus Jakarta Sans', sans-serif"
+        color="rgba(4, 164, 244, 1)"
+        fontWeight="500"
+        fontSize="14px"
+        lineHeight="21px"
+        >
+          Next
+        </Text>
+        </Button>
+        
 </Box>
         </Box>
         </Center>

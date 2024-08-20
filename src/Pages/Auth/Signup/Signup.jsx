@@ -6,24 +6,29 @@ import { Image } from '@chakra-ui/react';
 import "../../../index.css";
 import { FiEye } from "react-icons/fi";
 import { Icon } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const btn = useNavigate();
+  const handlebtn =()=>{
+    btn("/Signin");
+}
     return (
         <>
         <Container>
       
         <Center minH="900px">
        <Image src="./public/image (1).png"
-       minW="675px" mb="160px" ml="160px" h="700px" >
+       minW="675px" mb="160px" ml="0px" h="700px" >
        </Image>
        </Center>
             <Center minH="100vh">
             <Box border="1px solid Transparent" p="0" w="385px" height="677px" position="relative" // ensure proper positioning for `left` and `bottom`
-             left="835px"  bottom="850px" bg="white " >
+             left="765px"  bottom="850px" bg="white " >
             <Text  mb="3" display="flex" color="background: rgba(20, 21, 34, 1);" fontWeight="500" fontSize="40px" letterSpacing="1px" lineHeight="63px" fontFamily="'Plus Jakarta Sans', sans-serif">
                Create An Account
               </Text>
-              <Text mb="3" color="background: rgba(20, 21, 34, 1);" fontWeight="400" fontSize="14px" lineHeight="28px" fontFamily="'Plus Jakarta Sans', sans-serif">
+              <Text onClick={handlebtn} mb="3" color="background: rgba(20, 21, 34, 1);" fontWeight="400" fontSize="14px" lineHeight="28px" fontFamily="'Plus Jakarta Sans', sans-serif">
                 Already have an Account ? <span style={{color: 'rgba(4, 164, 244, 1)', fontWeight: 500, fontSize: '14px', lineHeight: '21px', fontFamily: "'Plus Jakarta Sans', sans-serif"}}>
                   Login</span>
               </Text>
