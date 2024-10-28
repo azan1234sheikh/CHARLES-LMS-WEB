@@ -1,8 +1,12 @@
 import UserProfile from "../../Components/UserProfile";
 import { Button, Heading, Image, Flex, Box, Container } from "@chakra-ui/react";
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function HomepageRowTwo() {
+  const btnnavigate = useNavigate();
+  const handlebtn = () => {
+    btnnavigate("/Signin");
+  };
   return (
     <Box mt="112px" alignSelf="stretch">
       <Flex bg="cyan.50" justifyContent="center" py={{ md: "72px", base: "20px" }}>
@@ -54,30 +58,31 @@ export default function HomepageRowTwo() {
                 </Flex>
               </Flex>
               <Box
-                h="448px"
-                ml={{ base: "0px", sm: "-134px" }}
+                h={{ base: "200px", sm: "334px",lg:"448px" }}
+                ml={{ base: "0px", sm: "-114px" }}
                 alignSelf="center"
                 position="relative"
                 bg="blue.600"
-                w="448px"
+                w={{base: "60%", sm: "334px",lg:"448px"}}
                 borderRadius="224px"
               />
             </Flex>
             <Image
               src="./img_adobestock_499845150.png"
               alt="Adobestock"
-              h="394px"
+              h={{base:"200px", lg:"394px"}}
               zIndex={6}
               w="76%"
               position="absolute"
               fit="contain"
-              left="6%"
-              top="16px"
+              left={{base:"11%",sm:"-10%",lg:"6%"}}
+              top={{base:"66px",sm:"55px",lg:"16px"}}
               m="auto"
               borderRadius="50px"
             />
             <Box zIndex={7} w="46%" position="absolute" bottom="-74px" right="17%" m="auto">
               <Image
+               display={{base:"none",lg:"flow" }}
                 src="./Homepagebox.svg"
                 alt="Image"
                 h={{ md: "348px", base: "auto" }}
@@ -85,9 +90,10 @@ export default function HomepageRowTwo() {
                 w="100%"
               />
               <Flex alignItems="start" px="12px">
-                <Image src="./img_chat_1_webp.png" alt="Chat1webp" h="1px" w="1px" fit="cover" />
-                <Image src="./img_chat__webp.png" alt="Chat2webp" h="1px" ml="12px" w="1px" fit="cover" />
+                <Image  src="./img_chat_1_webp.png" alt="Chat1webp" h="1px" w="1px" fit="cover" />
+                <Image   src="./img_chat__wbp.png" alt="Chat2webp" h="1px" ml="12px" w="1px" fit="cover" />
                 <Image
+
                   src=""
                   alt="Chat3webp"
                   h="1px"
@@ -136,7 +142,7 @@ export default function HomepageRowTwo() {
                 </Flex>
               </Flex>
             </Flex>
-            <Button size="2xl" fontWeight={500} minW="186px" borderRadius="10px">
+            <Button size="2xl" onClick={handlebtn} fontWeight={500} minW="186px" borderRadius="10px">
               Join Now
             </Button>
           </Flex>

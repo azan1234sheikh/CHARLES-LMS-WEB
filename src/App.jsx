@@ -28,11 +28,12 @@ const Accountsetting = React.lazy(() => import('./Pages/AccountSettings/Accounts
 const AccountNotification = React.lazy(() => import('./Pages/AccountNotifications/AccountNotification.jsx'));
 const Helpdesk = React.lazy(() => import('./Pages/AccHelpdesk/Helpdesk.jsx'));
 const WebmessagePage = React.lazy(() => import('./Pages/Webmessage/index.jsx'));
+const MobileHeader = React.lazy(() => import("./Components/MobileHeader/MobileHeader.jsx"));
 import theme from "./theme";
 
 // Loading Spinner component
 const LoadingSpinner = () => (
-  <Box ml="93px">
+  <Box ml={{base:"-53px",md:"5px",lg:"10px"}}>
     <Center height="100vh">
       <CircularProgress ml="274px" isIndeterminate color="green.300" />
     </Center>
@@ -94,9 +95,9 @@ const App = () => {
             <Route path="/Explorecourse" element={<Explorecourse />} />
             <Route path="/Mycourse" element={<MyCourses />} />
             <Route path="/CreateCourse" element={<CreateCourses />} />
-            <Route path="/CourseDetail" element={<CourseDetail />} />
+            <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/WebMentor" element={<Mentors />} />
-            <Route path="/MentorCourses" element={<MentorCourses />} />
+            <Route path="/MentorCourses/:id" element={<MentorCourses />} />
             <Route path="/Settings" element={<Settings />} />
             <Route path="/Notification" element={<Notification />} />
             <Route path="/Account" element={<Account />} />
@@ -104,6 +105,7 @@ const App = () => {
             <Route path="/AccountNotification" element={<AccountNotification />} />
             <Route path="/Helpdesk" element={<Helpdesk />} />
             <Route path="/Message" element={<WebmessagePage />} />
+            <Route path="/MobileHeader" element={<MobileHeader/>}/>
           </Routes>
         </Suspense>
         </ErrorBoundary>

@@ -1,10 +1,13 @@
 import { Center, ChakraProvider, Container,Text,Stack, FormControl, FormLabel,UnorderedList,
 ListItem, Link,Heading, Input, Button,Grid,GridItem, Flex, Box, Icon} from '@chakra-ui/react';
    import Sidebar8 from '../../../Components/Sidebar/sidebar.jsx';
+  import CourseData from '../../../Components/Data/CourseData.js';
   import { Image } from '@chakra-ui/react';
   import { useNavigate } from 'react-router-dom';
   import React, { Suspense } from "react";
   import { CiSearch } from "react-icons/ci";
+  import { IoMdClose } from "react-icons/io";
+
   import { useDisclosure } from '@chakra-ui/react';
   import {
     Modal,
@@ -15,17 +18,24 @@ ListItem, Link,Heading, Input, Button,Grid,GridItem, Flex, Box, Icon} from '@cha
     ModalBody,
     ModalCloseButton,
   } from '@chakra-ui/react'
+import UserProfile2 from '../../../Components/UserProfile2/index.jsx';
+import MobileHeader from '../../../Components/MobileHeader/MobileHeader.jsx';
+import { useState } from 'react';
+import MobileSidebar from '../../../Components/MobileSidebar/MobileSidebar.jsx';
+const Explorecourse = () => {
 
-const Explorecourse = ({
-  beginnerButton = "Beginner",
-  courseTitle = "Creating Beautifull Landing Page in 1 Hour",
-  mentorName = "Lincoln George",
-  reviewText = "4,5",
-  ...props}) => {
   const finalRef = React.useRef(null)
+  const [SearchBarValue,SetSearchBarValue] = useState("");
+  const [Visible,SetIsVisible] = useState(true);
   const { isOpen: isModal1Open, onOpen: onModal1Open, onClose: onModal1Close } = useDisclosure();
   const { isOpen: isModal2Open, onOpen: onModal2Open, onClose: onModal2Close } = useDisclosure();
   const { isOpen: isModal3Open, onOpen: onModal3Open, onClose: onModal3Close } = useDisclosure();
+  const handleClearSearch = () => {
+    // Delay clearing the search bar by 1 second
+    setTimeout(() => {
+      SetSearchBarValue("");
+    }, 100);
+  };
   const items = [
     { id: 1, name: 'Item 1', category: 'A-Z' },
     { id: 2, name: 'Item 2', category: 'Z-A' },
@@ -40,21 +50,58 @@ const Explorecourse = ({
   const handlenotfication=()=>{
     navigatebtn('/Notification');
   }
+  const handleExplore=()=>{
+    navigatebtn('/Explorecourse');
+  }
+  const handleMycourse=()=>{
+    navigatebtn('/MyCourse');
+  }
+ 
   return (
     <>
-    <Box h="100vh">
+    <Box  bg={{base:"rgba(242, 246, 255, 1)", lg:"#ffff"}} h="100vh">
      <Flex gap="56px" alignItems="start">
        <Sidebar8/>
-       <Flex mt="30px" gap="22px" alignSelf="center" flex={1} flexDirection="column">
+       <Flex mt={{base:"1px",lg:"80px" }}gap="2px" alignSelf="center" flex={1} flexDirection="column">
+        <Box display={{base:"block",md:"none"}} mb={{base:"22px"}}>
+        
+        <MobileHeader/>
+        <FormControl bg={"white"} w="54px" left="17px" top={"13px"} >
+                      <Input w="355px" value={SearchBarValue}
+                       onChange={(e) => SetSearchBarValue(e.target.value)}
+                       _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="46px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Search For Course Name/Mentor'/>
+                      <Box  position="relative" left="293px" bottom="40px" w="54px" h="0px" >
+                       <CiSearch  size={"32px"}  />
+                       </Box>
+                       {SearchBarValue?.length > 0 && (
+                        
+                        <Box  position="relative"  left="293px" zIndex={1} top="-38px" w="54px" h="0px">
+                        <IoMdClose onClick={handleClearSearch} size={"32px"}  />
+                        </Box>
+                       )} 
+                      
+                    </FormControl>
+           <Flex mb={"12px"}>
+           <Button fontSize="14px" onClick={handleExplore} position="relative" top={{base:"28px" ,lg:"0px"}} right={{base:"-12px",lg:"0px"}} h={{base:"45px",lg:"0px"}} fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} minW= {{base:"170px",lg:"0px" }} borderRadius="5px">
+                  Explore Courses
+                </Button>
+                <Button fontSize="14px" onClick={handleMycourse} color={"rgba(38, 189, 217, 1)"} position="relative" top={{base:"28px" ,lg:"0px"}} right={{base:"-27px",lg:"0px"}} h={{base:"45px",lg:"0px"}} fontFamily="Plus Jakarta Sans" bg="#ffff" fontWeight={500} minW= {{base:"170px",lg:"0px" }} borderRadius="5px">
+                 My Courses
+                </Button>
+           </Flex>
+           
+
+        </Box>
        <Flex
               mr={{ md: "30px", base: "0px" }}
               justifyContent="space-between"
               alignItems="start"
-              gap="20px"
+              display={{base:"none",md:"block"}}
+              gap="10px"
               flexDirection={{ md: "row", base: "column" }}
               as="header"
             >
-              <Flex flexDirection="row" mt="6px" px={{ md: 0, base: "20px" }}>
+              <Flex flexDirection="row" mt="-6px" px={{ md: 0, base: "20px" }}>
                 <Heading position="relative" bottom="290px" fontWeight ="500" fontSize="32px" lineHeight="48px" fontFamily="Plus Jakarta Sans" >
                 Explore courses
 
@@ -85,7 +132,10 @@ const Explorecourse = ({
                   />
                 </Link>
                 </Heading>
+                
+            
                <Box  position="relative" bottom="233px" right="243px">
+               
                 <Flex>
                  <Stack>
                     <FormControl mt="3">
@@ -121,7 +171,7 @@ const Explorecourse = ({
                        <Button border=" 1px solid rgba(245, 245, 247, 1)"  bottom="3px" left="4px" position="relative" bg="#fffff" color="#ffffff" w="74px" h="36px" borderRadius="10px">
                        <Text ml="2px" color="black">All</Text>
                        </Button>
-                       <Button  border=" 1px solid #000000"  bottom="3px" left="24px" position="relative" bg="#000000" color="white" w="100px" h="36px" borderRadius="10px">
+                       <Button  border=" 1px solid #000000"  bottom="3px" left="24px" position="relative" bg="#000000" color="#ffff" w="100px" h="36px" borderRadius="10px">
                        <Text ml="2px">Design</Text>
                        </Button>
                               
@@ -193,353 +243,24 @@ const Explorecourse = ({
               
         </Flex>
        </Flex>
+       
      </Flex>
-      <Box   ml="250px" position="relative" bottom="555px" width="1265px" bg="rgba(247, 248, 250, 1)">
-      <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} p={4} >
-
-        {/* Card 1 */}
-        <GridItem w="348px" >
-          <Link href="#" >
-            <Box position="relative" top="12px" left="23px" _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}>
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-              
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    
-                    Beginner
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                  Introduction Basic 
-                  Programming HTML & CSS
-                  </Heading>
-                  <Text color="rgba(156, 156, 164, 1)">$120.000</Text>
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end"color="black" textDecoration="none"> Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                        <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        {/* {reviewText} */}
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-        <GridItem w="348px" >
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" top="12px" right="213px">
-              <Flex
-             
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (2).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Intermediate
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                    {/* {courseTitle} */}
-                    Creating Beautiful Landing Pages
-                    In 1 Hr
-                  </Heading>
-                  <Text color="rgba(156, 156, 164, 1)">$120.000</Text>
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end" color="black">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        {/* {reviewText} */}
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-
-        {/* Card 3 */}
-        <GridItem w="348px">
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" top="32px" left="23px">
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.3s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Master
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                    {/* {courseTitle} */}
-                    Animation is the key of
-                    Successfull UI/UX Design
-                  </Heading>
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="blue_gray.100" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                         <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        {/* {reviewText} */}
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-
-        {/* Card 4 */}
-        <GridItem w="348px">
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" top="36px" right="213px">
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Master
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                    {/* {courseTitle} */}
-                    Animation is the key of
-                     UI/UX Design
-                  </Heading>
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        {/* {reviewText} */}
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-          
-        <GridItem w="348px">
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" bottom="706px" left="786px">
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Master
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                  Animation is the Key of
-                   Successfull UI/UX Design
-                  </Heading>
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text color="black" alignSelf="end">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                        
-                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-
-        <GridItem w="348px">
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" bottom="320px" left="171px">
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Master
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="neutral.black.0" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                    Advanced UI/UX Design
-                  </Heading>
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="blue_gray.100" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                       
-                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-      </Grid>
+     <Box   ml={{base:"0px",lg:"250px"}} position="relative" bottom={{base:"2px",lg:"525px"}} width={{base:"390px",md:"1245px"}} bg={{base:"rgba(242, 246, 255, 1)", lg:"rgba(247, 248, 250, 1)"}}>
+     <Flex  transform={{base:"translateX(0px)",lg:"translateX(32px)"}} gap={{base:"8px",lg:"45px"}} wrap="wrap" p={{base:2,lg:4}}  flexDirection={{ md: "row", base: "row" }}>
+          <Suspense fallback={<div>Loading feed...</div>}>
+           {CourseData.map((d,index) => (
+             <UserProfile2  {...d} display='none' isVisible={Visible} key={`Courses${index}`}/>
+           ))}
+         
+         </Suspense>
+         <Box w={"359px"} color={"#fffff"} >
+       <MobileSidebar />
+       </Box>
+     </Flex>
     </Box>
-     </Box> 
-   
      
+     </Box> 
+    
     </>
   )
 }

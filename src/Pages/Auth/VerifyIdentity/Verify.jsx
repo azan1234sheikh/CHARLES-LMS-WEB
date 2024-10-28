@@ -37,27 +37,34 @@ const Verify = () => {
     return (
         <>
             <Container>
-                <Center minH="900px">
+            <Flex 
+              direction={{ base: "column", md: "row" }} 
+              align="center"
+              justify="center"
+             minH="100vh"
+                >
+                    < Box minH="900px" flex={1} mb={{ base: 8, md: 0 }}>
                     <Image
-                        src="./image (1).png"
-                        minW="605px"
-                        mb="160px"
-                        ml="20px"
-                        h="700px"
+                       src="./image (1).png"
+                       w={{ base: "auto", lg: "675px" }}
+                       h={{ base: "auto", lg: "700px" }}
+                      mt={{lg:"30px"}}
                     />
-                </Center>
-                <Center minH="100vh">
+                   </Box>
+                
+                
                     <Box
                         border="1px solid Transparent"
                         p="0"
-                        w="385px"
-                        height="443px"
+                        maxW={{base:"auto",md:"385px"}}
+                        
+                        height="677px"
                         position="relative"
-                        left="680px"
-                        bottom="900px"
+                        left={{base:"8px",lg:"200px"}}
+                        bottom={{base:"420px",lg:"30px"}}
                         bg="white"
                     >
-                        <Center>
+                       
                             <Box w="24px" h="24px" mr="350px" mb="30px">
                                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 10C0 4.47715 4.47715 0 10 0H50V40C50 45.5228 45.5228 50 40 50H0V10Z" fill="#2888D6" />
@@ -68,15 +75,14 @@ const Verify = () => {
                                     <path d="M20.0946 25H20.1036" stroke="#141522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </Box>
-                        </Center>
-                        <Text mb="3" display="flex" color="background: rgba(20, 21, 34, 1);" fontWeight="500" fontSize="40px" letterSpacing="1px" lineHeight="63px" fontFamily="'Plus Jakarta Sans', sans-serif">
+                        <Text mb="3" display="flex" color="background: rgba(20, 21, 34, 1);" fontWeight="500" fontSize={{base:"25px",lg:"40px"}} letterSpacing="1px" lineHeight="63px" fontFamily="'Plus Jakarta Sans', sans-serif">
                             Update Your <br />Password
                         </Text>
-                        <Text mb="33px" color="background: rgba(20, 21, 34, 1);" fontWeight="400" fontSize="14px" lineHeight="28px" fontFamily="'Plus Jakarta Sans', sans-serif">
+                        <Text mb="33px" color="background: rgba(20, 21, 34, 1);" fontWeight="400" fontSize={{base:"11px", lg:"14px"}} lineHeight="28px" fontFamily="'Plus Jakarta Sans', sans-serif">
                             Enter the code we sent to the phone number ending in -30
                         </Text>
                         <Box >
-                        <HStack justifyContent="center" >
+                        <HStack justifyContent="center" w={{base:"323px"}} >
                             <PinInput size="lg" type='alphanumeric'>
                                 <PinInputField boxSize="85px" fontSize="2xl"/>
                                 <PinInputField boxSize="85px" fontSize="2xl"/>
@@ -89,7 +95,7 @@ const Verify = () => {
                         <Text onClick={handlebackClick} mt="32px"
                         color="rgba(156, 156, 164, 1);" fontWeight="500" fontSize="14px" letterSpacing="1px" lineHeight="21px" fontFamily="'Plus Jakarta Sans', sans-serif"
                         >Back</Text>    
-                         <Text ml="183px" mt="35px"
+                         <Text ml={{ base:"125px",lg:"183px"}} mt="35px"
                         color="rgba(4, 164, 244, 1);" fontWeight="500" fontSize="14px" letterSpacing="1px" lineHeight="21px" fontFamily="'Plus Jakarta Sans', sans-serif"
                         >Don't Recieve Code </Text>   
                         </Flex>
@@ -103,7 +109,8 @@ const Verify = () => {
                         color="rgba(4, 164, 244, 1);" fontWeight="500" fontSize="14px" letterSpacing="1px" lineHeight="21px" fontFamily="'Plus Jakarta Sans', sans-serif"
                         >Get your code with another way </Text>
                     </Box>
-                </Center>
+                
+                </Flex>
             </Container>
         </>
     );

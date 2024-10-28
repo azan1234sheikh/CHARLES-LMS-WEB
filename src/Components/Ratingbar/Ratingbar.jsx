@@ -5,8 +5,8 @@ const Ratingbar = (
         children,
         className,
         starCount = 5,
-        color = "grey",
-        activeColor = "red",
+        color = "gray",
+        activeColor = "rgba(255, 197, 48, 1)",
         isEditable = true,
         ...restProps
       }

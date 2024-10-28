@@ -17,7 +17,7 @@ const sizes = {
     fontFamily: "Plus Jakarta Sans",
     fontSize: {
       md: "32px",
-      base: "27px",
+      base: "17px",
       sm: "30px",
     },
     fontWeight: 700,

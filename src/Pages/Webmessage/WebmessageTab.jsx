@@ -8,6 +8,7 @@ export default function WebmessageTab() {
       borderBottomWidth="0.5px"
       borderStyle="solid"
       bg="neutral.white"
+      
       p={{ base: "20px", sm: "24px" }}
     >
       <Flex gap="20px" alignItems="center" flexDirection={{ md: "row", base: "column" }}>

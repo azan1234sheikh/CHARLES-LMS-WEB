@@ -8,9 +8,9 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
    import {IconButton,Card   , Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
    import DatePicker from "react-datepicker";
    import "react-datepicker/dist/react-datepicker.css"; 
-
+   import Coursedetail from '../Data/Coursedetail';
 const AccountComponent = ({
-    figmaprototype="Let’s return to design thinking. Over time designers have built up their own body of approaches to solving classes of problems.",
+    figmaprototype=`Let’s return to design thinking. Over time designers have built\n up their own body of approaches to solving classes of problems.`,
     Heading="1.Make a simple animation from figma prototype"
 }) => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -23,10 +23,10 @@ const AccountComponent = ({
   return (
     <> 
      <Stack   ml="2px" mt="22px">
-         <Text  fontWeight="500" color="black" fontSize="18px" lineHeight="27px" fontFamily="Plus Jakarta Sans">
+         <Text   fontWeight="500" color="black" fontSize={{base:"14px",md:"18px"}} lineHeight="27px" fontFamily="Plus Jakarta Sans">
            {Heading}
         </Text>
-        <Text   display="contents"  fontWeight="400" color="#000000" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
+        <Text whiteSpace={{base:"pre-line" ,lg:"collapse"}}    fontWeight="400" color="#000000" fontSize={{base:"9px",md:"14px"}} lineHeight="28px" fontFamily="Plus Jakarta Sans">
         {figmaprototype}
         </Text>
         <Flex>
@@ -40,12 +40,12 @@ const AccountComponent = ({
          p="13px 24px" // Correct padding syntax
          lineHeight="21px"
          fontFamily="'Plus Jakarta Sans', sans-serif"
-         w="139px"
          h="50px"
          border="1px solid gray"
          left="9px" // Optional: add margin-left to separate the button from the text
          _hover={{ bg: "#cbcbcb"  }} 
          onClick={() => setIsDatePickerOpen((prev) => !prev)}
+         w={{base:"100px",lg:"139px"}}
        >
         Celendar
        </Button>
@@ -64,14 +64,14 @@ const AccountComponent = ({
          p="13px 24px" // Correct padding syntax
          lineHeight="21px"
          fontFamily="'Plus Jakarta Sans', sans-serif"
-         w="139px"
+         w={{base:"100px",lg:"139px"}}
          h="50px"
          left="29px" // Optional: add margin-left to separate the button from the text
          _hover={{ bg: "#26bbd5"  }} 
        >
         Detail 
        </Button>
-       <Text mt="12px" ml="202px"  fontWeight="400" color="black" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
+       <Text mt={{base:"53px",lg:"12px"}} ml={{base:"-150px",lg:"202px"}}  fontWeight="400" color="black" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
        40 Students Collected
         </Text>
            </Flex>

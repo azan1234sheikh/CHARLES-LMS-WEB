@@ -12,39 +12,40 @@ export default function ButtonGroup({
   ...props
 }) {
   return (
-    <Flex {...props} gap="14px" flex={1} alignItems="center">
-      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW="40px">
+    <Flex  {...props} gap={{base :"17px",md:"14px"}} flex={1} alignItems="center">
+      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW={{base:"30px",md:"40px"}}>
         {buttonOne}
       </Button>
-      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW="40px">
+      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW={{base:"30px",md:"40px"}}>
         {buttonTwo}
       </Button>
-      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW="40px">
+      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW={{base:"30px",md:"40px"}}>
         {buttonThree}
       </Button>
-      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW="40px">
+      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW={{base:"30px",md:"40px"}}>
         {buttonFour}
       </Button>
-      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW="40px">
+      <Button variant="outline" colorScheme="undefined_undefined" fontWeight={600} minW={{base:"30px",md:"40px"}}>
         {buttonFive}
       </Button>
       <Button
-        color="black.900"
+        color="white"
         fontWeight={600}
         borderColor="gray.300"
         borderWidth="1.04px"
         borderStyle="solid"
-        minW="40px"
+        minW={{base:"30px",md:"40px"}}
       >
         {buttonSix}
       </Button>
       <Button
-        color="black.900"
+        color="white"
         fontWeight={600}
         borderColor="gray.300"
         borderWidth="1.04px"
         borderStyle="solid"
-        minW="40px"
+        
+        minW={{base:"30px",md:"40px"}}
       >
         {buttonSeven}
       </Button>

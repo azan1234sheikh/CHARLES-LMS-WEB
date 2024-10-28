@@ -9,8 +9,8 @@ const UserProfile = ({
   ...props
 }) => {
   return (
-    <Flex {...props} flex={1} alignItems="center" p="20px">
-    <Flex gap="20px" w="100%" alignItems="center">
+    <Flex  ml={{ base: "0", md: "-30px" }}  {...props} flex={1} alignItems="center" p="20px">
+    <Flex gap="20px" w={"100%"} alignItems="center">
       <Box h="50px" bg="rgba(217, 217, 217, 1)" w="50px" borderRadius="24px" />
       <Flex gap="4px" flex={1} flexDirection="column">
         <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap" gap="20px">
@@ -19,7 +19,7 @@ const UserProfile = ({
           </Text>
           <Text size="texts">{lastActive}</Text>
         </Flex>
-        <Flex gap="18px" justifyContent="center" alignItems="center">
+        <Flex gap="28px" justifyContent="center" alignItems="center">
           <Text size="texts" color="neutral.black.0">
             {userStatus}
           </Text>

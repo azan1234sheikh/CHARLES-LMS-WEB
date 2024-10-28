@@ -6,6 +6,8 @@ import { IoCloseSharp } from "react-icons/io5";
 import { Stack,Image, InputRightElement, InputGroup, Input, Text, Flex, Box, Heading } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
+import MobileHeader from "../../Components/MobileHeader/MobileHeader";
+import MobileSidebar from "../../Components/MobileSidebar/MobileSidebar";
 
 const data = [
   { userName: "Emerson Levin", lastActive: "2 m Ago", userStatus: "Unresolved : And the easiest of these things is..." },
@@ -27,23 +29,28 @@ export default function WebmessagePage() {
 
   return (
     <>
-      <Box bg="neutral.light_grey" w="100%">
+      <Box bg={{base:"rgba(242, 246, 255, 1)",lg:"rgba(255, 255, 255, 1)"}} w="100%">
         <Flex  alignItems="start">
           <Sidebar8 />
           <Box alignSelf="center" flex={1}>
-            <Box h="98px">
+            <Box display={{base:"none",lg:"block"}} h="98px">
             <Header  />
             </Box>
+            <Box   bg={{base:"rgba(242, 246, 255, 1)"}} display={{base:"block",md:"none"}}>
+              <MobileHeader/>
+
+              
+            </Box>
             <Stack >
-              <Box h="1px" w="1264px" bg="rgba(245, 245, 247, 1)"></Box>
+              <Box h="1px" w={{base:"350px",lg:"1264px"}} bg="rgba(245, 245, 247, 1)"></Box>
               </Stack>
-            <Flex mb="2px" alignItems="start" flexDirection={{ md: "row", base: "column" }}>
+            <Flex  mb="2px" alignItems="start" flexDirection={{ md: "row", base: "column" }}>
               <Box  alignSelf="center" w={{ md: "30%", base: "100%" }} px={{ md: 0, base: "20px" }}>
                 <Flex justifyContent="center" alignItems="start">
                   <Box flex={1}>
-                    <Box>
+                    <Box w={{ base: "100%", md: "80%", lg: "90%" }}  maxW="800px ">
                       <Box bg="neutral.white">
-                        <InputGroup mt="18px">
+                        <InputGroup  mt="18px">
                           <Input
                             colorScheme="undefined_undefined"
                             placeholder={`Search name/chat`}
@@ -60,7 +67,7 @@ export default function WebmessagePage() {
                             {searchBarValue2?.length > 0 ? (
                               <IoCloseSharp  onClick={() => setSearchBarValue2("")} />
                             ) : (
-                              <Image src="./Search.svg" alt="Contrast" h="18px" w="18px" />
+                              <Image src="/Search.svg" alt="Contrast" h="18px" w="18px" />
                             )}
                           </InputRightElement>
                         </InputGroup>
@@ -71,7 +78,7 @@ export default function WebmessagePage() {
                         borderStyle="solid"
                         bg="neutral.white"
                         
-                        px={{ base: "20px", sm: "30px" }}
+                        px={{ base: "0px", sm: "30px" }}
                       >
                         <Flex mt="20px" alignItems="start">
                         <Tabs mt="12px" h="42px" border="transparent " position='relative' variant='unstyled'>
@@ -83,7 +90,7 @@ export default function WebmessagePage() {
                       <TabIndicator  mt='-1.5px' height='2px' bg='rgba(255, 187, 84, 1)' borderRadius='1px' />
                         <TabPanels>
                         <TabPanel>
-                        <Flex  mb="1px" flexDirection="column">
+                        <Flex  mb={{base:"0px",md:"1px" }}flexDirection="column">
                       <Suspense fallback={<div>Loading feed...</div>}>
                         {data.map((data, index) => (
                           <UserProfile
@@ -92,14 +99,15 @@ export default function WebmessagePage() {
                             borderColor="neutral.soft_grey"
                             borderBottomWidth="0.5px"
                             borderStyle="solid"
-                            bg="neutral.light_grey"
+                            bg="white"
+                            
                           />
                         ))}
                       </Suspense>
                         </Flex>
                        </TabPanel>   
                        <TabPanel>
-                       <Flex  mb="1px" flexDirection="column">
+                       <Flex mb={{base:"0px",md:"1px" }} flexDirection="column">
                       <Suspense fallback={<div>Loading feed...</div>}>
                         {data.filter(user => !user.userStatus.startsWith("You :")).map((user,index)=>( 
                           <UserProfile
@@ -108,14 +116,14 @@ export default function WebmessagePage() {
                             borderColor="neutral.soft_grey"
                             borderBottomWidth="0.5px"
                             borderStyle="solid"
-                            bg="neutral.light_grey"
+                            bg="white"
                           />
                         ))}
                       </Suspense>
                         </Flex>
                      </TabPanel>
-                       <TabPanel>
-                       <Flex  mb="1px" flexDirection="column">
+                       <TabPanel >
+                       <Flex   mb={{base:"0px",md:"1px" }} flexDirection="column">
                       <Suspense fallback={<div>Loading feed...</div>}>
                         {data.filter(user => !user.userStatus.startsWith("Unresolved :")).map((user,index)=>( 
                           <UserProfile
@@ -124,32 +132,24 @@ export default function WebmessagePage() {
                             borderColor="neutral.soft_grey"
                             borderBottomWidth="0.5px"
                             borderStyle="solid"
-                            bg="neutral.light_grey"
+                            bg="white"
                           />
                         ))}
                       </Suspense>
                         </Flex>
+
                     </TabPanel>
+                    <Box display={{base:"block",md:"none"}} mt={"-21px"} ml={"0px"} w={"100%"} color={"#fffff"} >
+                        <MobileSidebar />
+                        </Box>
                    </TabPanels>
                        </Tabs>
                         </Flex>
                       </Box>
                     </Box>
-                    {/* <Flex flexDirection="column">
-                      <Suspense fallback={<div>Loading feed...</div>}>
-                        {data.map((data, index) => (
-                          <UserProfile
-                            {...data}
-                            key={"webmessage" + index}
-                            borderColor="neutral.soft_grey"
-                            borderBottomWidth="0.5px"
-                            borderStyle="solid"
-                            bg="neutral.light_grey"
-                          />
-                        ))}
-                      </Suspense>
-                    </Flex> */}
+                    
                   </Box>
+                  
                   <Box h="1004px" mb="20px" alignSelf="center" bg="neutral.soft_grey" w="1px" />
                 </Flex>
               </Box>
@@ -159,8 +159,9 @@ export default function WebmessagePage() {
                 flexDirection="column"
                 alignSelf={{ md: "auto", base: "stretch" }}
                 px={{ md: 0, base: "20px" }}
+                display={{base:"none",lg:"block"}}
               >
-                <WebmessageTab />
+                <WebmessageTab  />
                 <Flex flexDirection="column" alignItems="end" mx={{ md: "18px", base: "0px" }}>
                   <Flex gap="10px" alignSelf="stretch" flexDirection="column" alignItems="end">
                     <Flex
@@ -255,7 +256,7 @@ export default function WebmessagePage() {
                       borderTopWidth="0.5px"
                     />
                     <InputRightElement>
-                      <Image src="images/img_settings_neutral_dark_grey_24x24.svg" alt="Settings" h="24px" w="24px" />
+                      <Image src="/messages.svg" alt="Settings" h="39px" w="39px" />
                     </InputRightElement>
                   </InputGroup>
                 </Box>

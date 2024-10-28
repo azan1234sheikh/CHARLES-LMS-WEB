@@ -8,7 +8,7 @@ export default function UserProfile({
   ...props
 }) {
   return (
-    <Flex {...props} gap="10px" flex={1} justifyContent="center" alignItems="center">
+    <Flex {...props}  gap="10px" flex={1} justifyContent="center" alignItems="center">
       <Image src={userImage} alt="App Developer" h="22px" alignSelf="end" />
       <Flex flex={1} flexDirection="column" alignItems="start">
         <Heading size="headingxs" as="h6" fontSize="9.47px">

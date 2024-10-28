@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Forgot = () => {
 const navigate = useNavigate();
   const handleSignInClick = () => {
-    navigate('/Signin'); // Redirects to the /signup route
+    navigate('/WebSignin'); // Redirects to the /signup route
   };
   const handlenextInClick = () => {
     navigate('/Verify'); // Redirects to the /signup route
@@ -17,25 +17,39 @@ const navigate = useNavigate();
   return (
     <>
     <Container>
-     <Center minH="900px">
-
-   <Image src="./image (1).png"
-   minW="605px" mb="160px" h="700px" >
-   </Image>
-   </Center>
-        <Center minH="100vh">
-        <Box border="1px solid Transparent" p="0" w="385px" height="443px" position="relative" // ensure proper positioning for `left` and `bottom`
-         left="835px"  bottom="900px" bg="white " >
-     <Center>
-      <Box w="24px" h="24px" mr="350px" mb="30px">
+    <Flex 
+        direction={{ base: "column", md: "row" }} 
+        align="center"
+        justify="center"
+        minH="100vh"
+      >
+        <Box  minH="900px" flex={1} mb={{ base: 8, md: 0 }} >
+        <Image
+             src="./image (1).png"
+             minW={{ base: "auto", lg: "675px" }}
+             h={{ base: "auto", lg: "700px" }}
+            mt={{base:"0px",lg:"20px"}}
+          />
+        </Box>
+       <Box
+        border="1px solid Transparent"
+        p="0"
+        maxW={{base:"auto",md:"385px"}}
+        
+        height="677px"
+        position="relative"
+        left={{base:"8px",lg:"200px"}}
+        bottom={{base:"420px",lg:"-10px"}}
+        
+       >
+        <Box w="24px" h="24px" mr="350px" mb="30px">
         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 10C0 4.47715 4.47715 0 10 0H50V40C50 45.5228 45.5228 50 40 50H0V10Z" fill="#2781CA"/>
           <path d="M21.3799 25.0001L23.7899 27.4201L28.6199 22.5801" stroke="#141522" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M23.7499 15.4503C24.4399 14.8603 25.5699 14.8603 26.2699 15.4503L27.8499 16.8103C28.1499 17.0703 28.7099 17.2803 29.1099 17.2803H30.8099C31.8699 17.2803 32.7399 18.1503 32.7399 19.2103V20.9103C32.7399 21.3003 32.9499 21.8703 33.2099 22.1703L34.5699 23.7503C35.1599 24.4403 35.1599 25.5703 34.5699 26.2703L33.2099 27.8503C32.9499 28.1503 32.7399 28.7103 32.7399 29.1103V30.8103C32.7399 31.8703 31.8699 32.7403 30.8099 32.7403H29.1099C28.7199 32.7403 28.1499 32.9503 27.8499 33.2103L26.2699 34.5703C25.5799 35.1603 24.4499 35.1603 23.7499 34.5703L22.1699 33.2103C21.8699 32.9503 21.3099 32.7403 20.9099 32.7403H19.1799C18.1199 32.7403 17.2499 31.8703 17.2499 30.8103V29.1003C17.2499 28.7103 17.0399 28.1503 16.7899 27.8503L15.4399 26.2603C14.8599 25.5703 14.8599 24.4503 15.4399 23.7603L16.7899 22.1703C17.0399 21.8703 17.2499 21.3103 17.2499 20.9203V19.2003C17.2499 18.1403 18.1199 17.2703 19.1799 17.2703H20.9099C21.2999 17.2703 21.8699 17.0603 22.1699 16.8003L23.7499 15.4503Z" stroke="#141522" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </Box>
-    </Center>
-        <Text  mb="3" display="flex" color="background: rgba(20, 21, 34, 1);" fontWeight="500" fontSize="40px" letterSpacing="1px" lineHeight="63px" fontFamily="'Plus Jakarta Sans', sans-serif">
+        </Box>
+        <Text  mb="3" display="flex" color="background: rgba(20, 21, 34, 1);" fontWeight="500" fontSize={{base:"25px", lg:"40px"}} letterSpacing="1px" lineHeight="63px" fontFamily="'Plus Jakarta Sans', sans-serif">
            Verify Your Identity
           </Text>
           <Text mb="3" color="background: rgba(20, 21, 34, 1);" fontWeight="400" fontSize="14px" lineHeight="28px" fontFamily="'Plus Jakarta Sans', sans-serif">
@@ -203,11 +217,13 @@ const navigate = useNavigate();
           Next
         </Text>
         </Button>
-        
-</Box>
         </Box>
-        </Center>
-    
+       </Box>
+      
+   
+        
+          
+        </Flex>
     </Container>
     </>
   )

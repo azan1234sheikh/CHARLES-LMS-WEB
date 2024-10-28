@@ -2,7 +2,7 @@ import { Center, ChakraProvider, Container,Text,Stack, FormControl, FormLabel,Un
     ListItem, Link,Heading, Input, Button,Grid,GridItem, Flex, Box, Icon} from '@chakra-ui/react';
       import { Image } from '@chakra-ui/react';
       import { useNavigate } from 'react-router-dom';
-      import React, { Suspense } from "react";
+      import React, { Suspense, useState } from "react";
       import { CiSearch } from "react-icons/ci";
       import { useDisclosure } from '@chakra-ui/react';
       import {
@@ -14,16 +14,32 @@ import { Center, ChakraProvider, Container,Text,Stack, FormControl, FormLabel,Un
         ModalBody,
         ModalCloseButton,
       } from '@chakra-ui/react'
-const Mentorcard = () => {
+      import Mentordata from '../Data/Mentordata';
+const Mentorcard = ({    
+    mentorName = "Emerson Sopr",
+    button = "follow",
+    btn = "followed",
+    course = "Ui Ux Design",
+    coursescompleted = "50 Courses",
+    reviewa = "4.5(1200reviews)",
+    onClick,
+    ...props
+}
+) => {
+  const [follow,setfollow] = useState(true);
+  const followbtn = ()=>{
+    setfollow(!follow);
+  }
+
   return (
     <>
-     <GridItem w="354px" >
+     <GridItem  w="354px" >
               <Link href="#" >
-                <Box position="relative" bottom="138px" left="403px">
+                <Box onClick={onClick} position="relative" bottom="138px" left="403px">
                   <Flex
                     gap="20px"
                     bg="white"
-                    w="354px"
+                    w={{base:"356px",md:"354px",lg:"354px"}}
                     h="153px"
                     flexDirection="column"
                     p={{ base: "20px", sm: "30px" }}
@@ -35,27 +51,33 @@ const Mentorcard = () => {
                       <Flex alignItems="center">
                         <Flex gap="10px" flex={1} alignItems="center">
                           <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                          <Text fontWeight="714px" fontSize="14px" lineHeight="21px" alignSelf="end"color="black" textDecoration="none"> Emerson Levin</Text>
+                          <Text fontWeight="714px" fontSize="14px" lineHeight="21px" alignSelf="end"color="black" textDecoration="none">{mentorName}</Text>
                         </Flex>
                         <Flex gap="4px"  mt="8px" w="32%" justifyContent="center">
-                          <Text fontWeight="500" fontSize="14px" lineHeight="21px" color="rgba(4, 164, 244, 1)">Followed</Text>
+                          {follow ? 
+                          <Text fontWeight="500" fontSize="14px" onClick={followbtn} lineHeight="21px" color="rgba(4, 164, 244, 1)">{button}</Text>
+                          :
+                          <Text fontWeight="500" fontSize="14px" lineHeight="21px" color=" rgba(219, 89, 98, 1)">{btn}</Text>
+
+                          
+                          }
                         </Flex>
                       </Flex>
-                      <Text ml="43px" color="rgba(156, 156, 164, 1)">Ui Ux Design</Text>
+                      <Text ml="43px" color="rgba(156, 156, 164, 1)">{course}</Text>
                     </Flex>
                     <Stack>
                         <Flex position="relative" bottom="34px"   >
                         <Image  src="./document.svg" alt="Lincoln George" h="20px" w="20px" />
                         <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
-                            50 Courses
+                            {coursescompleted}
                           </Text>
                         </Flex>
                         <Flex left="152px" position="relative" bottom="62px" >
                     <Image  src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
                           <Text ml="12px" color="black" alignSelf="end">
                             {/* {reviewText} */}
-                            4.5(1200reviews)
+                            {reviewa}
                           </Text> 
                           </Flex>
                     </Stack>

@@ -2,27 +2,36 @@ import { Center, ChakraProvider, Container,Text,Stack, FormControl, FormLabel,Un
   ListItem, Link,Heading, Input,InputGroup,InputRightElement,IconButton, Button, Flex, Box} from '@chakra-ui/react';
 import Sidebar from '../../Components/Sidebar/sidebar.jsx';
 import { Image } from '@chakra-ui/react';
+
 import { CiSearch } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
+
 import WeekdayColumns from '../../Components/WeekdayColumns/index.jsx';
 import { useNavigate } from 'react-router-dom';
 import Overview from '../../Components/CouseOverview/Overview.jsx';
-import UserStatistics1 from '../../Components/UserStatistics1/index.jsx';
-import UserStats from '../../Components/UserStatistics/UserStats.jsx';
+
 import UserProfile2 from '../../Components/UserProfile2/index.jsx';
 import UserProfile3 from '../../Components/UserProfile3/index.jsx';
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
+import UserProfile4 from '../../Components/UserProfile4/index.jsx';
 import ButtonGroup from '../../Components/ButtonGroup/index.jsx';
+import GraphStats from '../../Components/GraphStats/GraphStats.jsx';
+import GraphStats2 from '../../Components/GraphStats/GraphStats2.jsx';
+import MobileHeader from '../../Components/MobileHeader/MobileHeader.jsx';
 
+import MobileSidebar from '../../Components/MobileSidebar/MobileSidebar.jsx';
 const data = [
-  { totalCourseHeading: "Total Course", courseCount: "2", courseDescription: "Total Course" },
-  { totalCourseHeading: "Total Course", courseCount: "2", courseDescription: "Total Course" },
-  { totalCourseHeading: "Total Course", courseCount: "2", courseDescription: "Total Course" },
+  { CourseHeading: "Total Course", Count: "2", Description: "Total Course",bg:"rgba(252, 217, 196, 1)" },
+  { CourseHeading: "Active Course", Count: "5", Description: "Training",bg:"rgba(191, 229, 199, 1)"  },
+  { CourseHeading: "TotalCourse Participants", Count: "50", Description: "People",bgImage:"./people.svg",bg:"rgba(225, 215, 250, 1)",},
 ];
 const data1 = [
   { passPeopleText: "50 Pass People", percentageText: "55%" },
   { passPeopleText: "30 Owho did not pass", percentageText: "35%" },
   { passPeopleText: "15 In progress", percentageText: "35%" },
+ 
 ];
+
 const data2 = [
   {
     buttonOne: "1",
@@ -71,8 +80,17 @@ const data2 = [
   },
 ];
 
-// import { Sidebar } from 'react-pro-sidebar';
 const Dashboard = () => {
+  const [SearchBarValue,SetSearchBarValue] = useState("");
+  const [isVisible, setIsVisible] = useState(true);
+
+  
+  const handleClearSearch = () => {
+    // Delay clearing the search bar by 1 second
+    setTimeout(() => {
+      SetSearchBarValue("");
+    }, 100);
+  };
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault(); 
@@ -85,34 +103,72 @@ const Dashboard = () => {
   const handlenotfication=()=>{
     navigatebtn('/Notification');
   }
+  const handleManage=()=>{
+    navigatebtn('/MyCourse');
+  }
+  
+
   return (
     <>
-    <Box  bg=" rgba(247, 248, 250, 1);">
+    
+    <Box  overflowX={"hidden"}  bg=" rgba(247, 248, 250, 1);">
      <Flex gap="16px" alignItems="start">
-     <Sidebar />
+     <Sidebar  />
          
-     <Flex mt="30px" gap="22px" alignSelf="center" flex={1} flexDirection="column">
+     <Flex mt={{base:"0px",lg:"30px"}}  gap="22px" alignSelf="center" flex={1} flexDirection="column">
+     <Box  position={"relative"} h={"0px"}  display={{base:"block",lg:"none"}}>
+              <MobileHeader/>
+                <FormControl bg={"white"} w="54px" left="10px" top={"13px"} >
+                      <Input w="355px" value={SearchBarValue}
+                       onChange={(e) => SetSearchBarValue(e.target.value)}
+                       _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="46px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Search For Course Name/Mentor'/>
+                      <Box  position="relative" left="293px" bottom="40px" w="54px" h="0px" >
+                       <CiSearch  size={"32px"}  />
+                       </Box>
+                       
+                       {SearchBarValue?.length > 0 && (
+                        
+                        <Box   position="relative"  left="293px" zIndex={1} top="-38px" w="54px" h="0px">
+                          <IoMdClose onClick={handleClearSearch} size={"32px"}  />
+                        </Box>
+                        
+                       )} 
+                                             
+
+                </FormControl>
+         </Box>
             <Flex
-              mr={{ md: "30px", base: "0px" }}
+              mr={{ md: "30px", base: "20px" }}
               justifyContent="space-between"
               alignItems="start"
               gap="20px"
               flexDirection={{ md: "row", base: "column" }}
               as="header"
             >
-              <Flex mt="6px" px={{ md: 0, base: "20px" }}>
-                <UnorderedList styleType="none" gap="16px" display="flex" alignItems="center" flexWrap="wrap">
+              <Flex mt={{base:"26px",lg:"16px"}} px={{ md: 0, base: "20px" }}>
+                <UnorderedList 
+                bottom={{base:"22px"}}
+                fontSize={{base:"12px",lg:"16px"}}
+                transform={{base:"translateY(122px)", lg:"translateY(0px)"}} 
+                display={{base:"flex", lg:"flex"}}
+                styleType="none"
+                gap="16px" 
+                alignItems="center" flexWrap="nowrap"
+                overflowX="hidden"
+               
+                >
+                  
                   <ListItem>
                   <Link href="#" cursor="pointer">
                       <Text
-                        size="label_l14_regular"
+                        
                         color=" rgba(35, 35, 35, 1)"
                         bg= "rgba(38, 189, 217, 1)"
                         borderTopLeftRadius = "6" 
                         borderTopRightRadius= "6"
                         borderBottomLeftRadius= "6"
                         borderBottomRightRadius= "6"
-                        p="10px"
+                        p={{base:"3px",md:"8px",lg:"10px"}}
                         _hover={{
                           color:" rgba(217, 243, 248, 1);",
                           fontWeight: 600,
@@ -128,7 +184,8 @@ const Dashboard = () => {
                       <Text
                         size="label_l14_regular"
                         color=" rgba(35, 35, 35, 1);"
-                        p="10px"
+                        p={{base:"4px",md:"8px",lg:"10px"}}
+                        onClick={handleManage}
                         _hover={{
                           color:" rgba(217, 243, 248, 1);",
                           borderTopLeftRadius: 6,
@@ -148,7 +205,7 @@ const Dashboard = () => {
                       <Text
                         size="label_l14_regular"
                         color=" rgba(35, 35, 35, 1);"
-                        p="10px"
+                        p={{base:"4px",md:"8px",lg:"10px"}}
                         _hover={{
                           color:" rgba(217, 243, 248, 1);",
                           borderTopLeftRadius: 6,
@@ -168,7 +225,7 @@ const Dashboard = () => {
                     <Text
                         size="label_l14_regular"
                         color=" rgba(35, 35, 35, 1);"
-                        p="10px"
+                        p={{base:"4px",md:"8px",lg:"10px"}}
                         _hover={{
                           color:" rgba(217, 243, 248, 1);",
                           borderTopLeftRadius: 6,
@@ -188,6 +245,7 @@ const Dashboard = () => {
                 </UnorderedList>
               </Flex>
               <Flex
+                display={{base:"none",lg:"block"}}
                 alignSelf="center"
                 w={{ md: "14%", base: "100%" }}
                 justifyContent="center"
@@ -195,10 +253,10 @@ const Dashboard = () => {
                 px={{ md: 0, base: "20px" }}
               >
                 
-                
                 <Flex
                   h={{ md: "24px", base: "auto" }}
-                  ml="-96px"
+                  ml={{base:"-16px",lg:"-66px"}}
+                  
                   color="black"
                     
                   bgRepeat="no-repeat"
@@ -206,29 +264,38 @@ const Dashboard = () => {
                   flexDirection="column"
                   alignItems="end"
                   px="2px"
-                ><Box  w="54px" h="24px" >
-                <CiSearch size="100%"  />
-              </Box>
+                > 
+                <Box  transform={{base: "translateX(0px)",lg:"translateX(-300px) translateY(20px)"}}  display={{base:"none",lg:"block"}} w="54px" h="24px" >
+                <CiSearch display={{base:"none"}} size="100%"  />
+
+               </Box>
+               {}
                 <Link href="#" onClick={handleAccount}>
-                  <Image  src="./Rectangle 5997.svg"  position="relative" bottom="33px" left="103px" alt="Contrast" h="50px" w="50px" />
+                  <Image  src="/Rectangle 5997.svg"  position="relative" bottom={{base:"86px" ,lg:"17px"}} right={{base:"0px",lg:"153px"}} alt="Contrast" h="50px" w="50px" />
                 </Link>
 
-                  <Box h="8px" mb="14px" bg="secondary.red" w="8px" borderRadius="4px" />
                 </Flex>
                 <Link onClick={handlenotfication} href="#">
                   <Image
+
                     src="./notif.svg"
                     alt="Image"
                     h="24px"
-                    mr="292px"
+                    transform={{base: "translateX(-89px)",lg:"translateX(-100px)"}}
+                    position={{base:"absolute", lg:"relative"}}
                     w="24px"
                     fit="cover"
+                    top={{base:"20px" ,lg:"0px"}}
                     borderRadius="24px"
                   />
                 </Link>
+                
               </Flex>
+              
             </Flex>
+           
             <Flex gap="26px" flexDirection="column">
+
               <Flex
                 mr={{ md: "34px", base: "0px" }}
                 justifyContent="center"
@@ -236,21 +303,23 @@ const Dashboard = () => {
                 flexDirection={{ base: "column", sm: "row" }}
               >
                 <Flex
-                  gap="12px"
+                  gap={{base:"22px",lg:"10px"}}
                   flex={1}
+                
                   flexDirection="column"
                   alignItems="start"
                   alignSelf={{ base: "stretch", sm: "auto" }}
                   px={{ base: "20px", sm: 0 }}
+                  transform={{base: "translateY(101px)",lg:"translateX(0px)"}}
                 >
-                  <Heading fontSize="32px" color=" rgba(20, 21, 34, 1);" lineHeight="48px" fontWeight="500" fontFamily="Plus Jakarta Sans">
+                  <Heading fontSize={{base:"20px",lg:"32px"}} color=" rgba(20, 21, 34, 1);" lineHeight="48px" fontWeight="500" fontFamily="Plus Jakarta Sans">
                     Hi, Alinah
                   </Heading>
-                  <Heading fontSize="18px" color=" rgba(156, 156, 164, 1);" lineHeight="27px" fontWeight="400" fontFamily="Plus Jakarta Sans">
+                  <Heading mb={{base:"42px",lg:"0px"}} fontSize={{base:"12px",lg:"18px"}} color=" rgba(156, 156, 164, 1);" lineHeight="27px" fontWeight="400" fontFamily="Plus Jakarta Sans">
                     Let’s learn something new today!
                   </Heading>
                 </Flex>
-                <Button fontSize="14px" position="relative" right="163px" h="50px" fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} minW="170px" borderRadius="10px">
+                <Button fontSize="14px" position="relative" top={{base:"12px" ,lg:"0px"}} right={{base:"10px",lg:"163px"}} h={{base:"39px",lg:"50px"}} fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} minW= {{base:"114px",lg:"170px" }} borderRadius="10px">
                   Buy Course
                 </Button>
               </Flex>
@@ -262,22 +331,25 @@ const Dashboard = () => {
                   flexDirection="column"
                   px={{ md: 0, base: "20px" }}
                 >
-                  <Box w="713px">
+                  <Box  w={{base:"66%",lg:"100%"}}>
+                  
                     <Box bg="#ffffff" borderRadius="8px">
                       <Flex
                         gap="18px"
                         bg="#fffff"
                         borderRadius="8px"
-                        flexDirection={{ md: "row", base: "column" }}
+                        flexDirection={{ md: "row", base: "row" }}
                       >
                         <Suspense fallback={<div>Loading feed...</div>}>
                           {data.map((d, index) => (
                             <Overview
                               {...d}
                               key={"listtotalcourse" + index}
-                              w={{ md: "30%", base: "100%" }}
+                              w={{ md: "30%", base: "30%" }}
+
                               my={{ md: "18px", base: "0px" }}
                               px={{ md: 0, base: "20px" }}
+
                             />
                           ))}
                         </Suspense>
@@ -291,7 +363,7 @@ const Dashboard = () => {
                       borderWidth="1px"
                       borderStyle="solid"
                       bg="#ffffff"
-                      w="347px"
+                      w={{base:"63%",md:"347px"}}
                       h="260px"
                       flexDirection="column"
                       alignItems="start"
@@ -300,140 +372,25 @@ const Dashboard = () => {
                       py="20px"
                       borderRadius="8px"
                     >
-                      <Heading
-                        size="16px"
-                        lineHeight="24px"
-                        fontWeight="700"
-                        as="h3"
-                        mt="53px"
-                        color=" rgba(15, 15, 15, 1);"
-                        ml={{ md: "10px", base: "0px" }}
-                        fontFamily="Plus Jakarta Sans"
-                      >
-                        Attendance Rate
-                      </Heading>
-                      <Flex ml={{ md: "10px", base: "0px" }} alignSelf="stretch" alignItems="start">
-                        <Flex gap="8px" alignSelf="center" flex={1}>
-                          <Box borderTopLeftRadius="16px" position="relative"  bottom="32px" h="16px" borderTopRightRadius="16px" borderBottomRadius="16px" bg="rgba(201, 201, 201, 1)" w="16px">
-                            <Flex
-                              mt="42px"
-                              bg="rgba(201, 201, 201, 1)"
-                              
-                              py="4px"
-                            >
-                              <Heading position="relative" fontSize="20px" lineHeight="26px" left="252px" bottom="103px" color="Black"  fontWeight={700}>
-                                55%
-                              </Heading>
-                            </Flex>
-                          </Box>
-                          <Box borderTopLeftRadius="6px" borderTopRightRadius="16px" bg="" w="18%">
-                            <Flex
-                              mt="66px"
-                              bg="rgba(40, 168, 69, 1)"
-                              flexDirection="column"
-                              alignItems="end"
-                              justifyContent="flex-end"
-                              py="4px"
-                            >
-                              <Heading bottom="42px" position="relative" fontSize="20px" lineHeight="26px"  left="212px" color="Black"  fontWeight={700}>
-                                45%
-                              </Heading>
-                            </Flex>
-                          </Box>
-                        </Flex>
-                        <Flex gap="6px" w="42%" flexDirection={{ md: "column", base: "row" }}>
-                          
-                        <UserStats />
-                          <UserStats
-                            peoplePresentText="20 Not present"
-                            percentageText="35%"
-                            mr={{ md: "18px", base: "0px" }}
-                          />
-                        </Flex>
-                      </Flex>
+                      
+                      <GraphStats/>
                     </Flex>
                     <Flex
                       gap="24px"
-                      borderColor="gray"
+                      borderColor="gray.200_01"
                       borderWidth="1px"
                       borderStyle="solid"
-                      bg="white"
-                      w="347px"
+                      bg="#ffffff"
+                      w={{base:"63%",md:"347px"}}
                       h="260px"
                       flexDirection="column"
                       alignItems="start"
-                      p="14px"
+                      justifyContent="center"
+                      px="8px"
+                      py="20px"
                       borderRadius="8px"
                     >
-                      <Heading
-                        size="heading2xl"
-                        as="h6"
-                        color="neutral.ne80.1"
-                        mt="6px"
-                        ml={{ md: "10px", base: "0px" }}
-                        fontFamily="Plus Jakarta Sans"
-                      >
-                        Graduated Level
-                      </Heading>
-                      <Flex alignSelf="stretch" alignItems="start">
-                        <Box borderTopLeftRadius="16px" borderTopRightRadius="16px" bg="gray.300_7f" w="12%">
-                          <Flex
-                            mt="42px"
-                            bg="primary.pr100"
-                            flexDirection="column"
-                            alignItems="center"
-                            justifyContent="flex-end"
-                            py="4px"
-                          >
-                            <Heading as="h6" color="neutral.white" mt="94px" fontWeight={700}>
-                              50%
-                            </Heading>
-                          </Flex>
-                        </Box>
-                        <Box ml="8px" borderTopLeftRadius="16px" borderTopRightRadius="16px" bg="white" w="12%">
-                          <Flex
-                            mt="88px"
-                            bg="rgba(221, 53, 69, 1)"
-                            flexDirection="column"
-                            alignItems="center"
-                            justifyContent="flex-end"
-                            py="4px"
-                          >
-                            <Heading as="h6" color="neutral.white" mt="48px" fontWeight={700}>
-                              35%
-                            </Heading>
-                          </Flex>
-                        </Box>
-                        <Flex
-                          ml="8px"
-                          borderTopLeftRadius="16px"
-                          borderTopRightRadius="16px"
-                          bg="white"
-                          w="12%"
-                          flexDirection="column"
-                          alignItems="center"
-                          justifyContent="flex-end"
-                        >
-                          <Center mt="130px" bg="warning.wr40" w="32px" flexDirection="column">
-                            <Heading as="h6" color="neutral.white" mt="6px" fontWeight={700}>
-                              15%
-                            </Heading>
-                          </Center>
-                        </Flex>
-                        <Flex
-                          ml="48px"
-                          gap="16px"
-                          alignSelf="center"
-                          flex={1}
-                          flexDirection={{ md: "column", base: "column", sm: "row" }}
-                        >
-                          <Suspense fallback={<div>Loading feed...</div>}>
-                            {data1.map((d, index) => (
-                              <UserStatistics1 {...d} key={"listview" + index} mr={{ md: "36px", base: "0px" }} />
-                            ))}
-                          </Suspense>
-                        </Flex>
-                      </Flex>
+                    <GraphStats2  />
                     </Flex>
                   </Flex>
                   <Flex justifyContent="center" alignItems="start">
@@ -446,46 +403,55 @@ const Dashboard = () => {
                     >
                       Daftar Kursus Saya
                     </Heading>
-                    <Flex gap="17px" flex={1} justifyContent="flex-end">
+                    <Flex   gap="17px" flex={1}  transform={{base: "translateX(109px)",lg:"translateX(390px)"}}
+ >
                       <IconButton
                         size="xs"
-                        icon={<Image src="images/img_fi_sr_arrow_small_left.svg" />}
+                        icon={<Image src="./Full Arrow Right.svg" />}
                         aria-label="1:5948-fisrarrow_one"
-                        borderColor="gray.400"
-                        borderWidth="1.09px"
-                        borderStyle="solid"
-                        w="26px"
-                        borderRadius="4px"
-                      />
-                      <IconButton
-                        size="xs"
-                        icon={<Image src="images/img_fi_sr_arrow_small_left.svg" />}
-                        aria-label="1:5945-fisrarrow_three"
                         transform="rotate(-180deg)"
                         borderColor="gray.400"
                         borderWidth="1.09px"
                         borderStyle="solid"
+                       
+                        w="26px"
+                        borderRadius="4px"
+                        bg={"rgba(196, 196, 196, 1)"}
+                      />
+                      <IconButton
+                        size="xs"
+                        icon={<Image src="./Full Arrow Right.svg" />}
+                        aria-label="1:5945-fisrarrow_three"
+                        
+                        borderColor="gray.400"
+                        borderWidth="1.09px"
+                        borderStyle="solid"
+                        bg={"rgba(196, 196, 196, 1)"}
                         w="26px"
                         borderRadius="4px"
                       />
                     </Flex>
                   </Flex>
-                  <Flex gap="25px"  flexDirection={{ md: "row", base: "column" }}>
+                  <Flex gap="15px" w={{base:"100%"}}  flexDirection={{ md: "row", base: "row" }}>
                     <UserProfile2
+                     isVisible={isVisible}
                       beginnerButton="Beginner"
                       courseTitle="Creating Beautifull Landing Page in 1 Hour"
                       mentorName="Lincoln George"
                       reviewText="4,5"
+                      display='none'
                     />
-                    <UserProfile2
+                    <UserProfile2 
+                    isVisible={isVisible}
+                      display='none'
                       beginnerButton="Master"
                       courseTitle="Animation is the Key of Successfull UI/UX Design"
-                      mentorName="Emerson Siphron"
+                      mentorName="Emerson Siph"
                       reviewText="4,5"
                     />
                   </Flex>
                 </Flex>
-                <Box mr="200px" w={{ md: "38%", base: "100%" }} px={{ md: 0, base: "0px" }}>
+                <Box mr={{base:"0px",lg:"200px"}} w={{ md: "38%", base: "70%" }} px={{ md: 0, base: "30px" }}>
                   <Flex
                     gap="38px"
                     borderColor="white"
@@ -493,7 +459,7 @@ const Dashboard = () => {
                     borderStyle="solid"
                     bg="white"
                     flexDirection="column"
-                    px={{ base: "20px", sm: "22px" }}
+                    px={{ base: "10px", sm: "22px" }}
                     py={{ md: "42px", base: "20px" }}
                     borderRadius="8px"
                   >
@@ -516,22 +482,25 @@ const Dashboard = () => {
                         <Button
                           size="md"
                           rightIcon={
-                            <Image src="images/img_full_arrow_right.svg" alt="Full Arrow Right" w="20px" h="20px" />
+                            <Image src="./img_full_arrow_right.svg" alt="Full Arrow Right" w="20px" h="20px" />
                           }
                           fontFamily="Plus Jakarta Sans"
                           fontWeight={500}
                           borderColor="neutral.soft_grey"
                           borderWidth="1px"
                           borderStyle="solid"
+                          bg={"white"}
                           minW="114px"
+                          color={"black"}
                           borderRadius="10px"
+                          right={{base:"2px",md:"0px"}}
                         >
                           View All
                         </Button>
                       </Flex>
-                      <Flex gap="12px" flexDirection="column">
+                      <Flex gap="12px" flexDirection="column" >
                         <WeekdayColumns />
-                        <Flex gap="12px" flexDirection="column">
+                        <Flex gap="12px" flexDirection="column"  >
                           <Suspense fallback={<div>Loading feed...</div>}>
                             {data2.map((d, index) => (
                               <ButtonGroup {...d} key={"listone" + index} />
@@ -539,8 +508,9 @@ const Dashboard = () => {
                           </Suspense>
                         </Flex>
                       </Flex>
+                      
                     </Flex>
-                    <Flex mb="8px" mr={{ md: "12px", base: "0px" }} gap="24px" flexDirection="column">
+                    <Flex mb="8px" mr={{ md: "12px", base: "30px" }} gap="24px" flexDirection="column">
                       <Flex justifyContent="space-between" alignItems="center" gap="20px">
                         <Heading size="heading2xl" as="h6" fontFamily="Plus Jakarta Sans" alignSelf="end">
                           Rating Course
@@ -554,26 +524,100 @@ const Dashboard = () => {
                           fontWeight={500}
                           borderColor="neutral.soft_grey"
                           borderWidth="1px"
+                          bg={"white"} 
                           borderStyle="solid"
                           minW="114px"
                           borderRadius="10px"
+                          right={{base:"2px",md:"0px"}}
+                          color={"black"}
                         >
                           View All
                         </Button>
                       </Flex>
-                      <Flex gap="34px" flexDirection="column">
+                      
+                      
+                    </Flex>
+                    <Flex  gap="34px" flexDirection="column">
                         <UserProfile3
+                         
                           userName="Dadang Sumargo"
                           userDescription="Materi sangat mudah di pahami dan lorem ipsum dolor sit amet consectetur adipiscing elit  Materi sangat mudah di pahami dan lorem ."
                         />
+                        
                         <UserProfile3
                           userName="Dadang Sumargo"
                           userDescription="Materi sangat mudah di pahami dan lorem ipsum dolor sit amet consectetur adipiscing elit  Materi sangat mudah di pahami dan lorem ."
                         />
                       </Flex>
-                    </Flex>
                   </Flex>
+                  
+                </Box >
+                <Box mr={{base:"0px",lg:"200px"}}
+                 w={{ md: "38%", base: "60%" }} 
+                px={{ md: 0, base: "0px" }}
+                display={{base:"block",lg:"none"}}
+                  >
+                <Flex
+                gap="38px"
+                borderColor="white"
+                borderWidth="1px"
+                borderStyle="solid"
+                bg="white"
+                flexDirection="column"
+                px={{ base: "30px", sm: "22px" }}
+                py={{ md: "42px", base: "20px" }}
+                transform={{base:"translateX(20px)"}}
+                borderRadius="8px"
+                
+                >
+                   
+                <Flex mb="8px" mr={{ md: "12px", base: "0px" }} gap="24px" flexDirection="column">
+                      <Flex justifyContent="space-between" alignItems="center" gap="20px">
+                        <Heading size="heading2xl" as="h6" fontFamily="Plus Jakarta Sans" alignSelf="end">
+                          Rating Course
+                        </Heading>
+                        <Button
+                          size="md"
+                          rightIcon={
+                            <Image src="./Full Arrow Right.svg" alt="Full Arrow Right" w="20px" h="20px" />
+                          }
+                          fontFamily="Plus Jakarta Sans"
+                          fontWeight={500}
+                          borderColor="neutral.soft_grey"
+                          borderWidth="1px"
+                          bg={"white"} 
+                          borderStyle="solid"
+                          minW="114px"
+                          borderRadius="10px"
+                          right={{base:"2px",md:"0px"}}
+                          color={"black"}
+                        >
+                          View All
+                        </Button>
+                      </Flex>
+                      
+                      
+                    </Flex>
+                <UserProfile4 />
+                <UserProfile4/>
+                </Flex>  
+                
                 </Box>
+
+                <Flex
+                 justify="space-around"
+                   align="center"
+                   bg="white"
+                   w={{base:"60%"}}
+                   p={0}
+                   position="fixed"
+                   bottom="0"
+                   left="10px"
+                   right="0"
+                  boxShadow="0 -2px 6px rgba(0, 0, 0, 0.1)">
+    
+    <MobileSidebar/>
+  </Flex>
               </Flex>
             </Flex>
           </Flex>
@@ -584,8 +628,7 @@ const Dashboard = () => {
      </Flex>
     </Box>
 
-    
-    
+  
     
     </>
   )

@@ -57,11 +57,11 @@ export default function HomepageColumnTwo() {
         px={{ md: "0px", base: "20px" }}
       >
         <Flex gap="6px" flexDirection="column" alignItems="start">
-          <Heading size="textxl" color="indigo.a700">
+          <Heading size={{base:"textmd",lg:"textxl"}} color="indigo.a700">
             Start Learning Now
           </Heading>
           <Flex alignSelf="stretch">
-            <Heading size="h2_web" as="h3" w="30%" lineHeight="48px">
+            <Heading size={{lg:"h2_web"}} as="h3" w={{base:"70%",lg:"30%"}} lineHeight="48px">
               Search Course Materials by Category
             </Heading>
           </Flex>

@@ -8,10 +8,10 @@ export default function UserProfile3({
   ...props
 }) {
   return (
-    <Flex {...props} gap="12px" flex={1} flexDirection="column">
+    <Flex  display={{base:"none" ,lg:"block"}} {...props} gap="12px" flex={1} flexDirection="column">
       <Flex gap="16px" alignSelf="stretch" justifyContent="center" alignItems="center">
         <Image
-          src="images/img_rectangle_224.png"
+          src="./Reviewer.svg"
           alt="Dadang Sumargo"
           h="38px"
           w="38px"
@@ -35,7 +35,7 @@ export default function UserProfile3({
           />
         </Flex>
       </Flex>
-      <Text size="texts" color="neutral.ne60" w="100%" lineHeight="18px">
+      <Text size="texts" color="neutral.ne60" w={{  base:"70%",lg:"100%"}} lineHeight="18px">
         {userDescription}
       </Text>
     </Flex>

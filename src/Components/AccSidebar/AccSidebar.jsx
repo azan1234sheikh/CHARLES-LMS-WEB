@@ -43,8 +43,12 @@ const handleHelpdesk=()=>{
 }
   return (
    <>
-   <Card borderRadius="18px" w="330px" h="532px" bg="white" ml="33px">
-      <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="36px" fontWeight="700" fontSize="24px" color="rgba(20, 21, 34, 1)">{courseTitle}</Text>
+   <Card borderRadius="18px"
+    w={{base:"100%",lg:"330px"}} 
+    h={{base:"full",lg:"532px"}} 
+    bg="white" 
+    ml={{base:"0px",lg:"3px"}}>
+      <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="36px" fontWeight="700" fontSize={{base:"18px",md:"24px"}} color="rgba(20, 21, 34, 1)">{courseTitle}</Text>
 
         <Box 
       {...props}
@@ -55,13 +59,14 @@ const handleHelpdesk=()=>{
       display="flex"
       flexDirection="column"
        bgColor=" #ffffff;"
-      h="100%"
+      h="full"
       top="0px"
       overflow="auto"
       px="12px"
       sx={{ position: "sticky" }}
     >
       <Box
+       
         menuItemStyles={{
           button: {
             padding: "1",
@@ -81,28 +86,28 @@ const handleHelpdesk=()=>{
         flexDirection="column"
         w="300px"
       >
-        <Box mt="12px">
-        <MenuItem onClick={handlebtn}  icon={<Image src="./Editprofile.svg" alt="Grid" h="18px" w="18px" />}>Edit Profile</MenuItem>
+        <Box mt="12px" >
+        <MenuItem onClick={handlebtn}  icon={<Image src="/Editprofile.svg" alt="Grid" h="18px" w="18px" />}>Edit Profile</MenuItem>
         </Box>
         <Box mt="12px">
-        <MenuItem  onClick={handlesetting} icon={<Image src="./Accountsetting.svg" alt="Lock" h="18px" w="18px" />}>
+        <MenuItem  onClick={handlesetting} icon={<Image src="/AccountSetting.svg" alt="Lock" h="18px" w="18px" />}>
           Account Settings
         </MenuItem>
         </Box>
         <Box mt="12px">
-        <MenuItem onClick={handleAnnouncment} icon={<Image src="./Accsettings.svg" alt="User" h="18px" w="18px" />}>
+        <MenuItem onClick={handleAnnouncment} icon={<Image src="/AccSettings.svg" alt="User" h="18px" w="18px" />}>
           Announcement
         </MenuItem>
         </Box>
         <Box mt="12px">
-        <MenuItem onClick={handleHelpdesk} icon={<Image src="./Helpdesk.svg" alt="Television" h="18px" w="18px" />}>Helpdesk</MenuItem>
+        <MenuItem onClick={handleHelpdesk} icon={<Image src="/Helpdesk.svg" alt="Television" h="18px" w="18px" />}>Helpdesk</MenuItem>
         </Box>
       </Box>
     </Box>                
 
     <Button
               onClick={onOpen}
-             w="290px"
+             w={{base:"auto",md:"290px"}}
              h="60px"
              bg="white"
              borderRadius="1px"
@@ -112,7 +117,7 @@ const handleHelpdesk=()=>{
              color="#000000"
              fontWeight="500"
              size="14px"
-             ml="18px"
+             ml={{base:"1px",md:"18px"}}
              mb="55px"
              padding="8px ,16px,8px,16px"
              gap="10px"

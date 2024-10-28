@@ -12,18 +12,18 @@ export default function WeekdayColumns({
   ...props
 }) {
   return (
-    <Flex {...props} justifyContent="center" alignItems="center">
+    <Flex {...props} justifyContent="centr" alignItems="center">
       <Flex flexDirection="column" alignItems="center" px="14px" py="18px" >
         <Heading fontWeight="600" alignItems="center" fontSize="12px" lineHeight="14px">{mondayText}</Heading>
       </Flex>
-      <Flex flex={1} flexDirection="column" alignItems="center" px="14px" py="18px">
+      <Flex flex={0} flexDirection="column" alignItems="center" px="14px" py="18px">
         <Heading fontWeight="600" alignItems="center"fontSize="12px" lineHeight="14px">{tuesdayText}</Heading>
       </Flex>
       <Heading fontWeight="600" alignItems="center"fontSize="12px" lineHeight="14px">{wednesdayText}</Heading>
       <Heading fontWeight="600" alignItems="center"fontSize="12px" lineHeight="14px" ml="24px">
         {thursdayText}
       </Heading>
-      <Flex flex={1} flexDirection="column" alignItems="end" p="18px">
+      <Flex flex={0} flexDirection="column" alignItems="end" p="18px">
         <Heading fontWeight="600" alignItems="center"fontSize="12px" lineHeight="14px">{fridayText}</Heading>
       </Flex>
       <Flex flexDirection="column" alignItems="center" px="14px" py="18px">

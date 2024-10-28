@@ -10,11 +10,11 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
     import { useNavigate } from 'react-router-dom';
     import React, {useRef,useState, Suspense } from "react";
     import "react-datepicker/dist/react-datepicker.css";  
-   import {IconButton,Card, Radio, RadioGroup , Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
+   import {IconButton,Card, Radio, RadioGroup  ,Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
 
 
 
-export const AccountNotification = () => {
+ const AccountNotification = () => {
   const [value, setValue] = useState('0')
   return (
   <>
@@ -37,7 +37,7 @@ export const AccountNotification = () => {
 
              <Link href="#">
                <Image
-                 src="./notif.svg"
+                 src="/notif.svg"
                  alt="Image"
                  h="24px"
                  position="relative"
@@ -50,7 +50,7 @@ export const AccountNotification = () => {
              </Link>
              <Link href="#">
                <Image
-                 src="./Rectangle 5997 (1).svg"
+                 src="/Rectangle 5997 (1).svg"
                  alt="Image"
                  h="50px"
                  position="relative"
@@ -129,7 +129,7 @@ export const AccountNotification = () => {
         <Text mt="12px" ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
         We will use this email address:
         <Box as="span" color="black"> pristia@gmal.com</Box> 
-        <Box as="span" color="rgba(255, 187, 84, 1)"> (change address)</Box> 
+        <Box as="span" color="rgba(255, 187, 84, 1)">AccountNotification</Box> 
 
         </Text>
       </Card>
@@ -142,6 +142,7 @@ export const AccountNotification = () => {
   </>
   </>
   )
+   
 }
 
-export default Notification
+export default AccountNotification;

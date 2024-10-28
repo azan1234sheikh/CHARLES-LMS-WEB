@@ -5,14 +5,21 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
     import RatingBar  from "../../../Components/Ratingbar/Ratingbar.jsx"
    import { useNavigate } from 'react-router-dom';
    import React, {useRef,useState, Suspense } from "react";
+   import { useParams } from 'react-router-dom';
    import {FaPlay, FaPause } from "react-icons/fa";
    import { AspectRatio } from '@chakra-ui/react'
    import {IconButton,Card   , Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
    import DatePicker from "react-datepicker";
    import "react-datepicker/dist/react-datepicker.css";  
    import AccountComponent from '../../../Components/CourseDetail/AccountComponent.jsx';
+   import CourseData from '../../../Components/Data/CourseData.js';
+   import UserProfile2 from '../../../Components/UserProfile2/index.jsx';
+import data from '../../../Components/Data/MycourseData.js';
+import Coursedetail from '../../../Components/Data/Coursedetail.js';
+import UserProfile5 from '../../../Components/UserProfile5/UserProfile5.jsx';
    const CourseDetail = (
     {
+        
         beginnerButton = "Beginner",
         courseTitle = "Animation is the Key of Successfull UI/UX Design",
         CourseCat = "UI UX Design . Apps Design",
@@ -28,18 +35,37 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
          Module5 = "How to Implement",
          Module6 = "Post Testing",
         mentorfollow = "+ Follow  Mentor",
+        children,
+        
         figmaprototype="2. Make a micro interaction with principle",
-        CourseDesccription= "The community's need for applications that can facilitate daily activities is increasing as technology advances. Currently, many companies are looking for developers so that they can sell products (goods or services) that can reach wider buyers online. To become a developer, we are not required to understand all the science of design, but at least we can know the basics so that we can realize the design into code into a complete application more effectively. This class is the right medium to learn design and coding at the same time. With Mentor, you will create useful applications by adding animations to applications that are made to make them more interesting and interactive                                                                                           Our expert Mentors will explain how to create a furniture application from the design to code stage using the flagship Google Flutter SDK framework. By using the popular design tool Figma, you will learn the basics of creating interactive mockups as an illustration into an application or commonly known as a prototype. Then you will learn to apply animation between screens to make the prototype come alive. After that, the process will continue to slicing with a variety of ready-to-use Flutter Widgets so that the developer's work can be more efficient, saving time and effor This class is suitable for those of you who want to deepen complete mobile application development on the front-end side. Later the application that is successfully built can become a portfolio for applying for work or your personal business needs. If you encounter difficulties while studying, please ask our Mentor directly through the Telegram group, OK? Register now and we are waiting in class!",
+        CourseDescription= "The community's need for applications that can facilitate daily activities is increasing as technology advances. Currently, many companies are looking for developers so that they can sell products (goods or services) that can reach wider buyers online. To become a developer, we are not required to understand all the science of design, but at least we can know the basics so that we can realize the design into code into a complete application more effectively. This class is the right medium to learn design and coding at the same time. With Mentor, you will create useful applications by adding animations to applications that are made to make them more interesting and interactive                                                                                           Our expert Mentors will explain how to create a furniture application from the design to code stage using the flagship Google Flutter SDK framework. By using the popular design tool Figma, you will learn the basics of creating interactive mockups as an illustration into an application or commonly known as a prototype. Then you will learn to apply animation between screens to make the prototype come alive. After that, the process will continue to slicing with a variety of ready-to-use Flutter Widgets so that the developer's work can be more efficient, saving time and effor This class is suitable for those of you who want to deepen complete mobile application development on the front-end side. Later the application that is successfully built can become a portfolio for applying for work or your personal business needs. If you encounter difficulties while studying, please ask our Mentor directly through the Telegram group, OK? Register now and we are waiting in class!",
         ...props}
    ) => {
     const videoRef = useRef(null);
+    const { id } = useParams();
+    
+    const [isVisible, setIsVisible] = useState(true);
+    const [isReadmore, setShowless] = useState(true);
     const[isPlaying , setisplaying] = useState(false);
+    const [isReadMore, setIsReadMore] = useState(false);
+    const btnnavigate = useNavigate();
+    const courseId = parseInt(id, 10);
+    const course = Coursedetail.find((course) => course.id === courseId);
+
+  const toggleReadMore = () => {
+      setIsReadMore(!isReadMore);
+  };
+  const handleExplore=()=>{
+    btnnavigate('/MyCourse');
+  }
+
     const items = [
       { id: 1, name: 'Item 1', category: 'A-Z' },
       { id: 2, name: 'Item 2', category: 'Z-A' },
       { id: 3, name: 'Item 3', category: 'Popular' },
       { id: 4, name: 'Item 4', category: 'Category 3' },
     ];
+    
     const handlevideobtn=()=>{
         if (videoRef.current && typeof videoRef.current.play === 'function') {
             videoRef.current.play();
@@ -51,10 +77,21 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
 
      return (
        <>
-          <Box h="100vh">
+          <Box overflowX={"hidden"} bg={{base:"rgba(242, 246, 255, 1)", lg:"#ffff"}} h="100vh">
       <Flex gap="56px" alignItems="start">
           <Sidebar8/>
           <Flex mt="30px" gap="22px" alignSelf="center" flex={1} flexDirection="column">
+          <Box display={{base:"block",md:"none"}} mb={{base:"22px"}}>
+            <Button 
+             onClick={handleExplore}
+             left={"12px"}
+             bg = {""}
+           leftIcon={
+            <Image src="/Full Arrow Right.svg" transform="rotate(-180deg)" alt="Full Arrow Right" w="20px" h="20px" />
+            }>
+            <Text ml={"122px"} fontWeight ="500" fontSize={{base:"18px",lg:"32px"}} lineHeight="48px" fontFamily="Plus Jakarta Sans">My Courses</Text>
+            </Button>
+            </Box>
           <Flex
                  mr={{ md: "30px", base: "0px" }}
                  justifyContent="space-between"
@@ -67,9 +104,9 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    <Heading position="relative" bottom="290px" fontWeight ="500" fontSize="32px" lineHeight="48px" fontFamily="Plus Jakarta Sans" >
                    My Courses
    
-                   <Link href="#">
+                   <Link href="#" >
                      <Image
-                       src="./notif.svg"
+                       src="/notif.svg"
                        alt="Image"
                        h="24px"
                        position="relative"
@@ -82,7 +119,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    </Link>
                    <Link href="#">
                      <Image
-                       src="./Rectangle 5997 (1).svg"
+                       src="/Rectangle 5997 (1).svg"
                        alt="Image"
                        h="50px"
                        position="relative"
@@ -101,31 +138,31 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
              </Flex>
            </Flex>
            
-         <Box   ml="250px" position="relative" bottom="625px" width="1265px" bg="rgba(247, 248, 250, 1)">
+         <Box   ml={{base:"10px",lg:"250px"}} position="relative" bottom={{base:"150px",md:"595px"}} width={{base:"auto",md:"1265px"}} bg="rgba(247, 248, 250, 1)">
          <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} p={4} >
             <GridItem>
-            <Flex direction="column" ml="24px" w="744px" h="500px" bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
+            <Flex direction="column"   w={{base:"355px",md:"744px"}} h={{base:"239px",lg:"500px"}} bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
             
             <iframe ref={videoRef}  title="Course Video" src="" type="video/mp4" controls={false} allowFullScreen/>
-              <Box ml="12px" mt="293px" borderRadius="8px" w="704px" h="41px" p="10px, 16px, 10px, 16px" bg="white">
+              <Box ml="12px" transform={{base:"translateX(-10px)"}} mt={{base:"28px",lg:"293px"}} borderRadius="8px" w={{base:"336px",lg:"704px"}} h={{base:"30px",lg:"41px"}} p="10px, 16px, 10px, 16px" bg="white">
               <IconButton  borderRadius="8px" bg="white" w="50px" color="black" 
                icon={isPlaying ? <FaPause/>  :  <FaPlay />}
               onClick={handlevideobtn} aria-label="Play/Pause"/>
               </Box>
              
             </Flex>
-            <Box h="997px" ml="25px" bg="white" >
-            <Text mb="12px" ml="22px" color="rgba(20, 21, 34, 1)" fontWeight="700" fontSize="32px" fontFamily="Plus Jakarta Sans" > 
-            Animation is the Key of Successfull UI/UX Design  
+            <Box h={{base:"1150px",lg:"997px"}} transform={{base:"translateY(600px)" ,lg:"translateY(0px)"}}  display={{lg:"block"}} w={{base:"356px",lg:"744px"}} ml="0px" bg="white" >
+            <Text mb="12px" display={{base:"none",lg:"block"}} ml="22px" color="rgba(20, 21, 34, 1)" fontWeight="700" fontSize={{base:"16px",lg:"32px"}} fontFamily="Plus Jakarta Sans" > 
+            {course.courseTitle}
             </Text>
             <Flex>
-            <Link href="#">
+            <Link href="#" display={{base:"none",lg:"block"}}>
                      <Image
-                       src="./Rectangle 5997 (1).svg"
+                       src="/Rectangle 5997 (1).svg"
                        alt="Image"
-                       h="30px"
+                       h="40px"
                        position="relative"
-                       w="30px"
+                       w="40px"
                        fit="cover"
                        ml="12px"
                        mt="12px"
@@ -133,53 +170,66 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                      /> 
                    </Link>
                    
-                    <Flex  mt="22px" >
+                    <Flex transform={{lg:"translateY(23px)"}} display={{base:"none",lg:"flex"}} >
                     
-                   <Text fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)"ml="23px">{studentName}</Text>
-                   <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(156, 156, 164, 1)"> {CourseCat}</Text>
-                   <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(4, 164, 244, 1)"> {mentorfollow}</Text>
+                   <Text fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)"ml="23px">{course.studentName}</Text>
+                   <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(156, 156, 164, 1)"> {course.CourseCat}</Text>
+                   <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(4, 164, 244, 1)"> {course.mentorfollow}</Text>
                    </Flex>
-                   <Image position="relative" top="24px" left="123px" src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                   <Text ml="132px" color="black" alignSelf="end">
+                   <Image display={{base:"none",lg:"block"}} position="relative" top="24px" left="123px" src="/star.svg" alt="Lincoln George" h="20px" w="20px" />
+                   <Text display={{base:"none",lg:"block"}} ml="132px" color="black" alignSelf="end">
                         4.5 </Text>
                    </Flex> 
                   
                    <Tabs left="22px" top="23px" border="transparent " position='relative' variant='unstyled'>
             <TabList >
-            <Tab  _hover={{border: '1px solid gray'}} >General</Tab>
+            <Tab fontSize={{base:"11px",lg:"16px"}} _hover={{border: '1px solid gray'}} fontWeight={{base:"bold",md:"normal"}} >General</Tab>
             
-            <Tab >Assignments</Tab>
-            <Tab >Tools</Tab>
-            <Tab>Review</Tab>
+            <Tab fontSize={{base:"11px",lg:"17px"}} fontWeight={{base:"bold",md:"normal"}} >Assignments</Tab>
+            <Tab  fontSize={{base:"11px",lg:"17px"}} fontWeight={{base:"bold",md:"normal"}} >Tools</Tab>
+            <Tab fontSize={{base:"11px",lg:"17px"}} fontWeight={{base:"bold",md:"normal"}}>Review</Tab>
             </TabList>
             <TabIndicator _hover={{ border: "1px solid #ffffff" }}mt='-1.5px' height='2px' bg='rgba(255, 187, 84, 1)' borderRadius='1px' />
              <TabPanels>
             <TabPanel>
-            <Text fontWeight="500" color="rgba(20, 21, 34, 1)" fontSize="24px" lineHeight="36px" fontFamily="Plus Jakarta Sans">
+            <Text fontWeight="500" color="rgba(20, 21, 34, 1)" fontSize={{base:"14px",lg:"24px"}} lineHeight="36px" fontFamily="Plus Jakarta Sans">
             Description
             </Text>
             <Flex>
-                  <Stack>
-                    <Text mt="18px" alignContent="space-around" fontWeight="400" color="rgba(20, 21, 34, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans"  >{CourseDesccription}</Text>
+                  <Stack >
+                  <Text mt="18px" alignContent="space-around" fontWeight="400" color="rgba(20, 21, 34, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans"  >
+                  {isReadMore ? CourseDescription : `${CourseDescription.slice(0, 400)}...`}
+                        {CourseDescription.length > 100 && (
+                        <span 
+                  onClick={toggleReadMore} 
+                  style={{ color: "blue", cursor: "pointer", marginLeft: "5px" }}
+                  >
+                  {isReadMore ? "Show Less" : "See More"}
+                </span>
+          )}
+                  </Text>
+                  <Box display={{base:"none",lg:"block"}}>
                     <Text mt="13px" fontWeight="500" color="rgba(20, 21, 34, 1)" fontSize="24px" lineHeight="36px" fontFamily="Plus Jakarta Sans">Key Points</Text>
+                  
                     <Flex mt="12px" >
-                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='/tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)">Undestand the basics of Prototype and Animation  </Text>
                        
                     </Flex>
                     <Flex mt="12px">
-                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='/tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)">Understand the basics of MicroInteraction</Text>
                        
                     </Flex>
                     <Flex mt="12px">
-                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='/tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)"> Creating Animation (20 case studies) for mobile apps</Text>
                     </Flex>
                     <Flex mt="12px">
-                        <Image h="24px" w="24px"  src='./tick-circle.svg'/>
+                        <Image h="24px" w="24px"  src='/tick-circle.svg'/>
                         <Text ml="13px" fontFamily="Plus Jakarta Sans" fontWeight="400" fontSize="14px" color="rgba(20, 21, 34, 1)">Presenting designs using Animation</Text>
                     </Flex>
+                    </Box>
                   </Stack>
             </Flex>
             </TabPanel>
@@ -188,17 +238,17 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
              <TabPanel>
               <Box mt="23px" w="684px" h="641px">
                 <AccountComponent/>
-                <Box mt="23px" w="684px" h="1px " bg="rgba(245, 245, 247, 1)"></Box>
+                <Box mt="23px"  w={{base:"354px",lg:"684px"}}h="1px " bg="rgba(245, 245, 247, 1)"></Box>
                 <AccountComponent Heading="2. Make a micro interaction with principles "/>
-                <Box mt="23px" w="684px" h="1px " bg="rgba(245, 245, 247, 1)"></Box>
+                <Box mt="23px" w={{base:"354px",lg:"684px"}} h="1px " bg="rgba(245, 245, 247, 1)"></Box>
                 <AccountComponent Heading="3. Make a showcase animation for dribbble" />
             </Box>
               
              </TabPanel>
         
-           <TabPanel>
-           <Flex>
-            <Flex mt="192px" transform="TranslateX(-410px)">
+           <TabPanel >
+           <Flex   flexDirection={{base:"column",md:"row"}}>
+            <Flex  mt="192px" transform="TranslateX(-410px)">
             <GridItem  >
               <Link href="#" >
               <Box position="relative" bottom="138px" left="403px">
@@ -213,8 +263,8 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    
                     
                   >
-                   <Flex ml="12px" mb="102px">
-                  <Image src='./Figma.svg' />
+                   <Flex  ml="12px" mb="102px">
+                  <Image src='/Figma.svg' />
                    <Stack >
                   <Text  ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Figma </Text>
                   <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
@@ -229,7 +279,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
             <Flex mt="192px" transform="TranslateX(-390px)">
             <GridItem  >
               <Link href="#" >
-                <Box position="relative" bottom="138px" left="403px">
+                <Box position="relative" bottom="138px" left={{base:"370px",lg:"403px"}}>
                   <Flex
                     gap="20px"
                     bg="white"
@@ -238,11 +288,11 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                     flexDirection="column"
                     p={{ base: "20px", sm: "30px" }}
                     borderRadius="16px"
-                   
+                    mt={{base:"-153px",lg:"0px"}}
                     
                   >
-                   <Flex ml="12px" mb="102px">
-                  <Image src='./Principal.svg' />
+                   <Flex ml={{base:"0px",lg:"12px"}} mb="102px">
+                  <Image src='/Principal.svg' />
                    <Stack >
                   <Text  ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="21px" fontWeight="500" fontSize="14px" color="rgba(20, 21, 34, 1)">Principle </Text>
                   <Text ml="17px"   fontWeight="400" color="rgba(156, 156, 164, 1)" fontSize="14px" lineHeight="28px" fontFamily="Plus Jakarta Sans">
@@ -286,13 +336,13 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
           </Tabs>  
             </Box>
             </GridItem>
-            <Flex flexDirection="row">
-            <Card borderRadius="18px" w="350px" h="708px" bg="white" ml="33px">
-            <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="27px" fontWeight="700" fontSize="18px" color="rgba(20, 21, 34, 1)">{courseTitle}</Text>
+            <Flex transform={{base:"translateY(-1150px)" ,lg:"translateY(0px)"}} flexDirection="row">
+            <Card borderRadius={{base:"2px",lg:"18px"}}  w="350px" h={{base:"600px",lg:"708px"}} bg="white" ml={{base:"2px",lg:"33px"}}>
+            <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="27px" fontWeight="700" fontSize="18px" color="rgba(20, 21, 34, 1)">{course.courseTitle}</Text>
             <Flex mt="23px">
             <Link href="#">
                      <Image 
-                       src="./Rectangle 5997 (1).svg"
+                       src="/Rectangle 5997 (1).svg"
                        alt="Image"
                        h="30px"
                        position="relative"
@@ -305,7 +355,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    </Link>
                     
                    <Text mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="400" lineHeight="28px" fontSize="14px" color="rgba(156, 156, 164, 1)"ml="23px">{studentName}</Text>
-                   <Image position="relative" top="26px" left="123px" src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
+                   <Image position="relative" top="26px" left="123px" src="/star.svg" alt="Lincoln George" h="20px" w="20px" />
                    
                    <Text ml="132px" color="black" alignSelf="end">
                         {reviewText} </Text>
@@ -313,7 +363,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    <Stack>
                    <Progress ml="22px" w="290px" mt="22px" borderRadius="12px" sx={{'& > div': { bg:'rgba(255, 187, 84, 1)',}}}size='sm' value={30} />
                    <Flex>
-                    <Image mt="7px" src="./Number.svg"/>
+                    <Image mt="7px" src="/Number.svg"/>
                    <Text mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="700" lineHeight="24px" fontSize="16px" color="#000000"ml="23px">{Modules}</Text>
                    <Text ml="127px" mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="400" lineHeight="28px" fontSize="14px" color="rgba(156, 156, 164, 1)" >{ratio}</Text>     
 
@@ -323,7 +373,7 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
                    <Text mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="500" lineHeight="21px" fontSize="14px" color="rgba(156, 156, 164, 1)"ml="23px">{Module1}</Text>  
                    <Text ml="142px"  mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="400" lineHeight="28px" fontSize="14px" color="rgba(156, 156, 164, 1)" >{Duration}</Text>     
                    </Flex> 
-                   <Flex> 
+                   <Flex>  
                    <Box  mt="7px" p="2px,2px,1px,2px" borderRadius="7px" w="30px" h="30px" bg="rgba(245, 245, 247, 1)" ><Text ml="12px" mt="8px">2</Text></Box>
                    <Text mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="500" lineHeight="21px" fontSize="14px" color="rgba(156, 156, 164, 1)"ml="23px">{Module2}</Text>
                    <Text ml="94px"  mt="18px" fontFamily="Plus Jakarta Sans" fontWeight="400" lineHeight="28px" fontSize="14px" color="rgba(156, 156, 164, 1)" >{Duration}</Text>     
@@ -357,188 +407,18 @@ import { Center, ChakraProvider,Text,Stack, FormControl, FormLabel,UnorderedList
             </Card>
             </Flex>
              <Text mt="22px" ml="22px" fontFamily="Plus Jakarta Sans" fontWeight="700" lineHeight="48px" fontSize="32px"  color="rgba(20, 21, 34, 1)">Related Courses</Text>
-            <GridItem  w="354px" h="369px" >
-              
-          <Link href="#" >
-            <Box position="relative" top="92px" right="733px" >
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-              
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    
-                    Beginner
-                  </Button>
-                </Flex>
-                <Stack>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                  Introduction Basic 
-                  Programming HTML & CSS
-                  </Heading>
-                  <Progress borderRadius="12px" sx={{'& > div': { bg:'rgba(37, 199, 139, 1)',}}}size='sm' value={30} />
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end"color="black" textDecoration="none"> Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                        <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                     
-                      <Text color="black" alignSelf="end">
-                        4.5
-                        
-                      </Text>
-                      
-                    </Flex>
-                  </Flex>
-                </Flex>
-                </Stack>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-          
-        <GridItem  w="354px" h="369px" >
-              
-              <Link href="#" >
-                <Box position="relative" bottom="272px" left="433px" >
-                  <Flex
-                    gap="20px"
-                    bg="white"
-                    w="340px"
-                    h="360px"
-                    flexDirection="column"
-                    p={{ base: "20px", sm: "30px" }}
-                    borderRadius="16px"
-                    _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                    transition="all 0.2s ease"
-                  >
-                  
-                    <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                      <Button
-                        size="sm"
-                        rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
-                        mt="100px"
-                        fontFamily="Plus Jakarta Sans"
-                        gap="6px"
-                        minW="90px"
-                        borderRadius="8px"
-                      >
-                        
-                        Beginner
-                      </Button>
-                    </Flex>
-                    <Stack>
-                    <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                      <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                      Introduction Basic 
-                      Programming HTML & CSS
-                      </Heading>
-                      <Progress borderRadius="12px" sx={{'& > div': { bg:'rgba(37, 199, 139, 1)',}}}size='sm' value={30} />
-                      <Flex alignItems="center">
-                        <Flex gap="10px" flex={1} alignItems="center">
-                          <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                          <Text alignSelf="end"color="black" textDecoration="none"> Emerson Sopr</Text>
-                        </Flex>
-                        <Flex gap="4px" w="32%" justifyContent="center">
-                          <Flex flex={1} flexDirection="column" alignItems="end">
-                            <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                          </Flex>
-                         
-                          <Text color="black" alignSelf="end">
-                            4.5
-                            
-                          </Text>
-                          
-                        </Flex>
-                      </Flex>
-                    </Flex>
-                    </Stack>
-                  </Flex>
-                </Box>
-              </Link>
-            </GridItem>
+             <Box   ml={{base:"0px",lg:"-760px"}} position="relative" top={{base:"2px",lg:"75px"}} width={{base:"390px",md:"1245px"}} bg={{base:"rgba(242, 246, 255, 1)", lg:"rgba(247, 248, 250, 1)"}}>
 
-            <GridItem  w="354px" h="369px" >
-              
-              <Link href="#" >
-                <Box position="relative" bottom="272px" left="63px" >
-                  <Flex
-                    gap="20px"
-                    bg="white"
-                    w="340px"
-                    h="360px"
-                    flexDirection="column"
-                    p={{ base: "20px", sm: "30px" }}
-                    borderRadius="16px"
-                    _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                    transition="all 0.2s ease"
-                  >
-                  
-                    <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                      <Button
-                        size="sm"
-                        rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
-                        mt="100px"
-                        fontFamily="Plus Jakarta Sans"
-                        gap="6px"
-                        minW="90px"
-                        borderRadius="8px"
-                      >
-                        
-                        Beginner
-                      </Button>
-                    </Flex>
-                    <Stack>
-                    <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                      <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                      Introduction Basic 
-                      Programming HTML & CSS
-                      </Heading>
-                      <Progress borderRadius="12px" sx={{'& > div': { bg:'rgba(37, 199, 139, 1)',}}}size='sm' value={30} />
-                      <Flex alignItems="center">
-                        <Flex gap="10px" flex={1} alignItems="center">
-                          <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                          <Text alignSelf="end"color="black" textDecoration="none"> Emerson Sopr</Text>
-                        </Flex>
-                        <Flex gap="4px" w="32%" justifyContent="center">
-                          <Flex flex={1} flexDirection="column" alignItems="end">
-                            <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                          </Flex>
-                         
-                          <Text color="black" alignSelf="end">
-                            4.5
-                            
-                          </Text>
-                          
-                        </Flex>
-                      </Flex>
-                    </Flex>
-                    </Stack>
-                  </Flex>
-                </Box>
-              </Link>
-            </GridItem>
+             <Flex  gap={{base:"8px",lg:"45px"}} wrap="wrap" p={{base:2,lg:4}}  flexDirection={{ md: "row", base: "row" }}>
+              {data.map((d,index) => (
+
+             <UserProfile5  {...d} isVisible={isVisible}   key={`Courses${index}`}
+             />
+
+             ))}
+            </Flex>
+            </Box>
+                
     
         </Grid>
         

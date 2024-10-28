@@ -1,10 +1,12 @@
+// BarChart.js
+
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import {
   barChartDataDailyTraffic,
   barChartOptionsDailyTraffic,
 } from '../Chartdata.js';
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 class BarChart extends Component {
   constructor(props) {
@@ -17,13 +19,17 @@ class BarChart extends Component {
 
   render() {
     return (
-      <Box position="relative" right="92px">
+      <Box height="350px"> {/* Ensure the box has width and height */}
+
         <Chart
+       
           options={this.state.chartOptions}
           series={this.state.chartData}
           type="bar"
-          width="100%"
-          height="164px"
+          w={{base:"100%",md:"110%",lg:"130%"}}
+          
+          height="100%" 
+          // Use full width and height of the Box
         />
       </Box>
     );

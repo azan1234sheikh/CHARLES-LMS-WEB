@@ -1,4 +1,4 @@
-import { Text, Link, UnorderedList, ListItem, Heading, Flex, Image, Container } from "@chakra-ui/react";
+import { Text, Link, UnorderedList, ListItem, Heading, Flex, Image, Container, Box } from "@chakra-ui/react";
 import React from "react";
 
 export default function Footer({ ...props }) {
@@ -138,7 +138,8 @@ export default function Footer({ ...props }) {
               </ListItem>
             </UnorderedList>
           </Flex>
-          <Flex gap="14px" alignSelf="center" flexDirection="column" alignItems="start">
+          <Box position="relative" left={{base:"142px",md:"0px"}} bottom={{base:"532px",md:"0px"}}>
+          <Flex gap="14px" alignSelf="center" flexDirection="column"  alignItems="start">
             <Heading size="headinglg" as="h6">
               Useful Links
             </Heading>
@@ -180,6 +181,8 @@ export default function Footer({ ...props }) {
               </ListItem>
             </UnorderedList>
           </Flex>
+          </Box>
+          
         </Flex>
       </Container>
     </Flex>

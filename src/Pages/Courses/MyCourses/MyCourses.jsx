@@ -7,7 +7,10 @@ import React, { useState,Suspense } from "react";
 import { CiSearch } from "react-icons/ci";
 import CourseDetail from '../CourseDetail/CourseDetail.jsx';
 import { useDisclosure } from '@chakra-ui/react';
-
+import MobileSidebar from '../../../Components/MobileSidebar/MobileSidebar.jsx';
+import MobileHeader from '../../../Components/MobileHeader/MobileHeader.jsx';
+import UserProfile2 from '../../../Components/UserProfile5/UserProfile5.jsx';
+import data from "../../../Components/Data/MycourseData.js";
 import {
     Modal,
     ModalOverlay,
@@ -24,11 +27,31 @@ const MyCourses = (
         courseTitle = "Creating Beautifull Landing Page in 1 Hour",
         mentorName = "Lincoln George",
         reviewText = "4,5",
+        course,
         ...props}
 ) => {
+ 
+
   const [isVisible, setIsVisible] = useState(true);
+  const [SearchBarValue,SetSearchBarValue] = useState("");
+ 
+
+  const handleExplore=()=>{
+    navigatebtn('/Explorecourse');
+  }
+  const handleMycourse=()=>{
+    navigatebtn('/MyCourse');
+  }
+
+  const handleClearSearch = () => {
+   
+    setTimeout(() => {
+      SetSearchBarValue("");
+    }, 100);
+  };
   const handleDelete = () => {
-    setIsVisible(false); 
+
+    setIsVisible((prev) => !prev);
   };
   const navigatebtn = useNavigate();
   const handleAccount=()=>{
@@ -37,9 +60,11 @@ const MyCourses = (
   const handlenotfication=()=>{
     navigatebtn('/Notification');
   }
-  const handlebtn=()=>{
-    navigatebtn('/CourseDetail');
-  }
+  const handleCourseClick = (course) => {
+    navigatebtn(`/course/${course.id}`);
+  };
+
+ 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
     const finalRef = React.useRef(null)
@@ -55,13 +80,43 @@ const MyCourses = (
 
   return (
 <>
- <Box h="100vh">
+ <Box bg={{base:"rgba(242, 246, 255, 1)", lg:"#ffff"}} h="100vh">
    <Flex gap="56px" alignItems="start">
        <Sidebar8/>
        <Flex mt="30px" gap="22px" alignSelf="center" flex={1} flexDirection="column">
+       <Box display={{base:"block",md:"none"}} mb={{base:"22px"}}>
+        
+        <MobileHeader/>
+        <FormControl bg={"white"} w="54px" left="17px" top={"13px"} >
+                      <Input w="355px" value={SearchBarValue}
+                       onChange={(e) => SetSearchBarValue(e.target.value)}
+                       _hover={{ border: "1px solid rgba(255, 187, 84, 1)"  }}   h="46px" name='Search For Course Name/Mentor' fontSize="12px" lineHeight="18px" fontWeight="400" fontFamily="'Plus Jakarta Sans', sans-serif" placeholder='Search For Course Name/Mentor'/>
+                      <Box  position="relative" left="293px" bottom="40px" w="54px" h="0px" >
+                       <CiSearch  size={"32px"}  />
+                       </Box>
+                       {SearchBarValue?.length > 0 && (
+                        
+                        <Box  position="relative"  left="293px" zIndex={1} top="-38px" w="54px" h="0px">
+                        <IoMdClose onClick={handleClearSearch} size={"32px"}  />
+                        </Box>
+                       )} 
+                      
+                    </FormControl>
+           <Flex mb={"12px"}>
+           <Button fontSize="14px" onClick={handleExplore} position="relative" top={{base:"28px" ,lg:"0px"}} right={{base:"-12px",lg:"0px"}} h={{base:"45px",lg:"0px"}} fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} minW= {{base:"170px",lg:"0px" }} borderRadius="5px">
+                  Explore Courses
+                </Button>
+                <Button fontSize="14px" onClick={handleMycourse} color={"rgba(38, 189, 217, 1)"} position="relative" top={{base:"28px" ,lg:"0px"}} right={{base:"-27px",lg:"0px"}} h={{base:"45px",lg:"0px"}} fontFamily="Plus Jakarta Sans" bg="#ffff" fontWeight={500} minW= {{base:"170px",lg:"0px" }} borderRadius="5px">
+                 My Courses
+                </Button>
+           </Flex>
+           
+
+        </Box>
        <Flex
               mr={{ md: "30px", base: "0px" }}
               justifyContent="space-between"
+              display={{base:"none",md:"block"}}
               alignItems="start"
               gap="20px"
               flexDirection={{ md: "row", base: "column" }}
@@ -206,188 +261,17 @@ const MyCourses = (
           </Flex>
         </Flex>
         </Flex> 
-        <Box   ml="250px" position="relative" bottom="555px" width="1265px" bg="rgba(247, 248, 250, 1)">
-      <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} p={4} >
-
-        {/* Card 1 */}
-        <GridItem  w="354px" h="369px" >
-          <Link href="#" >
-            <Box position="relative" top="12px" left="23px" _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}>
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-              
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range.svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    
-                    Beginner
-                  </Button>
-                </Flex>
-                <Stack>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                  Introduction Basic 
-                  Programming HTML & CSS
-                  </Heading>
-                  <Progress borderRadius="12px" sx={{'& > div': { bg:'rgba(37, 199, 139, 1)',}}}size='sm' value={30} />
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end"color="black" textDecoration="none"> Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                        <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                     
-                      <Text color="black" alignSelf="end">
-                        4.5
-                        
-                      </Text>
-                      
-                    </Flex>
-                  </Flex>
-                </Flex>
-                </Stack>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-        {/* Card 2 */}
-        <GridItem w="348px" >
-          <Link href="#" _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" top="12px" right="213px">
-              <Flex
-             
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.2s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (2).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Intermediate
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                    {/* {courseTitle} */}
-                    Creating Beautiful Landing Pages
-                    In 1 Hr
-                  </Heading>
-                  <Progress borderRadius="12px" sx={{'& > div': { bg:'rgba(255, 187, 84, 1)',}}}size='sm' value={30} />
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="gray" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end" color="black">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                      <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        {/* {reviewText} */}
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        </GridItem>
-
-        {/* Card 3 */}
-        <GridItem  flexDirection="column" w="348px">
-        {isVisible && ( 
-          <Link onClick={handlebtn} _hover={{ textDecoration: 'none' }}>
-            <Box position="relative" bottom="352px" left="783px">
-              <Flex
-                gap="20px"
-                bg="white"
-                w="340px"
-                h="360px"
-                flexDirection="column"
-                p={{ base: "20px", sm: "30px" }}
-                borderRadius="16px"
-                _hover={{ boxShadow: 'md', transform: 'scale(1.05)' }} // Hover effect
-                transition="all 0.3s ease"
-              >
-                {/* Content of the card */}
-                <Flex bg="rgba(226, 226, 226, 0.674)" alignSelf="stretch" p="10px" borderRadius="10px">
-                  <Button
-                    size="sm"
-                    rightIcon={<Image src="./range (1).svg" alt="Settings" w="12px" h="12px" />}
-                    mt="100px"
-                    fontFamily="Plus Jakarta Sans"
-                    gap="6px"
-                    minW="90px"
-                    borderRadius="8px"
-                  >
-                    {/* {beginnerButton} */}
-                    Master
-                  </Button>
-                </Flex>
-                <Flex mb="38px" gap="10px" alignSelf="stretch" flexDirection="column">
-                  <Heading size="heading3xl" as="h6" color="black" fontFamily="Plus Jakarta Sans" lineHeight="150%">
-                    {/* {courseTitle} */}
-                    Animation is the key of
-                    Successfull UI/UX Design
-                  </Heading>
-                  <Progress borderRadius="12px" sx={{'& > div': { bg:'rgba(255, 187, 84, 1)',}}}size='sm' value={30} />
-                  <Flex alignItems="center">
-                    <Flex gap="10px" flex={1} alignItems="center">
-                      <Box h="30px" bg="blue_gray.100" w="30px" borderRadius="14px" />
-                      <Text alignSelf="end">{/* {mentorName} */} Emerson Sopr</Text>
-                    </Flex>
-                    <Flex gap="4px" w="32%" justifyContent="center">
-                      <Flex flex={1} flexDirection="column" alignItems="end">
-                         <Image src="./star.svg" alt="Lincoln George" h="20px" w="20px" />
-                      </Flex>
-                      <Text color="black" alignSelf="end">
-                        {/* {reviewText} */}
-                        4.5
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Box>
-          </Link>
-        )}
-        </GridItem>
-       </Grid>
+        <Box ml={{base:"0px",md:"250px"}} position="relative" bottom={{base:"-12px",lg:"525px"}} width={{base:"390px",md:"1245px"}} bg={{base:"rgba(242, 246, 255, 1)", lg:"rgba(247, 248, 250, 1)"}}>
+        <Flex  transform={{base:"translateX(0px)",lg:"translateX(32px)"}} gap={{base:"8px",lg:"45px"}} wrap="wrap" p={{base:2,lg:4}}  flexDirection={{ md: "row", base: "row" }}>
+        {data.map((course,index) => (
+          
+            <UserProfile2  {...course} display='block' onClick={() => handleCourseClick(course)}  isVisible={isVisible} key={`Courses${index}`}/>
+        
+           ))}
+        </Flex>
+        <Box ml={"16px"} w={"359px"} color={"#fffff"} >
+        <MobileSidebar />
+       </Box>
 
       <Modal  blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -416,7 +300,7 @@ const MyCourses = (
                    <Button fontSize="14px" bottom="32px" position="relative"border="1px solid black " color="black" left="10px" h="50px" fontFamily="Plus Jakarta Sans" bg="#ffffff" fontWeight={500} w="150px" borderRadius="10px">
                       Cancel
                        </Button>
-                       <Button ml="12px" fontSize="14px" onClick={handleDelete} colorScheme="transparent"  bottom="32px" position="relative" left="10px" h="50px" fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} w="150px" borderRadius="10px">
+                       <Button ml="12px" fontSize="14px" toggleVisiblty={handleDelete} onClick={handleDelete} colorScheme="transparent"  bottom="32px" position="relative" left="10px" h="50px" fontFamily="Plus Jakarta Sans" bg="rgba(38, 189, 217, 1)" fontWeight={500} w="150px" borderRadius="10px">
                       Delete
                        </Button>
                        </Flex>

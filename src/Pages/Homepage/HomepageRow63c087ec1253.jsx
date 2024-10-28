@@ -1,6 +1,8 @@
 import RatingBar from "../../Components/Ratingbar/Ratingbar.jsx";
 import { Image, Box, Flex, Container, Heading, Button } from "@chakra-ui/react";
-import React, { Suspense } from "react";
+import React, { useState ,useEffect ,Suspense } from "react";
+import { useNavigate } from "react-router-dom";
+import '../../styles/Home.css';
 
 const data = [
   { image: "./img_clip_path_group.svg" },
@@ -10,7 +12,23 @@ const data = [
   { image: "./img_vector.svg" },
 ];
 
+
 export default function HomepageRow63c087ec1253() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (event) => {
+    setMousePosition({ x: event.clientX, y: event.clientY });
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+  const btnnavigate = useNavigate();
+  const handlebtn = () => {
+    btnnavigate("/Signin");
+  };
   return (
     <Flex justifyContent="center">
       <Flex
@@ -42,8 +60,9 @@ export default function HomepageRow63c087ec1253() {
             >
               <Box
                 h="62px"
-                mb="96px"
+                mb={{base:"195px",lg:"96px"}}
                 zIndex={1}
+                
                 alignSelf={{ base: "auto", sm: "end" }}
                 bg="light_blue.200"
                 w="62px"
@@ -62,9 +81,12 @@ export default function HomepageRow63c087ec1253() {
                 py={{ md: "78px", base: "20px" }}
               >
                 <Flex mt="216px" gap="20px" flexDirection="column" alignItems="end">
-                  <Box h="50px" mr={{ md: "100px", base: "0px" }} bg="blue.a400" w="50px" borderRadius="24px" />
+                  <Box h="50px"  mr={{ md: "100px", base: "0px" }} bg="blue.a400" w="50px" borderRadius="24px" />
                   <Flex
                     gap="6px"
+                    mb={{md: "0px", base: "-10px"}}
+                    
+                    position="relative"
                     borderColor="gray.200"
                     borderWidth="1px"
                     borderStyle="solid"
@@ -75,9 +97,10 @@ export default function HomepageRow63c087ec1253() {
                     alignItems="center"
                     p="8px"
                     borderRadius="12px"
+                    zIndex={6}
                   >
                     <Image src="./img_thumbs_up_neutral_white.png" alt="Thumbsup" h="42px" w="34%" fit="contain" />
-                    <Flex mt="8px" alignSelf="end" flex={1} flexDirection="column" alignItems="start">
+                    <Flex  mt="8px" alignSelf="end" flex={1} flexDirection="column" alignItems="start">
                       <Heading size="heading4xl" as="h1" color="gray.900" mt="4px" fontFamily="Inter">
                         <Heading size="heading4xl" as="span" color="gray.900">
                           350&nbsp;
@@ -95,7 +118,7 @@ export default function HomepageRow63c087ec1253() {
               </Box>
             </Flex>
             <Flex
-              mt="-64px"
+              top={{base:"9 5px" ,sm:"25px",lg:"-46px"}}
               mr={{ md: "16px", base: "0px" }}
               gap="16px"
               position="relative"
@@ -150,7 +173,7 @@ export default function HomepageRow63c087ec1253() {
                   #SpiritOfLearning
                 </Heading>
                 <Flex mt="-2px" position="relative" alignSelf="stretch">
-                  <Heading size="h1_web" as="h6" w="38%" lineHeight="69px">
+                  <Heading mb={{base:"240px" ,md:"140px",lg:"30px"}} fontSize={{base: "20px", md: "30px", lg: "46px"}} as="h6" w="38%" lineHeight={{base:"35px",md:"57px",lg:"69px"}}>
                     <>
                       Design & Code Your
                       <br />
@@ -159,15 +182,18 @@ export default function HomepageRow63c087ec1253() {
                   </Heading>
                 </Flex>
               </Flex>
-              <Flex>
+              <Flex >
                 <Heading
                   size="textxl"
                   as="h6"
+                  position="relative"
+                  bottom={{base:"52px", sm:"0px",lg:"0px"}}
                   fontFamily="Manrope"
                   fontWeight={400}
                   alignSelf="end"
-                  w="38%"
+                  w={{base:"59%",sm:"32%",lg:"38%"}}
                   lineHeight="32px"
+                  
                 >
                   <>
                     Deepen your design and code skills with the experts
@@ -178,7 +204,7 @@ export default function HomepageRow63c087ec1253() {
               </Flex>
             </Flex>
             <Flex gap="13px">
-              <Button size="2xl" fontWeight={500} minW="146px" borderRadius="10px">
+              <Button size="2xl" onClick={handlebtn} fontWeight={500} minW="146px" borderRadius="10px">
                 Explore Course
               </Button>
               <Button
@@ -195,15 +221,22 @@ export default function HomepageRow63c087ec1253() {
             </Flex>
           </Flex>
           <Box
+            
+            className="circle circle1"
             h="44px"
-            bg="light_blue.200"
+            color="light_blue.200"
             w="44px"
             position="absolute"
             left="3%"
             top="23px"
             m="auto"
             borderRadius="22px"
-          />
+           style={{
+            transform: `translate(${mousePosition.x * 0.9}px, ${
+              mousePosition.y * 1.15
+            }px)`,
+  
+           }}/>
           <Flex
             zIndex={3}
             flex={1}
@@ -218,6 +251,7 @@ export default function HomepageRow63c087ec1253() {
           >
             <Flex
               mb="86px"
+              top={{base:"22px"}}
               gap="14px"
               zIndex={4}
               alignSelf={{ md: "end", base: "auto" }}
@@ -234,7 +268,7 @@ export default function HomepageRow63c087ec1253() {
               p={{ base: "20px", sm: "28px" }}
               borderRadius="10px"
             >
-              <Box value={1} isEditable={true} size={20} starCount={1} as={RatingBar} display="flex" gap="10px" />
+              <Box   value={4} isEditable={false} size={20} starCount={4} color="yellow" as={RatingBar} display="flex" gap="10px" />
               <Heading
                 size="heading5xl"
                 as="h5"
@@ -245,7 +279,7 @@ export default function HomepageRow63c087ec1253() {
                 lineHeight="30px"
               >
                 <Heading size="heading5xl" as="span" color="gray.900">
-                  Rated 5 out of 5 by&nbsp;
+                  Rated 4.5 out of 5 by&nbsp;
                 </Heading>
                 <Heading size="heading5xl" as="span" color="blue.a400">
                   45,000+ students
@@ -260,15 +294,32 @@ export default function HomepageRow63c087ec1253() {
               alignItems="start"
               flexDirection={{ base: "column", sm: "row" }}
             >
-              <Box h="50px" mt="88px" bg="blue.600" w="50px" borderRadius="24px" />
+              <Box className="circle circle1" style={{
+                transform: `translate(${mousePosition.x * 0.09}px, ${
+                  mousePosition.y * 0.015
+                }px)`,
+              }} h="50px" alignItems="flex-start" mt="88px" bg="blue.600" w="50px" borderRadius="24px" />
+              <Box
+                h={{ base: "230px", sm: "224px",lg:"448px" }}
+                ml={{ base: "0px", sm: "-374px" }}
+                left={{base:"70px", sm:"434px"}}
+                bottom={{base:"550px",md:"50px",lg:"0px"}}
+                alignSelf="center"
+                position="relative"
+                bg="blue.600"
+                w={{ base: "230px", sm: "234px",lg:"448px" }}
+              
+                borderRadius="224px"
+              />
               <Image
                 src="./img_1_7.png"
                 alt="Image"
-                h="412px"
-                ml={{ base: "0px", sm: "-10px" }}
+                h={{ base: "200px", sm: "200px", lg:"412px" }}
+                ml={{ base: "140px", sm: "-10px" }}
+                bottom={{ base: "790px", sm: "10px" , lg:"0px" }}
                 alignSelf="center"
                 position="relative"
-                w={{ base: "100%", sm: "90%" }}
+                w={{ base: "100%", sm: "90%" ,lg:"76%"}}
                 fit="contain"
               />
             </Flex>
@@ -279,6 +330,7 @@ export default function HomepageRow63c087ec1253() {
             <Suspense fallback={<div>Loading feed...</div>}>
               {data.map((d, index) => (
                 <Image
+                
                   key={"listvectorone" + index}
                   src={d.image}
                   alt="Image"

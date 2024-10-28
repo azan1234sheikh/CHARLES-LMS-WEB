@@ -14,7 +14,7 @@ export default function MegaMenu1() {
               fontSize={{ base: "15px", sm: "18px" }}
               fontWeight={700}
             >
-              Title 1
+              Design
             </Text>
             <Flex gap="12px" flexDirection="column" alignItems="start">
               <Link href="#" fontSize={{ base: "13px", sm: "medium" }}>
@@ -24,23 +24,21 @@ export default function MegaMenu1() {
               </Link>
               <Link href="#" alignSelf="center" fontSize={{ base: "13px", sm: "medium" }}>
                 <Text size="undefined" color="black.600" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 2
+                  UI UX Design
                 </Text>
               </Link>
               <Link href="#" alignSelf="center" fontSize={{ base: "13px", sm: "medium" }}>
                 <Text size="undefined" color="black.600" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 3
+                 Graphics Design
                 </Text>
               </Link>
               <Link href="#" alignSelf="center" fontSize={{ base: "13px", sm: "medium" }}>
                 <Text size="undefined" color="black.600" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 4
+                  Animations
                 </Text>
               </Link>
               <Link href="#" alignSelf="center" fontSize={{ base: "13px", sm: "medium" }}>
-                <Text size="undefined" color="black.600" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 5
-                </Text>
+                
               </Link>
             </Flex>
           </Flex>
@@ -52,12 +50,12 @@ export default function MegaMenu1() {
               fontSize={{ base: "15px", sm: "18px" }}
               fontWeight={700}
             >
-              Title 2
+              Programming
             </Text>
             <Flex gap="12px" flexDirection="column" alignItems="start">
-              <Link href="#" fontSize={{ base: "13px", sm: "medium" }}>
-                <Text size="undefined" color="black" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 1
+              <Link href="#" fontSize={{ base: "10px", sm: "medium" }}>
+                <Text size="undefined" color="gray" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
+                  Programming
                 </Text>
               </Link>
               <Text
@@ -68,7 +66,7 @@ export default function MegaMenu1() {
                 fontWeight={400}
                 alignSelf="center"
               >
-                Menu 2
+               HTML & CSS
               </Text>
               <Text
                 size="undefined"
@@ -78,7 +76,7 @@ export default function MegaMenu1() {
                 fontWeight={400}
                 alignSelf="center"
               >
-                Menu 3
+                Frontend Development
               </Text>
               <Text
                 size="undefined"
@@ -88,13 +86,9 @@ export default function MegaMenu1() {
                 fontWeight={400}
                 alignSelf="center"
               >
-                Menu 4
+                Python Programming
               </Text>
-              <Link href="#" alignSelf="center" fontSize={{ base: "13px", sm: "medium" }}>
-                <Text size="undefined" color="black.600" fontFamily="Open Sans" fontSize="16px" fontWeight={400}>
-                  Menu 5
-                </Text>
-              </Link>
+              
             </Flex>
           </Flex>
           <Flex gap="16px" flexDirection="column" alignItems="start">
@@ -105,7 +99,7 @@ export default function MegaMenu1() {
               fontSize={{ base: "15px", sm: "18px" }}
               fontWeight={700}
             >
-              Title 3
+              Soft Skills
             </Text>
             <Flex gap="12px" flexDirection="column" alignItems="start">
               <Link href="#" fontSize={{ base: "13px", sm: "medium" }}>

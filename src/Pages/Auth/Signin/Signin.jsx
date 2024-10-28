@@ -18,13 +18,18 @@ import {
   Icon
 } from "@chakra-ui/react";
 import "../../../index.css";
-import { FiEye } from "react-icons/fi";
+import { FiEye,FiEyeOff } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast,ToastContainer } from "react-toastify";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const [Icon, SetIcon] = useState(false);
+  const Iconbtn =()=>{
+    SetIcon(!Icon);
+  }
+  const type = Icon? "text" : "password";
   const handleForgotclick = () => {
     navigate("/Forgot"); // Redirects to the /signup route
   };
@@ -77,26 +82,35 @@ const Signin = () => {
 
   return (
     <>
-      <Container>
-        <Center minH="900px">
+      <Container >    
+        <Flex 
+        direction={{ base: "column", md: "row" }} 
+        align="center"
+        justify="center"
+        minH="100vh"
+      >
+         < Box minH="900px" flex={1} mb={{ base: 0, md: 0 }}>
           <Image
-            src="./image (1).png"
-            minW="675px"
-            mb="160px"   
-            h="700px"
+             ml={{base:"0px",lg:"0px"}}
+             src="./image (1).png"
+             w={{ base: "395px",sm:"600px", lg: "675px" }}
+             h={{ base: "auto",sm:"600px", lg: "700px" }}
+            mt={{base:"0px",lg:"30px"}}
+
           />
-        </Center>
+        </Box>
   
-        <Center minH="100vh">
           <Box
             border="1px solid Transparent"
             p="0"
-            w="385px"
+            maxW={{base:"auto",md:"385px"}}
+            
             height="677px"
             position="relative"
-            left="700px"
-            bottom="850px"
+            left={{base:"8px",lg:"200px"}}
+            bottom={{base:"420px",lg:"30px"}}
             bg="white"
+         
           >
             <Text
               mb="3"
@@ -147,7 +161,7 @@ const Signin = () => {
                 </FormLabel>
   
                 <Input
-                  w="385px"
+                  w={{base:"323px",lg:"385px"}}
                   _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}
                   borderRadius="10px"
                   h="50px"
@@ -168,26 +182,39 @@ const Signin = () => {
                 </FormLabel>
                 <InputGroup>
                   <Input
-                    w="385px"
+                   w={{base:"323px",lg:"385px"}}
                     _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}
                     borderRadius="10px"
                     h="50px"
+                    type={type}
                     name="password"
                     fontFamily="'Plus Jakarta Sans', sans-serif"
                     placeholder="Enter Your Password"
                     onChange={handleChange}
                   />
-                  <InputRightElement>
+                  <InputRightElement >
+                  {Icon ?
                     <IconButton
+                    onClick={Iconbtn} 
+                     mr={{base:"92px",md:"0px"}}
+                     
                       icon={<FiEye />}
+                    
                       variant="ghost"
                       aria-label="Toggle Password Visibility"
+                      
                     />
+                    : <IconButton 
+                    onClick={Iconbtn}
+                    mr={{base:"92px",md:"0px"}}
+                    color={"white"}
+                     icon={< FiEyeOff /> }
+                    />}
                   </InputRightElement>
                 </InputGroup>
               </FormControl>
             </Stack>
-            <Flex>
+            <Flex w={{base:"323px",lg:"385px"}}>
               <Text
               onClick={handleForgotclick}
                 mt="48px"
@@ -204,6 +231,7 @@ const Signin = () => {
                 mt="9"
                 fontWeight="500"
                 fontSize="14px"
+                mr={{base:"120px"}}
                 borderRadius="10px"
                 p="13px 24px"
                 lineHeight="21px"
@@ -217,7 +245,7 @@ const Signin = () => {
                 Sign In
               </Button>
             </Flex>
-            <Flex>
+            <Flex w={{base:"323px",lg:"385px"}}>
               <Box
                 mt="10"
                 bg="rgba(245, 245, 247, 1)"
@@ -236,7 +264,8 @@ const Signin = () => {
               />
             </Flex>
             <Button
-              w="380px"
+            w={{base:"323px",lg:"385px"}}
+              
               h="50px"
               bg="white"
               leftIcon={
@@ -262,7 +291,7 @@ const Signin = () => {
             </Button>
             <Button
               mt="25px"
-              w="380px"
+              w={{base:"323px",lg:"385px"}}
               h="50px"
               bg="white"
               leftIcon={
@@ -320,7 +349,8 @@ const Signin = () => {
               .
             </Text>
           </Box>
-        </Center>
+        </Flex>
+        <ToastContainer w={{base:"auto",lg:"385px"}} />
       </Container>
     </>
   );

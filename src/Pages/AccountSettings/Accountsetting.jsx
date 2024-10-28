@@ -10,7 +10,11 @@ import { Checkbox, Image,Select  } from '@chakra-ui/react'
    import "react-datepicker/dist/react-datepicker.css";  
    import { useBoolean } from '@chakra-ui/react'
    import {IconButton,Card,InputRightElement,InputGroup , Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
+   import MobileHeader from '../../Components/MobileHeader/MobileHeader';
+   import { CiSearch } from "react-icons/ci";
+   import { IoMdClose } from "react-icons/io";
 
+   import MobileSidebar from '../../Components/MobileSidebar/MobileSidebar';
 const Accountsetting = (
     {
         userlanguage =" English (US)",
@@ -21,6 +25,12 @@ const Accountsetting = (
         AccountDelete="When you delete your account, you lose access to Front account services, and we permanently delete your personal data. You can cancel the deletion for 14 days.",
         ...props}
 ) => {
+  const handleClearSearch = () => {
+    setTimeout(() => {
+   SetSearchBarValue("");
+ }, 100);
+};
+    const [SearchBarValue,SetSearchBarValue] = useState(""); 
     const [flag, setFlag] = useBoolean()
     const [showinputs,setShowinputs] = useState();
     const [showusername,setShowusername] = useState();
@@ -41,10 +51,14 @@ const Accountsetting = (
   return (
     
   <>
-    <Box h="100vh">
-<Flex gap="56px" alignItems="start">
+    <Box h="100vh" overflowX={"hidden"}>
+      <Flex gap={{ base: "0px", md: "56px" }} alignItems="start">
     <Sidebar8/>
-    <Flex mt="30px" gap="22px" alignSelf="center" flex={1} flexDirection="column">
+    <Flex  mt={{ base: "0px", md: "30px" }}
+    gap="22px"
+    alignSelf="center" 
+    flex={1}
+    flexDirection="column">
     <Flex
            mr={{ md: "30px", base: "0px" }}
            justifyContent="space-between"
@@ -59,7 +73,7 @@ const Accountsetting = (
 
              <Link href="#">
                <Image
-                 src="./notif.svg"
+                 src="/notif.svg"
                  alt="Image"
                  h="24px"
                  position="relative"
@@ -72,7 +86,7 @@ const Accountsetting = (
              </Link>
              <Link href="#">
                <Image
-                 src="./Rectangle 5997 (1).svg"
+                 src="/Rectangle 5997 (1).svg"
                  alt="Image"
                  h="50px"
                  position="relative"
@@ -91,19 +105,60 @@ const Accountsetting = (
        </Flex>
      </Flex>
      
-   <Box   ml="250px" position="relative" bottom="625px" width="1265px" bg="rgba(247, 248, 250, 1)">
-   <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} p={4} >
-      <Flex flexDirection="row">
+   <Box 
+    ml={{ base: "0px", md: "250px" }}
+    
+    position="relative"
+     bottom={{base:"117px",md:"625px" }}
+     width="100%"
+      bg="rgba(247, 248, 250, 1)">
+        <Box display={{ base: "block", md: "none" }} mb={{ base: "22px" }}>
+      <MobileHeader />
+      <FormControl bg="white" w="90%" mx="auto" mt="20px">
+        <InputGroup>
+          <Input
+            w="full"
+            value={SearchBarValue}
+            onChange={(e) => SetSearchBarValue(e.target.value)}
+            placeholder="Search For Course Name/Mentor"
+            h="46px"
+            fontSize="12px"
+            fontFamily="'Plus Jakarta Sans', sans-serif"
+            _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}
+          />
+          <InputRightElement>
+            <CiSearch size={"24px"} />
+          </InputRightElement>
+          {SearchBarValue?.length > 0 && (
+            <Box position="absolute" right="40px" top="10px">
+              <IoMdClose onClick={handleClearSearch} size={"24px"} />
+            </Box>
+          )}
+        </InputGroup>
+      </FormControl>
+    </Box>
+   <Grid
+    templateColumns={{ base: "1fr", md: "1fr 3fr" }}
+     gap={1} 
+      p={4} >
+    
      <AccSidebar/>
 
-      <Card bottom="2px" left="42px" w="744px" h="1733px">
+      <Card 
+      boxShadow="md"
+      p={6}
+      w={{base:"100%",lg:"744px"}}
+      h="full"
+      bg="white"
+       borderRadius="lg"
+      >
       <Text mt="23px" ml="15px" fontFamily="Plus Jakarta Sans" lineHeight="27px" fontWeight="700" fontSize="18px" color="rgba(20, 21, 34, 1)">Edit Profile</Text>
        <Stack ml="22px" transform="translateY(20px)">
         <Flex>
         <Text  fontWeight="500" color="black" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">
         Password
         </Text>
-        <Button isChecked={showinputs} onClick={handleToggle} ml="522px" borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showinputs ? 'hide' : 'show'}</Button>
+        <Button isChecked={showinputs} onClick={handleToggle} ml={{base:"150px",md:"522px",lg:"522px"}} borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showinputs ? 'hide' : 'show'}</Button>
         </Flex>
         {showinputs&&(
               <Stack>
@@ -163,7 +218,7 @@ const Accountsetting = (
         <Text mt="15px" fontWeight="500" color="black" fontSize="14px" lineHeight="21px" fontFamily="Plus Jakarta Sans">
         Username
         </Text>
-        <Button onClick={handlesign} mt="19px"  isChecked={showinputs}  ml="522px" borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showusername ? 'hide' : 'show'}</Button>
+        <Button onClick={handlesign} mt="19px"  isChecked={showinputs}  ml={{base:"150px",md:"522px",lg:"522px"}} borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showusername ? 'hide' : 'show'}</Button>
         </Flex>
         {showusername&&(
               <Stack>
@@ -209,7 +264,7 @@ const Accountsetting = (
              Your current email Address is {useremail}
         </Text>
         </Stack>
-        <Button mt="12px" isChecked={showemail} onClick={handleemail} ml="280px" borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showemail ? 'hide' : 'show'}</Button>
+        <Button mt="12px" isChecked={showemail} onClick={handleemail} ml={{base:"150px",md:"280px",lg:"280px"}} borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showemail ? 'hide' : 'show'}</Button>
         </Flex>
         {showemail&&(
            <Stack ml="26px">
@@ -250,7 +305,7 @@ const Accountsetting = (
         Your language is currently set to: {userlanguage}
         </Text>
         </Stack>
-        <Button mt="12px" isChecked={showLanguage} onClick={handleLanguage} ml="325px" borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showemail ? 'hide' : 'show'}</Button>
+        <Button mt="12px" isChecked={showLanguage} onClick={handleLanguage} ml={{base:"150px",md:"325px",lg:"325px"}} borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showemail ? 'hide' : 'show'}</Button>
         </Flex>
         {showLanguage&&(
              <Stack ml="26px">
@@ -288,7 +343,7 @@ const Accountsetting = (
          {timezone}
         </Text>
         </Stack>
-        <Button mt="12px" isChecked={showtimezone} onClick={handletimezone} ml="145px" borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showemail ? 'hide' : 'show'}</Button>
+        <Button mt="12px" isChecked={showtimezone} ml={{base:"100px",md:"145px",lg:"145px"}} onClick={handletimezone}  borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showemail ? 'hide' : 'show'}</Button>
         </Flex>
         {showtimezone&&(
              <Stack ml="26px">
@@ -326,7 +381,7 @@ const Accountsetting = (
         {AccountDelete}
         </Text>
         </Stack>
-        <Button mt="12px" isChecked={showDelete} onClick={handleDelete} mr="80px" borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showDelete ? 'hide' : 'show'}</Button>
+        <Button mt="12px" isChecked={showDelete} onClick={handleDelete} mr={{base:"10px",md:"80px",lg:"80px"}} borderRadius="6px" w="46px"h="24px" bg="rgba(245, 245, 247, 1)" color="black" > {showDelete ? 'hide' : 'show'}</Button>
         </Flex>
          {showDelete&&(
           <Stack mt="22px">
@@ -370,7 +425,7 @@ const Accountsetting = (
           </Stack>
          )}
       </Card>
-      </Flex>
+      
     
     
   

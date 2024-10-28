@@ -12,23 +12,32 @@ import {
   IconButton,
   Button,
   Box,
+  Flex,
   Image
 } from "@chakra-ui/react";
-import { FiEye } from "react-icons/fi";
+import { FiEye,FiEyeOff  } from "react-icons/fi";
+
+
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 
-const Signup = () => {
+const Signup = (
+  
+) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
-  
+  const [Icon, SetIcon] = useState(false);
+  const Iconbtn =()=>{
+    SetIcon(!Icon);
+  }
+  const type = Icon? "text" : "password";
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData || {};
@@ -58,32 +67,38 @@ const Signup = () => {
   return (
     <>
       <Container>
-        <Center minH="900px">
+      <Flex 
+        direction={{ base: "column", md: "row" }} // Stack on mobile, side-by-side on desktop
+        align="center"
+        justify="center"
+        minH="100vh"
+      >
+        < Box minH="900px" flex={1} mb={{ base: 8, md: 0 }}>
           <Image
-            src="./image (1).png"
-            minW="675px"
-            mb="160px"
-           
-            h="700px"
+             src="./image (1).png"
+             w={{ base: "381px", lg: "675px" }}
+             h={{ base: "auto", lg: "700px" }}
+            mt={{lg:"30px"}}
           />
-        </Center>
-        <Center minH="100vh">
+        </Box>
+       
           <Box
-            border="1px solid Transparent"
-            p="0"
-            w="385px"
-            height="677px"
-            position="relative"
-            left="700px"
-            bottom="850px"
-            bg="white"
+               border="1px solid Transparent"
+               p="0"
+               maxW={{base:"auto",md:"385px"}}
+               
+               height="677px"
+               position="relative"
+               left={{base:"8px",lg:"200px"}}
+               bottom={{base:"460px",lg:"30px"}}
+               bg="white"
           >
             <Text
               mb="3"
               display="flex"
               color="background: rgba(20, 21, 34, 1);"
               fontWeight="500"
-              fontSize="40px"
+              fontSize={{base:"25px",lg:"40px"}}
               letterSpacing="1px"
               lineHeight="63px"
               fontFamily="'Plus Jakarta Sans', sans-serif"
@@ -118,7 +133,8 @@ const Signup = () => {
                   Email Address
                 </FormLabel>
                 <Input
-                  w="385px"
+                   w={{base:"323px",lg:"385px"}}
+
                   _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}
                   borderRadius="10px"
                   h="50px"
@@ -134,7 +150,7 @@ const Signup = () => {
                   Confirm Email Address
                 </FormLabel>
                 <Input
-                  w="385px"
+                   w={{base:"323px",lg:"385px"}}
                   _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}
                   borderRadius="10px"
                   h="50px"
@@ -151,7 +167,9 @@ const Signup = () => {
                 </FormLabel>
                 <InputGroup>
                   <Input
-                    w="385px"
+                     w={{base:"323px",lg:"385px"}}
+                     
+                     type={type}
                     _hover={{ border: "1px solid rgba(255, 187, 84, 1)" }}
                     borderRadius="10px"
                     h="50px"
@@ -160,17 +178,30 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <InputRightElement>
+                  {Icon ?
                     <IconButton
+                    onClick={Iconbtn} 
+                     mr={{base:"92px",md:"0px"}}
+                     
                       icon={<FiEye />}
+                    
                       variant="ghost"
                       aria-label="Toggle Password Visibility"
+                      
                     />
+                    : <IconButton 
+                    onClick={Iconbtn}
+                    mr={{base:"92px",md:"0px"}}
+                    color={"white"}
+                     icon={< FiEyeOff /> }
+                    />}
+                   
                   </InputRightElement>
                 </InputGroup>
               </FormControl>
             </Stack>
             <Button
-              w="380px"
+               w={{base:"323px",lg:"385px"}}
               h="50px"
               bg="white"
               borderRadius="10px"
@@ -220,8 +251,9 @@ const Signup = () => {
               .
             </Text>
           </Box>
-        </Center>
+      
         <ToastContainer />
+        </Flex>
       </Container>
     </>
   );

@@ -1,7 +1,7 @@
 import UserProfile1 from "../../Components/UserProfile1";
 import { Box, Flex, Button, Heading, Container } from "@chakra-ui/react";
 import React, { Suspense } from "react";
-
+import { useNavigate } from "react-router-dom";
 const data = [
   {
     userImage: "./img_63c02e556c48fe4.png",
@@ -41,6 +41,10 @@ const data = [
 ];
 
 export default function HomepageStacktrustedby9() {
+  const btnnavigate = useNavigate();
+  const handlebtn = () => {
+    btnnavigate("/Signin");
+  };
   return (
     <Box h={{ md: "860px", base: "auto" }} mt="62px" alignSelf="stretch" position="relative">
       <Heading size="textxl" mt="46px">
@@ -116,6 +120,8 @@ export default function HomepageStacktrustedby9() {
                 borderStyle="solid"
                 w="100%"
                 borderRadius="10px"
+                onClick={handlebtn}
+
               >
                 Join as a Tutor
               </Button>

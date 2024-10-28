@@ -1,97 +1,155 @@
-// export const lineChartDataOverallRevenue = {
-//     series: [{
-//       name: "Revenue",
-//       data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-//     }],
-//     options: {
-//       chart: {
-//         id: 'overall-revenue',
-//         type: 'line'
-//       },
-//       xaxis: {
-//         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
-//       }
-//     }
-//   };
-  
-  // Data for the chart
-// export const barChartDataDailyTraffic = [
-//   {
-//     name: "Daily Traffic",
-//     data: ["55%","45%"]
-//   }
-// ];
+// Chartdata.js
 
-// // Options for the chart
-// export const barChartOptionsDailyTraffic = {
-//   chart: {
-//     id: 'daily-traffic',
-    
-//   },
-  
-// };
+import { border } from "@chakra-ui/react";
 
 export const barChartDataDailyTraffic = [
   {
     name: "Present",
-    data: [55, 50]
+    data: [55]
   },
+  
   {
     name: "Not Present",
     data: [45]
   },
+  
+];
+export const GraduatebarChart = [
   {
-    name: "Pass",
+    name: "Present",
     data: [55]
   },
   {
-    name: "Didn't Pass",
+    name: "Didnot Pass",
     data: [35]
   },
   {
     name: "In Progress",
-    data: [35]
-  }
+    data: [25]
+  },
+  
 ];
 
-export const barChartOptionsDailyTraffic = {
+export const GraduatebarchartOptions = {
+
   chart: {
     type: 'bar',
-    height: 350,
+     
+    stacked: false,
+    dataLabels:{
+      enabled: false
+   } // This will help in stacking bars if required
   },
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: '55%',
-      endingShape: 'rounded'
+      columnWidth: '95%', // Adjusted width
+      columnHeight:"0%",
+      dataLabels:{
+         enabled: true
+      }
     },
   },
   dataLabels: {
     enabled: false
   },
   stroke: {
-    show: true,
-    width: 2,
+    show: false,
+    width:200 ,
     colors: ['transparent']
   },
   xaxis: {
-    categories: ['Antecedence Rate', 'Graduated Level'],
+    categories: ['Antendence Rate',],
+    categories: ['Pass Rate',],
+    categories: ['In Progress',],
   },
   yaxis: {
+    
     title: {
       text: '% (percentage)'
-    }
+    },
+    
   },
   fill: {
     opacity: 1
   },
+  grid: {
+    show: false, // Hide grid lines
+  },
+
+  yaxis: {
+    labels: {
+      show : false // Hide y-axis labels
+    },
+  },
+ 
   tooltip: {
-    y: {
+    x: {
       formatter: function (val) {
         return val + "%"
       }
     }
   },
-  colors: ['#2885D1', '#E0E0E0', '#50C878', '#FF4500', '#FFD700']
-};
+  colors: ['rgba(115, 64, 229, 1)', 'rgba(221, 53, 69, 1)', 'rgba(255, 193, 25, 1)', '#FF4500', '#FFD700'] 
+}
 
+export const barChartOptionsDailyTraffic = {
+  chart: {
+    type: 'bar',
+     
+    stacked: false,
+    dataLabels:{
+      enabled: false
+   } // This will help in stacking bars if required
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: '75%', // Adjusted width
+      columnHeight:"0%",
+      dataLabels:{
+         enabled: true
+      }
+    },
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    show: false,
+    width:200 ,
+    colors: ['transparent']
+  },
+  xaxis: {
+    categories: ['Antendence Rate',],
+    categories: ['Not Present',],
+  },
+  yaxis: {
+    
+    title: {
+      text: '% (percentage)'
+    },
+    
+  },
+  fill: {
+    opacity: 1
+  },
+  grid: {
+    show: false, // Hide grid lines
+  },
+
+  yaxis: {
+    labels: {
+      show : false // Hide y-axis labels
+    },
+  },
+ 
+  tooltip: {
+    x: {
+      formatter: function (val) {
+        return val + "%"
+      }
+    }
+  },
+  colors: ['#50C878', '#E0E0E0', '#2885D1', '#FF4500', '#FFD700'] 
+};
