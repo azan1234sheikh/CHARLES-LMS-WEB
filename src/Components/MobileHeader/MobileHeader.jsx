@@ -1,11 +1,14 @@
 
 import { Center, ChakraProvider, Container,Text,Stack, FormControl, FormLabel,UnorderedList,
-    ListItem, Link,Heading, Input,InputGroup,InputRightElement,IconButton, Button, Flex, Box} from '@chakra-ui/react';
+    ListItem, Link,Heading, Input,InputGroup,InputRightElement,IconButton, Button, Flex, Box,
+    Avatar} from '@chakra-ui/react';
+    import { useUser } from '@clerk/clerk-react';
     import React from 'react'
     import { Image } from '@chakra-ui/react';
  import { CiSearch } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
 const MobileHeader = () => {
+  const {user} = useUser()
     const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault(); 
@@ -28,7 +31,7 @@ const MobileHeader = () => {
      <Image  onClick={handleExplore} top={{base:"32px" ,lg:"0px"}} display={{base:"block",lg:"none"}} right={{base:"-10px",lg:"0px"}} position={"relative"} src="/Logo.svg" alt="Sidebarlogo" h="42px" w={{base:"127px,",lg:"122px"}} fit="contain" />
               
               <Link href="#" onClick={handleAccount}>
-                <Image  src="/Rectangle 5997.svg"  position="relative" bottom={{base:"9px" ,lg:"33px"}} left={{base:"290px",lg:"113px"}} alt="Contrast" h="50px" w="50px" />
+                <Avatar  src={user?.imageUrl}  position="relative" bottom={{base:"9px" ,lg:"33px"}} left={{base:"290px",lg:"113px"}} alt="Contrast" h="50px" w="50px" />
               </Link>
               <Link onClick={handlenotfication} href="#">
                 <Image

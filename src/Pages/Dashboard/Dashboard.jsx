@@ -1,5 +1,8 @@
 import { Center, ChakraProvider, Container,Text,Stack, FormControl, FormLabel,UnorderedList,
-  ListItem, Link,Heading, Input,InputGroup,InputRightElement,IconButton, Button, Flex, Box} from '@chakra-ui/react';
+  ListItem, Link,Heading, Input,InputGroup,InputRightElement,IconButton, Button, Flex, Box,
+  Avatar} from '@chakra-ui/react';
+  import { useUser } from "@clerk/clerk-react";
+
 import Sidebar from '../../Components/Sidebar/sidebar.jsx';
 import { Image } from '@chakra-ui/react';
 
@@ -83,7 +86,10 @@ const data2 = [
 const Dashboard = () => {
   const [SearchBarValue,SetSearchBarValue] = useState("");
   const [isVisible, setIsVisible] = useState(true);
-
+     
+  const { user } = useUser();
+   
+   console.log(user)
   
   const handleClearSearch = () => {
     // Delay clearing the search bar by 1 second
@@ -271,7 +277,7 @@ const Dashboard = () => {
                </Box>
                {}
                 <Link href="#" onClick={handleAccount}>
-                  <Image  src="/Rectangle 5997.svg"  position="relative" bottom={{base:"86px" ,lg:"17px"}} right={{base:"0px",lg:"153px"}} alt="Contrast" h="50px" w="50px" />
+                  <Avatar  src={user?.imageUrl} position="relative" bottom={{base:"86px" ,lg:"17px"}} right={{base:"0px",lg:"153px"}} alt="Contrast" h="50px" w="50px" />
                 </Link>
 
                 </Flex>
@@ -313,7 +319,7 @@ const Dashboard = () => {
                   transform={{base: "translateY(101px)",lg:"translateX(0px)"}}
                 >
                   <Heading fontSize={{base:"20px",lg:"32px"}} color=" rgba(20, 21, 34, 1);" lineHeight="48px" fontWeight="500" fontFamily="Plus Jakarta Sans">
-                    Hi, Alinah
+                    {`Hi ${user.firstName}`}
                   </Heading>
                   <Heading mb={{base:"42px",lg:"0px"}} fontSize={{base:"12px",lg:"18px"}} color=" rgba(156, 156, 164, 1);" lineHeight="27px" fontWeight="400" fontFamily="Plus Jakarta Sans">
                     Let’s learn something new today!

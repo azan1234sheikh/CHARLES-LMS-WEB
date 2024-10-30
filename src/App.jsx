@@ -3,8 +3,12 @@ import "./styles/font.css";
 import { ChakraProvider, CircularProgress, Center, Box } from '@chakra-ui/react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import React, { Suspense, useState, useEffect } from 'react';
+import OAuthRedirect from './Components/O-Auth-Redirect/OAuthRedirect.jsx';
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ClerkProvider, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
+
 
 // Lazy-loaded components
 const CourseDetail = React.lazy(() => import('./Pages/Courses/CourseDetail/CourseDetail.jsx'));
@@ -84,28 +88,39 @@ const App = () => {
         {loading && <LoadingSpinner />}
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/" element={<HomepagePage />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
+           
+            {/* Public Routes */}
+            
             <Route path="/SignUp" element={<Signup />} />
             <Route path="/Signin" element={<Signin />} />
             <Route path="/Forgot" element={<Forgot />} />
             <Route path="/Verify" element={<Verify />} />
             <Route path="/WebSignin" element={<Signin2 />} />
-            <Route path="/Sidebar" element={<Sidebar />} />
-            <Route path="/Explorecourse" element={<Explorecourse />} />
-            <Route path="/Mycourse" element={<MyCourses />} />
-            <Route path="/CreateCourse" element={<CreateCourses />} />
-            <Route path="/course/:id" element={<CourseDetail />} />
-            <Route path="/WebMentor" element={<Mentors />} />
-            <Route path="/MentorCourses/:id" element={<MentorCourses />} />
-            <Route path="/Settings" element={<Settings />} />
-            <Route path="/Notification" element={<Notification />} />
-            <Route path="/Account" element={<Account />} />
-            <Route path="/AccountSetting" element={<Accountsetting />} />
-            <Route path="/AccountNotification" element={<AccountNotification />} />
-            <Route path="/Helpdesk" element={<Helpdesk />} />
-            <Route path="/Message" element={<WebmessagePage />} />
-            <Route path="/MobileHeader" element={<MobileHeader/>}/>
+            <Route path="/" element={<HomepagePage />} />
+
+            <Route path="/oauth-callback" element={<OAuthRedirect />} />
+
+
+              {/* Protected Routes - Only accessible if signed in */}
+
+              <Route path="/Dashboard" element={ <SignedIn><Dashboard /> </SignedIn>}/>
+             
+              
+            <Route path="/Sidebar" element={<SignedIn><Sidebar /></SignedIn>} />
+            <Route path="/Explorecourse" element={<SignedIn><Explorecourse /></SignedIn>} />
+            <Route path="/Mycourse" element={<SignedIn><MyCourses /></SignedIn>} />
+            <Route path="/CreateCourse" element={<SignedIn><CreateCourses /></SignedIn>} />
+            <Route path="/course/:id" element={<SignedIn><CourseDetail /></SignedIn>} />
+            <Route path="/WebMentor" element={<SignedIn><Mentors /></SignedIn>} />
+            <Route path="/MentorCourses/:id" element={<SignedIn><MentorCourses /></SignedIn>} />
+            <Route path="/Settings" element={<SignedIn><Settings /></SignedIn>} />
+            <Route path="/Notification" element={<SignedIn><Notification /></SignedIn>} />
+            <Route path="/Account" element={<SignedIn><Account /></SignedIn>} />
+            <Route path="/AccountSetting" element={<SignedIn><Accountsetting /></SignedIn>} />
+            <Route path="/AccountNotification" element={<SignedIn><AccountNotification /></SignedIn>} />
+            <Route path="/Helpdesk" element={<SignedIn><Helpdesk /></SignedIn>} />
+            <Route path="/Message" element={<SignedIn><WebmessagePage /></SignedIn>} />
+            <Route path="/MobileHeader" element={<SignedIn><MobileHeader/></SignedIn>}/>
           </Routes>
         </Suspense>
         </ErrorBoundary>

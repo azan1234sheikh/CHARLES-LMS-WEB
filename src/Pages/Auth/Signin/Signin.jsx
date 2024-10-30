@@ -1,5 +1,8 @@
 
 import React, { useState } from "react";
+import { useSignIn } from "@clerk/clerk-react";
+import { useSession} from "@clerk/clerk-react";
+
 import {
   Center,
   Container,
@@ -15,7 +18,8 @@ import {
   Flex,
   Box,
   Image,
-  Icon
+  Icon,
+  Toast
 } from "@chakra-ui/react";
 import "../../../index.css";
 import { FiEye,FiEyeOff } from "react-icons/fi";
@@ -26,6 +30,9 @@ import { toast,ToastContainer } from "react-toastify";
 const Signin = () => {
   const navigate = useNavigate();
   const [Icon, SetIcon] = useState(false);
+  const { signIn } = useSignIn(); // Clerk sign-in hook
+  const { session } = useSession();
+
   const Iconbtn =()=>{
     SetIcon(!Icon);
   }
@@ -43,7 +50,50 @@ const Signin = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+      
 
+
+  // FACEBOOK LOGIN FUNCTIONALITY//
+  const handleFacebookSignIn = async () => {
+    if (session) {
+      console.log("Session already exists. Redirecting to dashboard.");
+      navigate("/Dashboard");
+      return;
+    }
+
+    try {
+      await signIn.authenticateWithRedirect({
+        strategy: "oauth_facebook",
+        redirectUrl: "/oauth-callback", // Ensure this route is handled in your app
+        redirectUrlComplete: "/Dashboard",
+      });
+    } catch (error) {
+      console.error("Facebook sign-in failed:", error);
+      toast.error("Facebook sign-in failed. Please try again.");
+    }
+  };
+
+  // GOOGLE LOGIN FUNCTIONALITY//
+  const handleGoogleSignIn = async () => {
+    if (session) {
+      toast.error("Session already exists. Redirecting to dashboard.");
+      navigate("/Dashboard");
+      return;
+    }
+  
+    try {
+      await signIn.authenticateWithRedirect({
+        strategy: "oauth_google",
+        redirectUrl: "/oauth-callback",
+        redirectUrlComplete: "/Dashboard", // Redirect after successful sign-in
+      });
+    } catch (error) {
+      console.error("Google sign-in failed:", error);
+      toast.error("Google sign-in failed. Please try again.");
+    }
+  
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData || {};
@@ -264,6 +314,8 @@ const Signin = () => {
               />
             </Flex>
             <Button
+             onClick={handleGoogleSignIn}
+
             w={{base:"323px",lg:"385px"}}
               
               h="50px"
@@ -290,6 +342,7 @@ const Signin = () => {
               Sign In with Google
             </Button>
             <Button
+            onClick={handleFacebookSignIn}
               mt="25px"
               w={{base:"323px",lg:"385px"}}
               h="50px"
