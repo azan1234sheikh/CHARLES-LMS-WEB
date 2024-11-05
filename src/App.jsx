@@ -4,7 +4,6 @@ import { ChakraProvider, CircularProgress, Center, Box } from '@chakra-ui/react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import React, { Suspense, useState, useEffect } from 'react';
 import OAuthRedirect from './Components/O-Auth-Redirect/OAuthRedirect.jsx';
-import { RedirectToSignIn, OAuthCallback } from '@clerk/clerk-react';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -99,7 +98,7 @@ const App = () => {
             <Route path="/WebSignin" element={<Signin2 />} />
             <Route path="/" element={<HomepagePage />} />
 
-            <Route path="/oauth-callback" element={<OAuthCallback } />
+            <Route path="/oauth-callback" element={<OAuthRedirect />} />
 
 
               {/* Protected Routes - Only accessible if signed in */}
